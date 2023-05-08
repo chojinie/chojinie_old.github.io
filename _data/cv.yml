@@ -2,31 +2,31 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Cho HyunJin
     - name: Date of Birth
-      value: 14th March 1879
+      value: 15 / Nov / 1991
     - name: Languages
-      value: English, German
+      value: Korean, English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Master program ongoing
+      institution: University of ChungAng, Seoul, Republic of Korea
+      year: 2023 ~
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Major in Image Engineering, AI Imaging
+        - title: Research Topics
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - Machine Learning
+            - Computer Vision
+            - Autonomous Driving
+    
+    - title: Bachelor Degree
+      institution: University of ChungAng, Seoul, Republic of Korea
+      year: 2019
       description:
-        - Description 1.
-        - Description 2.
+        - Majored in Electronic and Electrical Engineering.
 
 - title: Experience
   type: time_table
