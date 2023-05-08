@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   address: 
     <p>Song-do city</p>
-    <p>Incheon, Republic of Korea</p>
+    <p>Incheon, Korea</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
