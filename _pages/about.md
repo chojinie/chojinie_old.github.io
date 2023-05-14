@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.vilab.cau.ac.kr/home'>Affiliations " : "CAU @VILAB</a>.Contact " : "jincho@vilab.cau.ac.kr.
+subtitle: <a href='https://www.vilab.cau.ac.kr/home'>Affiliations " :"CAU @VILAB</a>.jincho@vilab.cau.ac.kr.
 
 
 profile:
