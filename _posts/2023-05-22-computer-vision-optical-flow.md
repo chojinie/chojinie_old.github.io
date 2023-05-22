@@ -57,6 +57,54 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 왼쪽의 그림은 광원의 위치는 그대로 두고, 구체가 회전하는 상태입니다. 즉, Motion Field는 존재하지만 Optical Flow는 발생하지 않게 됩니다.
 오른쪽 그림은 이와 반대입니다. 구체는 가만히 있지만 광원이 움직여서 밝아 보이는 위치에 변화가 발생합니다. 
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of5.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+실생활의 예시를 들어보겠습니다. 이발소 영업 상태를 나타내는 돌돌이가 있죠. 실제로 그 안의 패턴은 오른쪽으로 움직여서 Motion Field는 왼쪽에서 오른쪽을 향하게 됩니다.
+하지만, 우리가 눈으로 볼 때는 위에서 아래로 움직이는 것 같은 효과가 발생하죠. 즉 Motion Field와 Optical Field가 해당 경우에느 orthogonal한 관계임을 보여줍니다.
+아래 두 그림 역시 움직임은 없으나 시각적으로 flow하는 것을 느낄 수 있습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of6.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+그렇다면 이제는 Optical Flow에 대해 얘기해보겠습니다. 사진 상의 새가 $$ \delta t $$ 만큼의 시간동안 이동하였습니다. 즉 변위(Displacement)가 발생한 것입니다.
+그 찰나동안 x, y 방면으로 이동하는 동안의 속도(u, v)를 point와 연관이 있는 Optical Flow라고 표현합니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of7.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+Optical Flow가 성립되기 위해서는 중요한 가정들이 몇가지 있습니다. 이를 Optical Flow Constraint Equation이라고 표현하며, 비단 Optical Flow 뿐 아니라 
+Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제를 푸는 것을 알 수 있습니다.
+
+우선 모든 시간에 걸쳐서 이미지의 Point들의 brightness는 불변하다고 전제합니다. 매우 짧은 순간인 $$ \delta t $$ 만큼의 시간이기에 가능한 가정인 것 같습니다.
+위와 같이 수식으로도 표현할 수 있죠.(I = Intensity = Brightness)
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of8.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+두번째로는 $$ (\delta x, \delta y, \delta t) $$는 매우매우 작아야 한다는 것입니다. 이를 통해 Taylor Expansion을 적용하여 수식을 간소화 할 수 있습니다.
+아래 Taylor Series Expansion의 설명을 참고하시면 됩니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of9.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+
+
 ##
 
 ## Reference
