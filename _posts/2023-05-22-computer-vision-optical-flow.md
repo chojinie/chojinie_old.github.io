@@ -10,7 +10,7 @@ related_posts: false
 toc:
   sidebar: left
 
-석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글이다.
+석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글입니다.
 
 ## Optical Flow의 정의
 
@@ -18,8 +18,21 @@ toc:
 
 ## Motion Field와 Optical Flow
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Ref : First Principle of Computer Vision [2]
+</div>
 
+$$  $$
 
 ## Reference
 
 [1] Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow
+[2] https://youtube.com/@firstprinciplesofcomputerv3258
