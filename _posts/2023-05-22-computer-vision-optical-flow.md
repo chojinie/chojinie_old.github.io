@@ -71,7 +71,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 
 실생활의 예시를 들어보겠습니다. 이발소 영업 상태를 나타내는 돌돌이가 있죠. 실제로 그 안의 패턴은 오른쪽으로 움직여서 Motion Field는 왼쪽에서 오른쪽을 향하게 됩니다.
-하지만, 우리가 눈으로 볼 때는 위에서 아래로 움직이는 것 같은 효과가 발생하죠. 즉 Motion Field와 Optical Field가 해당 경우에느 orthogonal한 관계임을 보여줍니다.
+하지만, 우리가 눈으로 볼 때는 위에서 아래로 움직이는 것 같은 효과가 발생하죠. 즉 Motion Field와 Optical Field가 해당 경우에는 orthogonal한 관계임을 보여줍니다.
 아래 두 그림 역시 움직임은 없으나 시각적으로 흐르고 있는 것을 느낄 수 있습니다.
 
 <div class="row mt-3">
@@ -161,7 +161,7 @@ line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. �
 결과적으로 Under constraint한 환경에서 optical flow를 구하게 되는 것이고, 이를 찾기 위한 몇가지 알고리즘을 이제 소개하도록 하겠습니다.
 
 
-## Lucas-Kanade Oprical Flow
+## Lucas-Kanade Optical Flow
 
 
 <div class="row mt-3">
