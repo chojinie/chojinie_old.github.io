@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-22T08:18:51+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Ride the waves</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-22T08:51:14+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Ride the waves</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Computer Vision_Optical Flow</title><link href="https://chojinie.github.io/blog/2023/computer-vision-optical-flow/" rel="alternate" type="text/html" title="Computer Vision_Optical Flow" /><published>2023-05-22T00:00:00+00:00</published><updated>2023-05-22T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/computer-vision-optical-flow</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/computer-vision-optical-flow/"><![CDATA[<p>석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글입니다.</p>
 
 <h2 id="optical-flow의-정의">Optical Flow의 정의</h2>
@@ -271,8 +271,8 @@ Computer Vision분야에서는 이러한 ‘제약’들을 걸어서 많은 문
     </div>
 </div>
 
-<p>가정들을 종합하면 위와 같이 식을 나타낼 수 있게 됩니다. Constraint Equation으로 \(\mathbb{I}_x{u} + \mathbb{I}_x{v} + \mathbb{I}_t = 0\) 가 도출됩니다.
-또한 \(\mathbb{I}_x, \mathbb{I}_y, \mathbb{I}_t\)는 이미지의 두 프레임만으로 쉽게 구할 수 있습니다.</p>
+<p>가정들을 종합하면 위와 같이 식을 나타낼 수 있게 됩니다. Constraint Equation으로 \(\mathbf{I}_x{u} + \mathbf{I}_x{v} + \mathbf{I}_t = 0\) 가 도출됩니다.
+또한 \(\mathbf{I}_x, \mathbf{I}_y, \mathbf{I}_t\)는 이미지의 두 프레임만으로 쉽게 구할 수 있습니다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -294,6 +294,79 @@ Computer Vision분야에서는 이러한 ‘제약’들을 걸어서 많은 문
 
     </div>
 </div>
+
+<p>Constraint를 optical flow 좌표상에 표현해보면 아래와 같이 나타낼 수 있습니다. 좌표로 나타낸다면, 성분을 분리하여 나타낼 수도 있죠.
+Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. 하지만 constraint line과 평행한 \(u_p\) 는 무한하므로 특정지을 수가 없습니다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/of13-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/of13-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/of13-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/of13.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>이러한 ambiguity는 Aperture Problem을 야기하게 됩니다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/of14-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/of14-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/of14-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/of14.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. 하지만, local(일부분)만 볼 경우 오른쪽 위 방향으로 움직이는 것처럼 보이게 됩니다.
+이를 Aperture Problem이라고 하며 이를 해결하기 위한 해결책은 후술하겠습니다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/of15-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/of15-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/of15-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/of15.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>결과적으로 Under constraint한 환경에서 optical flow를 구하게 되는 것이고, 이를 찾기 위한 몇가지 알고리즘을 이제 소개하도록 하겠습니다.</p>
 
 <p>##</p>
 
@@ -479,7 +552,7 @@ sequenceDiagram
 </code></pre></div></div>
 
 <div class="jekyll-diagrams diagrams mermaid">
-  <svg id="mermaid-1684743547075" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:450px;" viewBox="-50 -10 450 231"><style>#mermaid-1684743547075 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1684743547075 .node circle,#mermaid-1684743547075 .node ellipse,#mermaid-1684743547075 .node polygon,#mermaid-1684743547075 .node rect{fill:#ececff;stroke:#9370db;stroke-width:1px}#mermaid-1684743547075 .node.clickable{cursor:pointer}#mermaid-1684743547075 .arrowheadPath{fill:#333}#mermaid-1684743547075 .edgePath .path{stroke:#333;stroke-width:1.5px}#mermaid-1684743547075 .edgeLabel{background-color:#e8e8e8}#mermaid-1684743547075 .cluster rect{fill:#ffffde!important;stroke:#aa3!important;stroke-width:1px!important}#mermaid-1684743547075 .cluster text{fill:#333}#mermaid-1684743547075 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#ffffde;border:1px solid #aa3;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1684743547075 .actor{stroke:#ccf;fill:#ececff}#mermaid-1684743547075 text.actor{fill:#000;stroke:none}#mermaid-1684743547075 .actor-line{stroke:grey}#mermaid-1684743547075 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1684743547075 .messageLine0,#mermaid-1684743547075 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1684743547075 #arrowhead{fill:#333}#mermaid-1684743547075 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1684743547075 .messageText{fill:#333;stroke:none}#mermaid-1684743547075 .labelBox{stroke:#ccf;fill:#ececff}#mermaid-1684743547075 .labelText,#mermaid-1684743547075 .loopText{fill:#000;stroke:none}#mermaid-1684743547075 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#ccf}#mermaid-1684743547075 .note{stroke:#aa3;fill:#fff5ad}#mermaid-1684743547075 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1684743547075 .section{stroke:none;opacity:.2}#mermaid-1684743547075 .section0{fill:rgba(102,102,255,.49)}#mermaid-1684743547075 .section2{fill:#fff400}#mermaid-1684743547075 .section1,#mermaid-1684743547075 .section3{fill:#fff;opacity:.2}#mermaid-1684743547075 .sectionTitle0,#mermaid-1684743547075 .sectionTitle1,#mermaid-1684743547075 .sectionTitle2,#mermaid-1684743547075 .sectionTitle3{fill:#333}#mermaid-1684743547075 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1684743547075 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1684743547075 .grid path{stroke-width:0}#mermaid-1684743547075 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1684743547075 .task{stroke-width:2}#mermaid-1684743547075 .taskText{text-anchor:middle;font-size:11px}#mermaid-1684743547075 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1684743547075 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1684743547075 .taskText0,#mermaid-1684743547075 .taskText1,#mermaid-1684743547075 .taskText2,#mermaid-1684743547075 .taskText3{fill:#fff}#mermaid-1684743547075 .task0,#mermaid-1684743547075 .task1,#mermaid-1684743547075 .task2,#mermaid-1684743547075 .task3{fill:#8a90dd;stroke:#534fbc}#mermaid-1684743547075 .taskTextOutside0,#mermaid-1684743547075 .taskTextOutside1,#mermaid-1684743547075 .taskTextOutside2,#mermaid-1684743547075 .taskTextOutside3{fill:#000}#mermaid-1684743547075 .active0,#mermaid-1684743547075 .active1,#mermaid-1684743547075 .active2,#mermaid-1684743547075 .active3{fill:#bfc7ff;stroke:#534fbc}#mermaid-1684743547075 .activeText0,#mermaid-1684743547075 .activeText1,#mermaid-1684743547075 .activeText2,#mermaid-1684743547075 .activeText3{fill:#000!important}#mermaid-1684743547075 .done0,#mermaid-1684743547075 .done1,#mermaid-1684743547075 .done2,#mermaid-1684743547075 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1684743547075 .doneText0,#mermaid-1684743547075 .doneText1,#mermaid-1684743547075 .doneText2,#mermaid-1684743547075 .doneText3{fill:#000!important}#mermaid-1684743547075 .crit0,#mermaid-1684743547075 .crit1,#mermaid-1684743547075 .crit2,#mermaid-1684743547075 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1684743547075 .activeCrit0,#mermaid-1684743547075 .activeCrit1,#mermaid-1684743547075 .activeCrit2,#mermaid-1684743547075 .activeCrit3{stroke:#f88;fill:#bfc7ff;stroke-width:2}#mermaid-1684743547075 .doneCrit0,#mermaid-1684743547075 .doneCrit1,#mermaid-1684743547075 .doneCrit2,#mermaid-1684743547075 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1684743547075 .activeCritText0,#mermaid-1684743547075 .activeCritText1,#mermaid-1684743547075 .activeCritText2,#mermaid-1684743547075 .activeCritText3,#mermaid-1684743547075 .doneCritText0,#mermaid-1684743547075 .doneCritText1,#mermaid-1684743547075 .doneCritText2,#mermaid-1684743547075 .doneCritText3{fill:#000!important}#mermaid-1684743547075 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1684743547075 g.classGroup text{fill:#9370db;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1684743547075 g.classGroup rect{fill:#ececff;stroke:#9370db}#mermaid-1684743547075 g.classGroup line{stroke:#9370db;stroke-width:1}#mermaid-1684743547075 .classLabel .box{stroke:none;stroke-width:0;fill:#ececff;opacity:.5}#mermaid-1684743547075 .classLabel .label{fill:#9370db;font-size:10px}#mermaid-1684743547075 .relation{stroke:#9370db;stroke-width:1;fill:none}#mermaid-1684743547075 #compositionEnd,#mermaid-1684743547075 #compositionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1684743547075 #aggregationEnd,#mermaid-1684743547075 #aggregationStart{fill:#ececff;stroke:#9370db;stroke-width:1}#mermaid-1684743547075 #dependencyEnd,#mermaid-1684743547075 #dependencyStart,#mermaid-1684743547075 #extensionEnd,#mermaid-1684743547075 #extensionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1684743547075 .branch-label,#mermaid-1684743547075 .commit-id,#mermaid-1684743547075 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1684743547075 {
+  <svg id="mermaid-1684745491707" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:450px;" viewBox="-50 -10 450 231"><style>#mermaid-1684745491707 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1684745491707 .node circle,#mermaid-1684745491707 .node ellipse,#mermaid-1684745491707 .node polygon,#mermaid-1684745491707 .node rect{fill:#ececff;stroke:#9370db;stroke-width:1px}#mermaid-1684745491707 .node.clickable{cursor:pointer}#mermaid-1684745491707 .arrowheadPath{fill:#333}#mermaid-1684745491707 .edgePath .path{stroke:#333;stroke-width:1.5px}#mermaid-1684745491707 .edgeLabel{background-color:#e8e8e8}#mermaid-1684745491707 .cluster rect{fill:#ffffde!important;stroke:#aa3!important;stroke-width:1px!important}#mermaid-1684745491707 .cluster text{fill:#333}#mermaid-1684745491707 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#ffffde;border:1px solid #aa3;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1684745491707 .actor{stroke:#ccf;fill:#ececff}#mermaid-1684745491707 text.actor{fill:#000;stroke:none}#mermaid-1684745491707 .actor-line{stroke:grey}#mermaid-1684745491707 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1684745491707 .messageLine0,#mermaid-1684745491707 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1684745491707 #arrowhead{fill:#333}#mermaid-1684745491707 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1684745491707 .messageText{fill:#333;stroke:none}#mermaid-1684745491707 .labelBox{stroke:#ccf;fill:#ececff}#mermaid-1684745491707 .labelText,#mermaid-1684745491707 .loopText{fill:#000;stroke:none}#mermaid-1684745491707 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#ccf}#mermaid-1684745491707 .note{stroke:#aa3;fill:#fff5ad}#mermaid-1684745491707 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1684745491707 .section{stroke:none;opacity:.2}#mermaid-1684745491707 .section0{fill:rgba(102,102,255,.49)}#mermaid-1684745491707 .section2{fill:#fff400}#mermaid-1684745491707 .section1,#mermaid-1684745491707 .section3{fill:#fff;opacity:.2}#mermaid-1684745491707 .sectionTitle0,#mermaid-1684745491707 .sectionTitle1,#mermaid-1684745491707 .sectionTitle2,#mermaid-1684745491707 .sectionTitle3{fill:#333}#mermaid-1684745491707 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1684745491707 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1684745491707 .grid path{stroke-width:0}#mermaid-1684745491707 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1684745491707 .task{stroke-width:2}#mermaid-1684745491707 .taskText{text-anchor:middle;font-size:11px}#mermaid-1684745491707 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1684745491707 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1684745491707 .taskText0,#mermaid-1684745491707 .taskText1,#mermaid-1684745491707 .taskText2,#mermaid-1684745491707 .taskText3{fill:#fff}#mermaid-1684745491707 .task0,#mermaid-1684745491707 .task1,#mermaid-1684745491707 .task2,#mermaid-1684745491707 .task3{fill:#8a90dd;stroke:#534fbc}#mermaid-1684745491707 .taskTextOutside0,#mermaid-1684745491707 .taskTextOutside1,#mermaid-1684745491707 .taskTextOutside2,#mermaid-1684745491707 .taskTextOutside3{fill:#000}#mermaid-1684745491707 .active0,#mermaid-1684745491707 .active1,#mermaid-1684745491707 .active2,#mermaid-1684745491707 .active3{fill:#bfc7ff;stroke:#534fbc}#mermaid-1684745491707 .activeText0,#mermaid-1684745491707 .activeText1,#mermaid-1684745491707 .activeText2,#mermaid-1684745491707 .activeText3{fill:#000!important}#mermaid-1684745491707 .done0,#mermaid-1684745491707 .done1,#mermaid-1684745491707 .done2,#mermaid-1684745491707 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1684745491707 .doneText0,#mermaid-1684745491707 .doneText1,#mermaid-1684745491707 .doneText2,#mermaid-1684745491707 .doneText3{fill:#000!important}#mermaid-1684745491707 .crit0,#mermaid-1684745491707 .crit1,#mermaid-1684745491707 .crit2,#mermaid-1684745491707 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1684745491707 .activeCrit0,#mermaid-1684745491707 .activeCrit1,#mermaid-1684745491707 .activeCrit2,#mermaid-1684745491707 .activeCrit3{stroke:#f88;fill:#bfc7ff;stroke-width:2}#mermaid-1684745491707 .doneCrit0,#mermaid-1684745491707 .doneCrit1,#mermaid-1684745491707 .doneCrit2,#mermaid-1684745491707 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1684745491707 .activeCritText0,#mermaid-1684745491707 .activeCritText1,#mermaid-1684745491707 .activeCritText2,#mermaid-1684745491707 .activeCritText3,#mermaid-1684745491707 .doneCritText0,#mermaid-1684745491707 .doneCritText1,#mermaid-1684745491707 .doneCritText2,#mermaid-1684745491707 .doneCritText3{fill:#000!important}#mermaid-1684745491707 .titleText{text-anchor:middle;font-size:18px;fill:#000}#mermaid-1684745491707 g.classGroup text{fill:#9370db;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1684745491707 g.classGroup rect{fill:#ececff;stroke:#9370db}#mermaid-1684745491707 g.classGroup line{stroke:#9370db;stroke-width:1}#mermaid-1684745491707 .classLabel .box{stroke:none;stroke-width:0;fill:#ececff;opacity:.5}#mermaid-1684745491707 .classLabel .label{fill:#9370db;font-size:10px}#mermaid-1684745491707 .relation{stroke:#9370db;stroke-width:1;fill:none}#mermaid-1684745491707 #compositionEnd,#mermaid-1684745491707 #compositionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1684745491707 #aggregationEnd,#mermaid-1684745491707 #aggregationStart{fill:#ececff;stroke:#9370db;stroke-width:1}#mermaid-1684745491707 #dependencyEnd,#mermaid-1684745491707 #dependencyStart,#mermaid-1684745491707 #extensionEnd,#mermaid-1684745491707 #extensionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1684745491707 .branch-label,#mermaid-1684745491707 .commit-id,#mermaid-1684745491707 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1684745491707 {
     color: rgb(0, 0, 0);
     font: normal normal 400 normal 16px / normal "Times New Roman";
   }</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="220" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">John</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="220" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Alice</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Hello John, how are you?</text><line x1="275" y1="100" x2="75" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Great!</text><line x1="75" y1="135" x2="275" y2="135" class="messageLine1" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="stroke-dasharray: 3, 3; fill: none;"></line></g><g><rect x="0" y="155" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="187.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">John</tspan></text></g><g><rect x="200" y="155" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="187.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Alice</tspan></text></g></svg>
