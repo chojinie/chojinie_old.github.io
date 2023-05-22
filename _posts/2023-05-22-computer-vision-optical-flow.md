@@ -117,14 +117,42 @@ Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제�
     </div>
 </div>
 
-가정들을 종합하면 위와 같이 식을 나타낼 수 있게 됩니다. Constraint Equation으로 $$ \mathbb{I}_x{u} + \mathbb{I}_x{v} + \mathbb{I}_t = 0 $$ 가 도출됩니다.
-또한 $$ \mathbb{I}_x, \mathbb{I}_y, \mathbb{I}_t $$는 이미지의 두 프레임만으로 쉽게 구할 수 있습니다.
+가정들을 종합하면 위와 같이 식을 나타낼 수 있게 됩니다. Constraint Equation으로 $$ \mathbf{I}_x{u} + \mathbf{I}_x{v} + \mathbf{I}_t = 0 $$ 가 도출됩니다.
+또한 $$ \mathbf{I}_x, \mathbf{I}_y, \mathbf{I}_t $$는 이미지의 두 프레임만으로 쉽게 구할 수 있습니다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of12.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
+
+Constraint를 optical flow 좌표상에 표현해보면 아래와 같이 나타낼 수 있습니다. 좌표로 나타낸다면, 성분을 분리하여 나타낼 수도 있죠.
+Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. 하지만 constraint line과 평행한 $$ u_p $$ 는 무한하므로 특정지을 수가 없습니다. 
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of13.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+이러한 ambiguity는 Aperture Problem을 야기하게 됩니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of14.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. 하지만, local(일부분)만 볼 경우 오른쪽 위 방향으로 움직이는 것처럼 보이게 됩니다.
+이를 Aperture Problem이라고 하며 이를 해결하기 위한 해결책은 후술하겠습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of15.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+결과적으로 Under constraint한 환경에서 optical flow를 구하게 되는 것이고, 이를 찾기 위한 몇가지 알고리즘을 이제 소개하도록 하겠습니다.
 
 ##
 
