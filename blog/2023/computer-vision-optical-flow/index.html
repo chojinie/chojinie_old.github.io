@@ -32,10 +32,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
-    <link rel="shortcut icon" href="/assets/img//assets/img/woodstock.png">
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%90%A5&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="canonical" href="https://chojinie.github.io/blog/2023/computer-vision-optical-flow/">
@@ -130,7 +133,15 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
 
 <div class="post">
 
@@ -141,23 +152,17 @@
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
         <a href="/blog/tag/optical-flow">
-          <i class="fas fa-hashtag fa-sm"></i> Optical_Flow</a>  
+          <i class="fas fa-hashtag fa-sm"></i> optical_flow</a>  
           <a href="/blog/tag/computer-vision">
-          <i class="fas fa-hashtag fa-sm"></i> Computer_Vision</a>  
+          <i class="fas fa-hashtag fa-sm"></i> computer_vision</a>  
           <a href="/blog/tag/lucas-kanade">
           <i class="fas fa-hashtag fa-sm"></i> Lucas_Kanade</a>  
           <a href="/blog/tag/horn-schunck">
           <i class="fas fa-hashtag fa-sm"></i> Horn_schunck</a>  
           
         ·  
-        <a href="/blog/category/optical-flow">
-          <i class="fas fa-tag fa-sm"></i> Optical_Flow</a>  
-          <a href="/blog/category/computer-vision">
-          <i class="fas fa-tag fa-sm"></i> Computer_Vision</a>  
-          <a href="/blog/category/lucas-kanade">
-          <i class="fas fa-tag fa-sm"></i> Lucas_Kanade</a>  
-          <a href="/blog/category/horn-schunck">
-          <i class="fas fa-tag fa-sm"></i> Horn_schunck</a>  
+        <a href="/blog/category/study">
+          <i class="fas fa-tag fa-sm"></i> study</a>  
           
 
     </p>
@@ -166,10 +171,7 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>toc:
-  sidebar: left</p>
-
-<p>석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글입니다.</p>
+      <p>석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글입니다.</p>
 
 <h2 id="optical-flow의-정의">Optical Flow의 정의</h2>
 
@@ -220,7 +222,7 @@
 </div>
 
 <p>\(\mathrm{v}_i\)(Image velocity) 와 \(\mathrm{v}_o\)(Seen velocity) 간의 관계를 나타내는 것이 초기 목적입니다. 
-\(\Rightarrow\) Perspective projection을 이용하게 됩니다.</p>
+\ \(\Rightarrow\) Perspective projection을 이용하게 됩니다.</p>
 
 <p>\(\mathrm{v}_i\) 나 Motion Field를 측정할 수 없으므로 Brightness Pattern을 측정할 수 밖에 없습니다.
 연속되는 두 이미지 간에 포인트의 모션은 두 포인트의 Depth와 관련이 있습니다.
@@ -228,13 +230,17 @@
 
 <h2 id="reference">Reference</h2>
 
-<p>[1] Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow
-[2] https://youtube.com/@firstprinciplesofcomputerv3258</p>
+<p>[1] Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow</p>
+
+<p>[2] https://youtube.com/@firstprinciplesofcomputerv3258</p>
 
     </div>
   </article>
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -262,6 +268,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
