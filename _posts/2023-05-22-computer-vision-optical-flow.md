@@ -181,16 +181,27 @@ Lucas-Kanade 방식은 local 방식입니다. 픽셀 $$(x, y)$$ 를 중심으로
 </div>
 
 그렇다면, 이러한 조건을 갖기 위해서는 어떻게 해야할까요?
-<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.</p>
-<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,</p>
-<p>$$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 , \lambda_2 $$는 positive definite해야하며,</p> 
-<p>eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$ 이지만, 그 크기의 차이가 너무 커서도 안됩니다.</p>
+<p>$$\bullet \mathbf{A}^T\mathbf{A} 는 반드시 invertible해야 합니다. determinant $$ \neq 0 이어야만 계산할 수 있기 때문이죠.</p>
+<p>$$\bullet \mathbf{A}^T\mathbf{A} 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,</p>
+<p>$$\mathbf{A}^T\mathbf{A} 의 eigen value인 $$ \lambda_1 , \lambda_2 는 positive definite해야하며,</p> 
+<p>eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 이지만, 그 크기의 차이가 너무 커서도 안됩니다.</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of20.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
+해당 조건에 대해 자세히 살펴보겠습니다.
+만약에 eigen value가 너무 작고 크기에 차이가 거의 없는 경우 $$\mathbf{A}^T\mathbf{A}$$는 well condition이 아니게 됩니다.
+반면 오른쪽 그림처럼 Edge라서 eigen value값의 차이가 너무 큰 경우, Aperture problem과 같은 side effect가 발생합니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of21.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of22.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## Reference
 
