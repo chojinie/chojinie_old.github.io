@@ -16,7 +16,7 @@ toc:
 ## Optical Flow의 정의
 
 
-옵티컬 플로우는 관찰자와 장면 간의 상대적인 움직임으로 인해 발생하는 물체, 표면 및 가장자리의 두드러지는 움직임 패턴을 의미합니다.[1] 제가 이해한대로 표현하자면 영상(Image)이나 동영상에서 사물이나 배경의 움직임을 표현하는 기법인데, 사물이나 광원이 움직일 경우 인간의 눈에는 어떠한 흐름의 크기와 방향성이 느껴집니다. 이를 수식적으로 표현하는 것을 뜻합니다.
+옵티컬 플로우는 관찰자와 장면 간의 상대적인 움직임으로 인해 발생하는 물체, 표면 및 가장자리의 두드러지는 움직임 패턴을 의미합니다. 제가 이해한대로 표현하자면 영상(Image)이나 동영상에서 사물이나 배경의 움직임을 표현하는 기법인데, 사물이나 광원이 움직일 경우 인간의 눈에는 어떠한 흐름의 크기와 방향성이 느껴집니다. 이를 수식적으로 표현하는 것을 뜻합니다.
 
 
 ## Motion Field와 Optical Flow
@@ -30,9 +30,6 @@ toc:
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
-</div>
-<div class="caption">
-    Ref : First Principle of Computer Vision [2]
 </div>
 
 $$ \mathrm{v}_i $$(Image velocity) 와 $$ \mathrm{v}_o $$(Seen velocity) 간의 관계를 나타내는 것이 초기 목적입니다. 
@@ -254,7 +251,7 @@ contraint equation을 다시 적용할 수 있게 되는 것입니다.
 </div>
 
 
-## Horn-Schunck Oprical Flow
+## Horn-Schunck Optical Flow
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -262,15 +259,15 @@ contraint equation을 다시 적용할 수 있게 되는 것입니다.
     </div>
 </div>
 
-LK 방식은 지역적 방법이므로 굉장히 Sparse한 결과를 낸다는 단점이 있었습니다. 이를 극복하기 위해서는 Smoothness를 더하는 방안이 있겠는데요,
-보통 사물은 단단하거나 탄력적으로 변형되며, 포인트가 개별이 아닌 사물 전체가 함께 움직인다는 점에서 착안된 방식입니다.
-Horn-Schunck 방식의 key idea는 brightness의 일관성과 Optical Flow의 smoothness를 강제로 둔다는 것입니다.
+LK 방식은 지역적 방법이므로 굉장히 Sparse한 결과를 낸다는 단점이 있었습니다. LK의 윈도우 내부만을 보는 방식이 아니라 이미지 전역(GLOBAL)에서 
+이를 극복하기 위해서는 Smoothness를 더하는 방안이 있겠는데요, 보통 사물은 단단하거나 탄력적으로 변형되며, 포인트가 개별이 아닌 사물 전체가 함께 움직인다는 점에서 착안된 방식입니다.
+Horn-Schunck 방식의 key idea는 Frame간의 움직임이 작아서, brightness의 일관성과 Optical Flow의 균일성을 강제로 둔다는 것입니다.
 
 
 ### Enforce Brightness constancy
 
 
-Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathbf{I}_y{v} + \mathbf{I}_t \eq 0$$를 다시 불러옵니다.
+Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathbf{I}_y{v} + \mathbf{I}_t = 0$$를 다시 불러옵니다.
 모든 픽셀에 대해 적용해야 하기 때문에 아래 식을 만족하면 되겠네요.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -282,14 +279,30 @@ Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathb
 ### Enforce Smooth flow field
 
 
-smoothness는 아래처럼 표현하면 간단할 것 같습니다.
+smoothness는 아래처럼 표현하면 간단할 것 같습니다. 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of30.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
-위 두 key idea를 합치면 optical flow를 계산할 수 있습니다.
+좀 더 쉽게 설명해보겠습니다. smooth하다면 optical flow 맵은 균일할 것입니다. 균일한 정도는 아래 식을 사용하여 추정합니다.
+gradient가 작다면 이웃한 픽셀간의 u, v가 비슷하다는 의미이므로 optical flow가 균일하다고도 볼 수 있습니다. 아래 이미지처럼 오른쪽은 균일하지 못하죠.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of32.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of33.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+위 두 key idea를 합치면 optical flow를 계산할 수 있습니다. 결국, smoothness와 brightness constancy를 최소화 시키는 방향의 해를 구해야 합니다.
+여기서 $$ \lambda $$는 어느 것에 더 비중을 둬야하는지를 나타내는 가중치를 의미합니다. 이와 같이 가중치가 붙어 있는 항을 regularization term이라고 하며,
+균일한 optical flow 해를 구하는 방법을 정규화 기법이라고 합니다.
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of31.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
@@ -299,6 +312,10 @@ smoothness는 아래처럼 표현하면 간단할 것 같습니다.
 
 ## Reference
 
-[1] Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow
+Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow<br>
 
-[2] https://youtube.com/@firstprinciplesofcomputerv3258
+https://youtube.com/@firstprinciplesofcomputerv3258<br>
+
+https://gaussian37.github.io/vision-concept-optical_flow/<br>
+
+http://www.cs.cmu.edu/~16385/<br>
