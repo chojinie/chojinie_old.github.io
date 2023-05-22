@@ -203,6 +203,53 @@ eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$이지만
     </div>
 </div>
 
+아래와 같이 texture가 있는 영역은 optical flow 계산에 좋은 영역입니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of23.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+그렇다면, 만약 사물의 위치 변화가 크면 어떻게 될까요? 이 경우에는 $$ \delta t $$ $$\delta x $$ $$\delta y$$를 가정하기 어렵습니다.
+그래서 constraint를 가하기도 어렵구요. 결국 Aliasing이 일어나게 됩니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of24.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+이를 해결하기 위한 방법으로 Coarse-to-Fine Estimation방법이 있습니다. 직역하자면 거친 이미지에서 좋은 이미지로 옮겨가며 추정한다는 것입니다.
+거친 이미지는 저해상도를 좋은 이미지는 고해상도의 이미지를 의미합니다. 이러한 워딩이 왜 나왔는지는 아래 그림으로 설명이 가능합니다.
+왼쪽의 원본 이미지 상에서는 $$ \delta t$$의 시간 동안 사물이 꽤 많은 위치를 이동한 것으로 보입니다. 이러한 Gap을 줄이려면 downsampling을 하면
+가능합니다. 맨 우측의 N/8 사이즈의 저해상도 이미지의 경우 1pixel안에서 모션의 gap 차이를 담을 수 있게 됩니다. 이 상황에서는 optical flow의
+contraint equation을 다시 적용할 수 있게 되는 것입니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of25.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of26.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+아래와 같이 optical flow가 잘 나타나는 것을 볼 수 있습니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of27.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+## Horn-Schunck Oprical Flow
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of28.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 ## Reference
 
 [1] Optical flow. (2023, April 29). In Wikipedia. https://en.wikipedia.org/wiki/Optical_flow
