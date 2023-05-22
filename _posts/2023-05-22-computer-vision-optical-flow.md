@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Computer Vision_Optical Flow
-date: 2023-05-22 15:04:00
+date: 2023-05-22
 description: recording_a Summary of a optical flow
 tags: Optical_Flow Computer_Vision Lucas_Kanade Horn_schunck
 categories: Optical_Flow Computer_Vision Lucas_Kanade Horn_schunck
