@@ -181,10 +181,10 @@ Lucas-Kanade 방식은 local 방식입니다. 픽셀 $$(x, y)$$ 를 중심으로
 </div>
 
 그렇다면, 이러한 조건을 갖기 위해서는 어떻게 해야할까요?
-$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.
-$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,
-$$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 \lambda_2 $$는 positive definite해야하며, eigen value를 나열하는 순서대로
-$$ \lambda_1 \geq \lambda_2 $$ 이지만, 그 크기의 차이가 너무 커서도 안됩니다. 
+<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.</p>
+<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,</p>
+<p>$$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 , \lambda_2 $$는 positive definite해야하며,</p> 
+<p>eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$ 이지만, 그 크기의 차이가 너무 커서도 안됩니다.</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of20.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
