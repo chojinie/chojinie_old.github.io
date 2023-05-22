@@ -25,10 +25,10 @@ toc:
 ### Motion Field
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -41,7 +41,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of3.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of3.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -52,7 +52,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of4.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of4.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -62,7 +62,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of5.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of5.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -76,7 +76,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of6.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of6.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -85,7 +85,7 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of7.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of7.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -97,7 +97,7 @@ Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of8.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of8.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -110,16 +110,16 @@ Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of9.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of9.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of10.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of10.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of11.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of11.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -128,7 +128,7 @@ Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of12.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of12.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -137,7 +137,7 @@ Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. �
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of13.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of13.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -145,7 +145,7 @@ Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. �
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of14.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of14.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -154,7 +154,7 @@ line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. �
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of15.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of15.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -166,24 +166,24 @@ line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. �
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of16.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of16.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 Lucas-Kanade 방식은 local 방식입니다. 픽셀 $$(x, y)$$ 를 중심으로 하는 윈도우 영역 $$\mathbf{W} $$의 Optical Flow는 같다고 가정합니다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of17.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of17.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 아래와 같이 모든 point를 쌓아서 matrix form으로 나타낼 수 있게 되고 계산이 편리해 집니다. 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of18.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of18.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of19.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of19.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -194,7 +194,7 @@ $$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 , \lambda_2$$ 는 pos
 eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$이지만, 그 크기의 차이가 너무 커서도 안됩니다.<br>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of20.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of20.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -203,17 +203,17 @@ eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$이지만
 반면 오른쪽 그림처럼 Edge라서 eigen value값의 차이가 너무 큰 경우, Aperture problem과 같은 side effect가 발생합니다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of21.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of21.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of22.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of22.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 아래와 같이 texture가 있는 영역은 optical flow 계산에 좋은 영역입니다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of23.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of23.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -221,7 +221,7 @@ eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$이지만
 그래서 constraint를 가하기도 어렵구요. 결국 Aliasing이 일어나게 됩니다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of24.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of24.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -233,20 +233,20 @@ contraint equation을 다시 적용할 수 있게 되는 것입니다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of25.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of25.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of26.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of26.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
 아래와 같이 optical flow가 잘 나타나는 것을 볼 수 있습니다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of27.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of27.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -255,7 +255,7 @@ contraint equation을 다시 적용할 수 있게 되는 것입니다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of28.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of28.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -271,7 +271,7 @@ Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathb
 모든 픽셀에 대해 적용해야 하기 때문에 아래 식을 만족하면 되겠네요.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of29.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of29.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -282,7 +282,7 @@ Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathb
 smoothness는 아래처럼 표현하면 간단할 것 같습니다. 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of30.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of30.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -290,12 +290,12 @@ smoothness는 아래처럼 표현하면 간단할 것 같습니다.
 gradient가 작다면 이웃한 픽셀간의 u, v가 비슷하다는 의미이므로 optical flow가 균일하다고도 볼 수 있습니다. 아래 이미지처럼 오른쪽은 균일하지 못하죠.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of32.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of32.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of33.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of33.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
@@ -305,7 +305,7 @@ gradient가 작다면 이웃한 픽셀간의 u, v가 비슷하다는 의미이�
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/of31.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="assets/img/optical_flow_study/of31.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
