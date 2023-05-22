@@ -12,11 +12,15 @@ toc:
 
 석사 과정 재학 중, 공부한 내용을 기록하기 위해 작성하는 글입니다.
 
+
 ## Optical Flow의 정의
+
 
 옵티컬 플로우는 관찰자와 장면 간의 상대적인 움직임으로 인해 발생하는 물체, 표면 및 가장자리의 두드러지는 움직임 패턴을 의미합니다.[1] 제가 이해한대로 표현하자면 영상(Image)이나 동영상에서 사물이나 배경의 움직임을 표현하는 기법인데, 사물이나 광원이 움직일 경우 인간의 눈에는 어떠한 흐름의 크기와 방향성이 느껴집니다. 이를 수식적으로 표현하는 것을 뜻합니다.
 
+
 ## Motion Field와 Optical Flow
+
 
 ### Motion Field
 <div class="row mt-3">
@@ -65,7 +69,9 @@ $$ \mathrm{v}_i $$ 나 Motion Field를 측정할 수 없으므로 Brightness Pat
     </div>
 </div>
 
+
 ### Optical Flow
+
 
 실생활의 예시를 들어보겠습니다. 이발소 영업 상태를 나타내는 돌돌이가 있죠. 실제로 그 안의 패턴은 오른쪽으로 움직여서 Motion Field는 왼쪽에서 오른쪽을 향하게 됩니다.
 하지만, 우리가 눈으로 볼 때는 위에서 아래로 움직이는 것 같은 효과가 발생하죠. 즉 Motion Field와 Optical Field가 해당 경우에느 orthogonal한 관계임을 보여줍니다.
@@ -101,7 +107,9 @@ Computer Vision분야에서는 이러한 '제약'들을 걸어서 많은 문제�
 두번째로는 $$ (\delta x, \delta y, \delta t) $$는 매우매우 작아야 한다는 것입니다. 이를 통해 Taylor Expansion을 적용하여 수식을 간소화 할 수 있습니다.
 아래 Taylor Series Expansion의 설명을 참고하시면 됩니다.
 
+
 #### Taylor Series
+
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -155,7 +163,9 @@ line의 실제 움직임은 오른쪽 아래 방향으로 이루어집니다. �
 
 결과적으로 Under constraint한 환경에서 optical flow를 구하게 되는 것이고, 이를 찾기 위한 몇가지 알고리즘을 이제 소개하도록 하겠습니다.
 
+
 ## Lucas-Kanade Oprical Flow
+
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -180,9 +190,9 @@ Lucas-Kanade 방식은 local 방식입니다. 픽셀 $$(x, y)$$ 를 중심으로
     </div>
 </div>
 
-그렇다면, 이러한 조건을 갖기 위해서는 어떻게 해야할까요?
-$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.<br>
-$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,<br>
+그렇다면, 이러한 조건을 갖기 위해서는 어떻게 해야할까요?<br>
+$$ \bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.<br>
+$$ \bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,<br>
 $$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 , \lambda_2$$ 는 positive definite해야하며,<br> 
 eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$이지만, 그 크기의 차이가 너무 커서도 안됩니다.<br>
 <div class="row mt-3">
@@ -243,12 +253,49 @@ contraint equation을 다시 적용할 수 있게 되는 것입니다.
     </div>
 </div>
 
+
 ## Horn-Schunck Oprical Flow
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/of28.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
+
+LK 방식은 지역적 방법이므로 굉장히 Sparse한 결과를 낸다는 단점이 있었습니다. 이를 극복하기 위해서는 Smoothness를 더하는 방안이 있겠는데요,
+보통 사물은 단단하거나 탄력적으로 변형되며, 포인트가 개별이 아닌 사물 전체가 함께 움직인다는 점에서 착안된 방식입니다.
+Horn-Schunck 방식의 key idea는 brightness의 일관성과 Optical Flow의 smoothness를 강제로 둔다는 것입니다.
+
+
+### Enforce Brightness constancy
+
+
+Brightness를 일관되게 유지하기 위해서는 $$ \mathbf{I}_x{u} + \mathbf{I}_y{v} + \mathbf{I}_t \eq 0$$를 다시 불러옵니다.
+모든 픽셀에 대해 적용해야 하기 때문에 아래 식을 만족하면 되겠네요.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of29.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+
+### Enforce Smooth flow field
+
+
+smoothness는 아래처럼 표현하면 간단할 것 같습니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of30.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+위 두 key idea를 합치면 optical flow를 계산할 수 있습니다.
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/of31.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
 
 ## Reference
 
