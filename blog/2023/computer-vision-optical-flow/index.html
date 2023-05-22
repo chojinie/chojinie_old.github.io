@@ -627,10 +627,10 @@ Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. �
 </div>
 
 <p>그렇다면, 이러한 조건을 갖기 위해서는 어떻게 해야할까요?</p>
-<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 반드시 invertible해야 합니다. determinant $$ \neq 0$$ 이어야만 계산할 수 있기 때문이죠.</p>
-<p>$$\bullet \mathbf{A}^T\mathbf{A}$$ 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,</p>
-<p>$$\mathbf{A}^T\mathbf{A}$$ 의 eigen value인 $$ \lambda_1 , \lambda_2 $$는 positive definite해야하며,</p>
-<p>eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 $$ 이지만, 그 크기의 차이가 너무 커서도 안됩니다.</p>
+<p>$$\bullet \mathbf{A}^T\mathbf{A} 는 반드시 invertible해야 합니다. determinant $$ \neq 0 이어야만 계산할 수 있기 때문이죠.</p>
+<p>$$\bullet \mathbf{A}^T\mathbf{A} 는 Well-conditioned 상태여야 합니다. 풀어쓰자면,</p>
+<p>$$\mathbf{A}^T\mathbf{A} 의 eigen value인 $$ \lambda_1 , \lambda_2 는 positive definite해야하며,</p>
+<p>eigen value를 나열하는 순서대로 $$ \lambda_1 \geq \lambda_2 이지만, 그 크기의 차이가 너무 커서도 안됩니다.</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -644,6 +644,48 @@ Normal Flow의 방향, 크기를 각각 식으로 구분할 수 있습니다. �
 
     <!-- Fallback to the original file -->
     <img src="/assets/img/of20.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>해당 조건에 대해 자세히 살펴보겠습니다.
+만약에 eigen value가 너무 작고 크기에 차이가 거의 없는 경우 \(\mathbf{A}^T\mathbf{A}\)는 well condition이 아니게 됩니다.
+반면 오른쪽 그림처럼 Edge라서 eigen value값의 차이가 너무 큰 경우, Aperture problem과 같은 side effect가 발생합니다.</p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/of21-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/of21-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/of21-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/of21.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/of22-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/of22-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/of22-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/of22.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
