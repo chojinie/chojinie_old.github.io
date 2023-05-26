@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>computer_vision | Ride the waves</title>
+    <title>Numpy study | Ride the waves</title>
     <meta name="author" content="Hyun Jin  Cho">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="recording_a Summary of Numpy">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -33,13 +32,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%90%A5&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://chojinie.github.io/blog/tag/computer-vision/">
+    <link rel="canonical" href="https://chojinie.github.io/blog/2023/numpy-study.md/">
 
     <!-- Dark Mode -->
     
@@ -131,37 +133,85 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <div class="post">
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
+
+<div class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> <i class="fas fa-hashtag fa-sm"></i> computer_vision </h1>
-    <p class="post-description"> an archive of posts with this tag </p>
+    <h1 class="post-title">Numpy study</h1>
+    <p class="post-meta">May 23, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/tag/numpy">
+          <i class="fas fa-hashtag fa-sm"></i> numpy</a>  
+          
+        ·  
+        <a href="/blog/category/study">
+          <i class="fas fa-tag fa-sm"></i> study</a>  
+          
+
+    </p>
   </header>
 
-  <article>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-        <tr>
-          <th scope="row">May 23, 2023</th>
-          <td>
-              <a class="post-link" href="/blog/2023/human-pose-estimation-%EB%B3%B5%EC%82%AC%EB%B3%B8/">Computer Vision_Human Pose Estimation</a>
-          </td>
-        </tr>
-      
-        <tr>
-          <th scope="row">May 22, 2023</th>
-          <td>
-              <a class="post-link" href="/blog/2023/computer-vision-optical-flow-%EB%B3%B5%EC%82%AC%EB%B3%B8/">Computer Vision_Optical Flow</a>
-          </td>
-        </tr>
-      
-      </table>
+  <article class="post-content">
+    
+    <div id="markdown-content">
+      <h2 id="numpyrandomchoicea-sizenone-replacetrue-pnone">numpy.random.choice(a, size=None, replace=True, p=None)</h2>
+
+<p>a = 1차원 배열 또는 정수 (정수인 경우, np.arrange(a)와 같은 배열 생성)
+size = 정수 또는 튜플(튜플인 경우, 행렬로 리턴됨. (x, y, z) » x<em>y</em>z)
+replace = 중복 허용 여부, boolean
+p = 1차원 배열, 각 데이터가 선택될 확률</p>
+
+<p>e.g. np.random.choice(5, 3)
+array([0, 3, 4])</p>
+
+<p>0 이상 5미만인 정수 중 3개를 출력(replace=True가 default로 숨어져 있으므로 중복 허용)</p>
+
+<p>np.random.choice(5, 3, replace=False)
+array([3, 1, 0])
+0 이상 5미만인 정수 중 3개를 출력(replace=False이므로 중복 불가)</p>
+
+<h2 id="flatnonzero">flatnonzero</h2>
+
+<p>import numpy as np
+a = np.array([1.2, -1.3, 2.1, 5.0, 4.7])
+print(np.flatnonzero(a&gt;2)) <em># [2 3 4]</em></p>
+
+<p>2보다 큰 원소의 index를 array로 리턴.</p>
+
+<h2 id="npreshapex_train-x_trainshape0--1">np.reshape(X_train, (X_train.shape[0], -1))</h2>
+
+<p>np.reshape: It is a function from the NumPy library that allows you to reshape an array.</p>
+
+<p>X_train: It is the array that you want to reshape.</p>
+
+<p>(X_train.shape[0], -1): X_train이 목표로 하는 모양을 의미합니다.
+X_train.shape[0]: X_train array의 row의 수를 의미합니다. X_train.shape[0]을 이용하여 reshape된 array에서 row의 숫자가 바뀌지 않고 유지되게 됩니다.
+-1: 이것은 NumPy가 제공된 행 수와 원래 배열의 전체 크기를 기반으로 재구성된 배열의 열 수를 자동으로 결정하도록 지시하는 자리 표시자 값입니다.
+ -1은 차원이 자동으로 추론되고 조정되어야 함을 나타냅니다. 요약하면, 이 코드 라인은 X_train 배열의 형태를 재구성하며, 행 수는 유지되고 원본 배열의 크기에 따라 열 수가 자동으로 결정됩니다.</p>
+
+<h2 id="reference">Reference</h2>
+
+<p>https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html
+<br></p>
+
     </div>
   </article>
-
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -189,6 +239,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
