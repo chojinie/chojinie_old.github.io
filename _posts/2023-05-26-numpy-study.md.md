@@ -15,7 +15,7 @@ toc:
 a = 1차원 배열 또는 정수 (정수인 경우, np.arrange(a)와 같은 배열 생성)
 size = 정수 또는 튜플(튜플인 경우, 행렬로 리턴됨. (x, y, z) >> x*y*z)
 replace = 중복 허용 여부, boolean
-p = 1차원 배열, 각 데이터가 선택될 확률 
+p = 1차원 배열, 각 데이터가 선택될 확률
 
 e.g. np.random.choice(5, 3)
 array([0, 3, 4])
