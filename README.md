@@ -1,6 +1,6 @@
-# Hits
+# hits
 
-[![HitCount](https://hits.dwyl.com/chojinie/chojiniegithubio.svg?style=flat-square)](http://hits.dwyl.com/chojinie/chojiniegithubio)
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchojinie.github.io&count_bg=%23939597&title_bg=%23555555&icon=twoo.svg&icon_color=%23F5DF4D&title=hits&edge_flat=false"/></a>
 
 # al-folio
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
