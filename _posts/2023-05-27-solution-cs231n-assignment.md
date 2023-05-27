@@ -24,7 +24,7 @@ Notice the structured patterns in the distance matrix, where some rows or column
 - What in the data is the cause behind the distinctly bright rows?
 - What causes the columns?
 
-$\color{blue}{\textit Your Answer:}$ *fill this in.*
+$$ \definecolor{ao}{rgb}{0.0, 0.0, 1.0}{\textit Your Answer:} $$ *fill this in.*
 
 <p>
 훈련 데이터 세트에 포함되지 않은 클래스로부터의 관측이거나, 적어도 대부분의 훈련 데이터와 매우 다른 관측일 가능성이 높습니다. 아마도 배경 색상과 관련하여 큰 차이가 있을 것입니다.
