@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-27T03:46:54+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-27T04:09:08+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">cs231n assignment solution</title><link href="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/" rel="alternate" type="text/html" title="cs231n assignment solution" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/solution-cs231n-assignment</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/"><![CDATA[<h2 id="assignment-1">Assignment 1</h2>
 <h3 id="inline-question-1">Inline Question 1</h3>
 <p>Notice the structured patterns in the distance matrix, where some rows or columns are visibly brighter. 
@@ -107,10 +107,58 @@ arr2[1:3, :] 혹은 arr2[:, :2]와 같이, 행 또는 열에 범위 인덱스를
 <p>한편 2차원 array에서 4행 3열에 위치한 하나의 성분을 얻고자 할 때는 arr2[3,2]를 실행하면 됩니다.
 인덱싱을 통해 선택한 성분에 새로운 값을 대입하는 경우에도, arr2[:2, 1:3] = 0 과 같이 입력값을 넣으면 됩니다.<br /></p>
 
-<h3 id="reference">Reference</h3>
+<h3 id="numpy-어레이-정렬-npargsort">NumPy 어레이 정렬 (np.argsort)</h3>
+<h4 id="기본-사용오름차순-정렬">기본 사용(오름차순 정렬)</h4>
 
-<p>https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html
-<br /></p>]]></content><author><name></name></author><category term="study" /><category term="math" /><category term="numpy" /><category term="math" /><summary type="html"><![CDATA[recording_a Summary of Numpy]]></summary></entry><entry><title type="html">Computer Vision_Human Pose Estimation</title><link href="https://chojinie.github.io/blog/2023/human-pose-estimation-%EB%B3%B5%EC%82%AC%EB%B3%B8/" rel="alternate" type="text/html" title="Computer Vision_Human Pose Estimation" /><published>2023-05-23T00:00:00+00:00</published><updated>2023-05-23T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/human-pose-estimation%20-%20%EB%B3%B5%EC%82%AC%EB%B3%B8</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/human-pose-estimation-%EB%B3%B5%EC%82%AC%EB%B3%B8/"><![CDATA[<h2 id="글에-들어가기-앞서">글에 들어가기 앞서..</h2>
+<p>
+import numpy as np <br />
+
+a = np.array([1.5, 0.2, 4.2, 2.5])<br />
+s = a.argsort()<br />
+
+print(s)<br />
+print(a[s])<br />
+</p>
+
+<p>
+[1 0 3 2]<br />
+[0.2 1.5 2.5 4.2]<br />
+</p>
+
+<p>a는 정렬되지 않은 숫자들의 어레이입니다.
+a.argsort()는 어레이 a를 정렬하는 인덱스의 어레이 [1 0 3 2]를 반환합니다.
+a[s]와 같이 인덱스의 어레이 s를 사용해서 어레이 a를 다시 정렬하면,
+오름차순으로 정렬된 어레이 [0.2 1.5 2.5 4.2]가 됩니다.</p>
+
+<h4 id="내림차순-정렬">내림차순 정렬</h4>
+<p>
+import numpy as np<br />
+
+a = np.array([1.5, 0.2, 4.2, 2.5])<br />
+s = a.argsort()<br />
+
+print(s)<br />
+print(a[s[::-1]])<br />
+print(a[s][::-1])<br />
+&lt;/p\&gt;
+<p>
+[1 0 3 2]<br />
+[4.2 2.5 1.5 0.2]<br />
+[4.2 2.5 1.5 0.2]<br />
+</p>
+
+<p>
+내림차순으로 정렬된 어레이를 얻기 위해서는
+a[s[::-1]]와 같이 인덱스 어레이를 뒤집어서 정렬에 사용하거나,
+a[s][::-1]과 같이 오름차순으로 정렬된 어레이를 뒤집어주면 됩니다.
+</p>
+
+
+### Reference
+
+https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html
+<br />
+</p>]]></content><author><name></name></author><category term="study" /><category term="math" /><category term="numpy" /><category term="math" /><summary type="html"><![CDATA[recording_a Summary of Numpy]]></summary></entry><entry><title type="html">Computer Vision_Human Pose Estimation</title><link href="https://chojinie.github.io/blog/2023/human-pose-estimation-%EB%B3%B5%EC%82%AC%EB%B3%B8/" rel="alternate" type="text/html" title="Computer Vision_Human Pose Estimation" /><published>2023-05-23T00:00:00+00:00</published><updated>2023-05-23T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/human-pose-estimation%20-%20%EB%B3%B5%EC%82%AC%EB%B3%B8</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/human-pose-estimation-%EB%B3%B5%EC%82%AC%EB%B3%B8/"><![CDATA[<h2 id="글에-들어가기-앞서">글에 들어가기 앞서..</h2>
 
 <p>우선, viso.ai에 잘 정리가 되어 있는 Human Pose Estimation with Deep Learning - Ultimate Overview in 2023을 읽은 것을 시작으로 해당분야의 정리 및 논문 탐색을 해보려 합니다.- <a href="https://viso.ai/deep-learning/pose-estimation-ultimate-overview/">viso.ai/deep-learning 관련 글</a></p>
 
