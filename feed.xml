@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-27T03:45:43+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-27T03:46:54+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">cs231n assignment solution</title><link href="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/" rel="alternate" type="text/html" title="cs231n assignment solution" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/solution-cs231n-assignment</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/"><![CDATA[<h2 id="assignment-1">Assignment 1</h2>
 <h3 id="inline-question-1">Inline Question 1</h3>
 <p>Notice the structured patterns in the distance matrix, where some rows or columns are visibly brighter. 
@@ -33,8 +33,8 @@
 <p>\(\color{blue}Your Answer :\) <em>fill this in.</em></p>
 
 <p>
-훈련 데이터 세트에 포함되지 않은 클래스로부터의 관측이거나, 적어도 대부분의 훈련 데이터와 매우 다른 관측일 가능성이 높습니다. 아마도 배경 색상과 관련하여 큰 차이가 있을 것입니다.
-학습 데이터 포인트가 테스트 데이터 내의 어떠한 포인트와도 비슷하지 않음을 의미합니다.
+- 훈련 데이터 세트에 포함되지 않은 클래스로부터의 관측이거나, 적어도 대부분의 훈련 데이터와 매우 다른 관측일 가능성이 높습니다. 아마도 배경 색상과 관련하여 큰 차이가 있을 것입니다.<br />
+- 학습 데이터 포인트가 테스트 데이터 내의 어떠한 포인트와도 비슷하지 않음을 의미합니다.
 </p>]]></content><author><name></name></author><category term="study" /><category term="cs231" /><category term="AI" /><category term="cs231" /><category term="study" /><category term="AI" /><summary type="html"><![CDATA[recording_a Summary of assignment]]></summary></entry><entry><title type="html">Numpy study</title><link href="https://chojinie.github.io/blog/2023/numpy-study.md/" rel="alternate" type="text/html" title="Numpy study" /><published>2023-05-26T00:00:00+00:00</published><updated>2023-05-26T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/numpy-study.md</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/numpy-study.md/"><![CDATA[<h3 id="numpyrandomchoicea-sizenone-replacetrue-pnone">numpy.random.choice(a, size=None, replace=True, p=None)</h3>
 
 <p>a = 1차원 배열 또는 정수 (정수인 경우, np.arrange(a)와 같은 배열 생성)<br />
