@@ -138,3 +138,38 @@ k-Nearest Neighbor 알고리즘에서 픽셀 간의 거리를 사용하지 않�
 
 
 ## Linear Classifier
+선형 분류기(Linear Classifier)는 입력 데이터를 선형 경계로 구분하는 분류 알고리즘입니다. 주어진 입력 데이터에 대해 각각의 특성을 가중치와 결합하여 선형 함수를 생성하고, 이 함수의 결과를 기반으로 데이터를 클래스로 분류합니다.
+
+선형 분류기는 입력 데이터를 공간상의 점들로 표현하고, 클래스를 나누는 하이퍼플레인(hyperplane)이라는 선형 경계로 구분합니다. 이 때, 하이퍼플레인은 입력 특성의 가중치와 절편(bias)으로 정의됩니다. 예를 들어, 이진 분류에서는 하이퍼플레인이 입력 공간을 두 영역으로 나누는 직선이 될 수 있습니다.
+
+선형 분류기는 간단하고 해석하기 쉬우며, 많은 문제에 효과적으로 적용될 수 있습니다. 그러나 입력 데이터가 비선형적인 관계를 가지거나, 클래스 간의 결정 경계가 비선형적일 경우에는 선형 분류기의 성능이 제한될 수 있습니다. 이러한 경우에는 비선형 분류기를 사용하거나, 선형 분류기를 변형하여 비선형성을 고려할 수 있는 방법들을 적용할 수 있습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic64.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+위 그림 예시를 보면, x라는 이미지가 들어갔을 때, W라는 가중치와 함께 어떠한 함수f를 구하면, Wx + b와 같은 형태가 나오게 됩니다. 차원 값을 보게 된다면, 10개의 숫자가 10개의 클래스에 할당되는 점수값으로 반환되는 것을 알 수 있습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic65.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+맨 마지막 layer에서 linearity를 주어, 최종적으로 찾고자하는 클래스에 대응되는 값을 구합니다.
+
+이미지를 3클래스로 분류하는 것을 예시로 들면 아래와 같이, 대수적/기하학적/시각적 관점에서 해석할 수 있습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic66.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic67.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic68.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
