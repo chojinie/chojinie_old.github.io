@@ -6,6 +6,7 @@ description: recording_a Summary of lecture
 tags: cs231 study AI
 categories: study cs231 AI
 related_posts: True
+giscus_comments: true
 toc:
   sidebar: left
 ---
