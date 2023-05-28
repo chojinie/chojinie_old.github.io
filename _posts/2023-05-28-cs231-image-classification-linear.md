@@ -29,20 +29,6 @@ toc:
     </div>
 </div>
 
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic46.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic47.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>    
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic48.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div> 
-</div>
-
-
 하지만, 만약 고양이 사진을 다른 각도에서 찍거나 조명이 달라지거나 한다면 밝기 성분은 당연히 달라질 수 밖에 없겠죠. 사람은 같은 고양이로 인식할 것입니다. 누워있던 숨어있던 뒤돌아 있던, 하지만 컴퓨터는 어렵죠.<br>
 
 Challenges of recognition : 
@@ -149,3 +135,6 @@ k-Nearest Neighbor 알고리즘에서 픽셀 간의 거리를 사용하지 않�
 </div>
 
 따라서, 이미지 데이터의 경우에는 픽셀 간의 거리를 직접 사용하지 않고, 보다 효과적인 특징 추출 방법과 거리 측정 방법을 활용하는 것이 일반적입니다.
+
+
+## Linear Classifier
