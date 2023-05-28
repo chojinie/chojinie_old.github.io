@@ -58,3 +58,38 @@ Hubel and Wiesel, 1959의 연구를 보면 생명체가 사물을 인식할 때 
     </div>
 </div>
 사람과 물체를 인식할 때 부분부분별로 따로 떼어서 인식하기도 했습니다. 또한, 인간이 사물을 파악할 때 edge(가장자리)로 구분 짓는다는 특징을 이용하여 edge detection 분야가 연구되기도 했습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic8.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic7.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+
+#### cs231n Overview
+
+##### Deep Learning Basics - Image Classification
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic35.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+이미지 상의 대상을 무엇으로 분류할지를 classification task라고 합니다. 다양한 방법으로 이를 구현할 수 있습니다.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic36.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic37.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic38.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+선분의 좌측이면 고양이 우측이면 강아지와 같은 방식으로 Classifier을 구현할 수 있습니다. 모델의 정확성을 높이기 위하여 Regularization과 Optimization을 수행하기도 합니다. Neural Network방식의 Classifier도 존재합니다.
