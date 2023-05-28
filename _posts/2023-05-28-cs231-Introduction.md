@@ -10,16 +10,20 @@ toc:
   sidebar: left
 ---
 
-### 목표
+### 강의 목표
+
+교집합 부분에 대한 이해를 높인다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1.pic1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 
-- What in the data is the cause behind the distinctly bright rows?
-- What causes the columns?
+### Agenda
+#### 컴퓨터 비전과 딥러닝의 기원의 요약
+
+
 
 $$ \color{blue}Your Answer : $$ *fill this in.*
 
