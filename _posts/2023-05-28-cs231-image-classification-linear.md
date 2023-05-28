@@ -86,6 +86,20 @@ KNN(K-Nearest Neighbor)분류기입니다. task 수행을 위해 모델이 필�
 
 고양이라는 (Label)을 달고 있는 training data를 저장해두었다가, 나중에 query로 들어오는 Test data와의 거리 비교(Distance Metric)를 하여 그 차이가 가장 작은 데이터를 고양이라고 분류하는 거죠.
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic56.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+
 Distance Metric 즉, 거리 차이를 비교하는 방법은 대표적으로 두가지가 있습니다. L1 distance와 L2 distance 입니다.
 
-L1 distance: $$ d_1(I_1, I_2) = \sum\limits_{p}|I_1^{p} - I_2^{p}| $$
+L1 distance: \begin{equation} d_1(I_1, I_2) = \sum\limits_{p}|I_1^{p} - I_2^{p}| \end{equation}
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic57.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+L2 distance: $$ d_1(I_1, I_2) = \sqrt{\sum\limits_{p}(I_1^{p} - I_2^{p})^2} $$
