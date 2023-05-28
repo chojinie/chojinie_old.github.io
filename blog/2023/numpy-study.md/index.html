@@ -244,6 +244,8 @@ arr2[1:3, :] 혹은 arr2[:, :2]와 같이, 행 또는 열에 범위 인덱스를
 <h3 id="numpy-어레이-정렬-npargsort">NumPy 어레이 정렬 (np.argsort)</h3>
 <h4 id="기본-사용오름차순-정렬">기본 사용(오름차순 정렬)</h4>
 
+<p>\begin{document}
+\begin{lstlisting}[language=Python]</p>
 <p>
 import numpy as np <br>
 
@@ -253,6 +255,8 @@ s = a.argsort()<br>
 print(s)<br>
 print(a[s])<br>
 </p>
+<p>\end{lstlisting}
+\end{document}</p>
 
 <p>
 [1 0 3 2]<br>
@@ -274,7 +278,6 @@ s = a.argsort()<br>
 print(s)<br>
 print(a[s[::-1]])<br>
 print(a[s][::-1])<br>
-&lt;/p\&gt;
 </p>
 <p>
 [1 0 3 2]<br>
@@ -288,12 +291,10 @@ a[s[::-1]]와 같이 인덱스 어레이를 뒤집어서 정렬에 사용하거�
 a[s][::-1]과 같이 오름차순으로 정렬된 어레이를 뒤집어주면 됩니다.
 </p>
 
+<h3 id="reference">Reference</h3>
 
-### Reference
-
-https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html
-<br>
-
+<p>https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html
+<br></p>
 
     </div>
   </article>
