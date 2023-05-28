@@ -93,3 +93,33 @@ Hubel and Wiesel, 1959의 연구를 보면 생명체가 사물을 인식할 때 
 </div>
 
 선분의 좌측이면 고양이 우측이면 강아지와 같은 방식으로 Classifier을 구현할 수 있습니다. 모델의 정확성을 높이기 위하여 Regularization과 Optimization을 수행하기도 합니다. Neural Network방식의 Classifier도 존재합니다.
+
+##### Perceiving and Understanding the Visual World
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic39.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+컴퓨터가 사물을 분류하는 등 역할을 수행하기 위해서는 결국 사물을 "인지"하고 "이해"하는 과정을 거쳐야 합니다.
+사람에게는 정말 쉬운 작업이지만 컴퓨터에게는 이를 위해 다양한 task를 수행해야하며 여기에 맞는 모델이 필요합니다.
+
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic40.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic41.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic42.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic43.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
