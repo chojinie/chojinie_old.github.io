@@ -86,8 +86,11 @@ arr2[1:3, :] 혹은 arr2[:, :2]와 같이, 행 또는 열에 범위 인덱스를
 ### NumPy 어레이 정렬 (np.argsort)
 #### 기본 사용(오름차순 정렬)
 
+<!--코드블럭-->
+
+$$ \documentclass{article}
 \begin{document}
-\begin{lstlisting}[language=Python]
+\begin{verbatim}
 <p>
 import numpy as np <br>
 
@@ -97,8 +100,8 @@ s = a.argsort()<br>
 print(s)<br>
 print(a[s])<br>
 </p>
-\end{lstlisting}
-\end{document}
+\end{verbatim}
+\end{document} $$
 
 <p>
 [1 0 3 2]<br>
