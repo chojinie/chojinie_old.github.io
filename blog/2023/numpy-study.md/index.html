@@ -244,19 +244,22 @@ arr2[1:3, :] 혹은 arr2[:, :2]와 같이, 행 또는 열에 범위 인덱스를
 <h3 id="numpy-어레이-정렬-npargsort">NumPy 어레이 정렬 (np.argsort)</h3>
 <h4 id="기본-사용오름차순-정렬">기본 사용(오름차순 정렬)</h4>
 
-<p>\begin{document}
-\begin{lstlisting}[language=Python]</p>
-<p>
-import numpy as np <br>
+<!--코드블럭-->
 
-a = np.array([1.5, 0.2, 4.2, 2.5])<br>
-s = a.argsort()<br>
+\[\documentclass{article}
+\begin{document}
+\begin{verbatim}
+&lt;p&gt;
+import numpy as np &lt;br&gt;
 
-print(s)<br>
-print(a[s])<br>
-</p>
-<p>\end{lstlisting}
-\end{document}</p>
+a = np.array([1.5, 0.2, 4.2, 2.5])&lt;br&gt;
+s = a.argsort()&lt;br&gt;
+
+print(s)&lt;br&gt;
+print(a[s])&lt;br&gt;
+&lt;/p&gt;
+\end{verbatim}
+\end{document}\]
 
 <p>
 [1 0 3 2]<br>
