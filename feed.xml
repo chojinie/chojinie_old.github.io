@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-28T09:35:11+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-28T09:51:12+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">cs231n Summary - Introduction</title><link href="https://chojinie.github.io/blog/2023/cs231-Introduction/" rel="alternate" type="text/html" title="cs231n Summary - Introduction" /><published>2023-05-28T00:00:00+00:00</published><updated>2023-05-28T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Introduction</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Introduction/"><![CDATA[<h3 id="강의-목표">강의 목표</h3>
 
 <p>아래 이미지에서 교집합 부분에 해당하는 부분을 학습합니다.</p>
@@ -617,7 +617,45 @@
 </figure>
 
     </div>
-</div>]]></content><author><name></name></author><category term="study" /><category term="cs231" /><category term="AI" /><category term="cs231" /><category term="study" /><category term="AI" /><summary type="html"><![CDATA[recording_a Summary of lecture]]></summary></entry><entry><title type="html">cs231n assignment solution</title><link href="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/" rel="alternate" type="text/html" title="cs231n assignment solution" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/solution-cs231n-assignment</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/"><![CDATA[<h2 id="assignment-1">Assignment 1</h2>
+</div>
+
+<h3 id="nearest-neighbor-classifier">Nearest Neighbor Classifier</h3>
+
+<p>KNN(K-Nearest Neighbor)분류기입니다. task 수행을 위해 모델이 필요하다고 했었죠. 하지만 KNN의 경우 특별한 모델이 필요한 것은 아니고 training data(학습 데이터)의 정답을 모두 저장해두었다가 나중에 test data(테스트 데이터)를 모델에 넣었을 때 정답과 가장 유사한 결과를 예측해내어 분류 task를 수행하는 것이 전부입니다.</p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/assignment1/pic55-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/assignment1/pic55-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/assignment1/pic55-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/cs231n/assignment1/pic55.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>고양이라는 (Label)을 달고 있는 training data를 저장해두었다가, 나중에 query로 들어오는 Test data와의 거리 비교(Distance Metric)를 하여 그 차이가 가장 작은 데이터를 고양이라고 분류하는 거죠.</p>
+
+<p>Distance Metric 즉, 거리 차이를 비교하는 방법은 대표적으로 두가지가 있습니다. L1 distance와 L2 distance 입니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>L1 distance: $$ d_1(I_1, I_2) = \sum\limits_{p}</td>
+      <td>I_1^{p} - I_2^{p}</td>
+      <td>$$</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="study" /><category term="cs231" /><category term="AI" /><category term="cs231" /><category term="study" /><category term="AI" /><summary type="html"><![CDATA[recording_a Summary of lecture]]></summary></entry><entry><title type="html">cs231n assignment solution</title><link href="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/" rel="alternate" type="text/html" title="cs231n assignment solution" /><published>2023-05-27T00:00:00+00:00</published><updated>2023-05-27T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/solution-cs231n-assignment</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/solution-cs231n-assignment/"><![CDATA[<h2 id="assignment-1">Assignment 1</h2>
 <h3 id="inline-question-1">Inline Question 1</h3>
 <p>Notice the structured patterns in the distance matrix, where some rows or columns are visibly brighter. 
 (Note that with the default color scheme black indicates low distances while white indicates high distances.)</p>
