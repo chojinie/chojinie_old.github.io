@@ -12,7 +12,7 @@ toc:
 
 ### 강의 목표
 
-교집합 부분에 대한 이해를 높인다.
+아래 이미지에서 교집합 부분에 해당하는 부분을 학습합니다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -20,9 +20,18 @@ toc:
     </div>
 </div>
 
+
 ### Agenda
 #### 컴퓨터 비전과 딥러닝의 기원의 요약
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+        <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 
 $$ \color{blue}Your Answer : $$ *fill this in.*
