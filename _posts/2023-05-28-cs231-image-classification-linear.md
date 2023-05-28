@@ -43,23 +43,13 @@ toc:
 </div>
 
 
-하지만, 만약 고양이 사진을 다른 각도에서 찍거나 조명이 달라지거나 한다면 밝기 성분은 당연히 달라질 수 밖에 없겠죠. 사람은 같은 고양이로 인식할 것입니다. 누워있던 숨어있던 뒤돌아 있던, 하지만 컴퓨터는 어렵죠.
+하지만, 만약 고양이 사진을 다른 각도에서 찍거나 조명이 달라지거나 한다면 밝기 성분은 당연히 달라질 수 밖에 없겠죠. 사람은 같은 고양이로 인식할 것입니다. 누워있던 숨어있던 뒤돌아 있던, 하지만 컴퓨터는 어렵죠.<br>
 
+Challenges of recognition : 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/cs231n/assignment1/pic49.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic50.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>    
-</div>
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic51.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="/assets/img/cs231n/assignment1/pic52.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>    
 </div>
 
 물론 고전적인 Computer vision에서는 edge detection 등 많은 방식으로 Classification task(분류 문제)를 풀려고 했습니다. 하지만 이렇다할 성능을 보이지는 못했고, 현대에 와서는 Data-driven 방식의 머신러닝 기법을 적용하게 되었습니다.
