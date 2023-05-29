@@ -204,8 +204,9 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
 
 $$ i $$번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있다.
 
-\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta} \end{equation} 
+\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation} 
 
+아래 예시를 보면 Multiclass SVM 손실 함수를 어떻게 구해야 할지 알 수 있다.
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/cs231n/assignment1/pic69.png" class="img-fluid rounded z-depth-1" zoomable=true %}
