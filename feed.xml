@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-29T07:46:54+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-29T08:13:02+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">cs231n Summary - Introduction</title><link href="https://chojinie.github.io/blog/2023/cs231-Introduction/" rel="alternate" type="text/html" title="cs231n Summary - Introduction" /><published>2023-05-28T00:00:00+00:00</published><updated>2023-05-28T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Introduction</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Introduction/"><![CDATA[<h3 id="강의-목표">강의 목표</h3>
 
 <p>아래 이미지에서 교집합 부분에 해당하는 부분을 학습합니다.</p>
@@ -874,8 +874,9 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
 
 <p>\(i\)번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있다.</p>
 
-<p>\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta} \end{equation}</p>
+<p>\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation}</p>
 
+<p>아래 예시를 보면 Multiclass SVM 손실 함수를 어떻게 구해야 할지 알 수 있다.</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
