@@ -224,3 +224,9 @@ $$ i $$번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반�
         {% include figure.html path="/assets/img/cs231n/assignment1/pic72.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
+
+### Softmax 함수
+
+### 참고
+https://heekangpark.github.io/Stanford_cs231n/03-linear-classification
+http://cs231n.stanford.edu/schedule.html
