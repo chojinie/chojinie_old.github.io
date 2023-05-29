@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-29T09:14:09+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-29T10:51:32+00:00</updated><id>https://chojinie.github.io/feed.xml</id><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">cs231n Summary - Introduction</title><link href="https://chojinie.github.io/blog/2023/cs231-Introduction/" rel="alternate" type="text/html" title="cs231n Summary - Introduction" /><published>2023-05-28T00:00:00+00:00</published><updated>2023-05-28T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Introduction</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Introduction/"><![CDATA[<h3 id="강의-목표">강의 목표</h3>
 
 <p>아래 이미지에서 교집합 부분에 해당하는 부분을 학습합니다.</p>
@@ -1004,11 +1004,11 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
 
 <p>소프트맥스 분류기(Softmax Classifier)는 다중 클래스 분류 문제를 해결하기 위한 알고리즘입니다. 소프트맥스 분류기는 입력 데이터를 각 클래스에 속할 확률로 변환하여 분류를 수행합니다.</p>
 
-<p>예를 들어, 3개의 수 \(x_0=2, x_1=1, x_2=-1\)이 있고 이 수의 대소 관계를 유지하면서 각각의 확률을 나타내는 \(y_0, y_1, y_2\)로 변환하려고 할 경우, 확률이므로 0에서 1 사이의 숫자가 나와야 하며, 모두 더하면 1이어야만 합니다. 이 떄 사용되는 것이 소프트맥스 (Softmax) 함수입니다. 먼저 \(x_i\)의 지수함수(exp) 꼴들의 합계를 구해서 u라고 두겠습니다.</p>
+<p>예를 들어, 3개의 수 \(x_0=2, x_1=1, x_2=-1\)이 있고 이 수의 대소 관계를 유지하면서 각각의 확률을 나타내는 \(y_0, y_1, y_2\)로 변환하려고 할 경우, 확률이므로 0에서 1 사이의 숫자가 나와야 하며, 모두 더하면 1이어야만 합니다. 이 떄 사용되는 것이 소프트맥스 (Softmax) 함수입니다. 먼저 \(x_i\)의 지수함수(exp) 꼴들의 합계를 구해서 u라고 두겠습니다. 지수함수가 사용되는 이유는 미분이 가능하도록 하게 함이며, 입력값 중 큰 값은 더 크게 작은 값은 더 작게 만들어 입력벡터가 더 잘 구분되게 하기 위함입니다.</p>
 
 <p>\begin{equation} u = exp(x_0) + exp(x_1) + exp(x_2)
 \end{equation}
-위 식을 사용하여 y꼴로 변환해준다면, \(y_0 = \left ( \frac{exp(x_0)}{u} \right ), y_1 = \left ( \frac{exp(x_1)}{u} \right ), y_2 = \left ( \frac{exp(x_2)}{u} \right )\)
+위 식을 사용하여 y꼴로 변환해준다면, \(y_0 = \frac{exp(x_0)}{u} , y_1 = \frac{exp(x_1)}{u}, y_2 = \frac{exp(x_2)}{u}\)
 소프트맥스 분류기는 다음과 같은 단계로 작동합니다:</p>
 
 <ol>
