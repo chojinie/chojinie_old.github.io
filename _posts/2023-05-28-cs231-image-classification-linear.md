@@ -259,6 +259,11 @@ $$ i $$번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반�
 
 소프트맥스 분류기는 손실 함수로 크로스 엔트로피 손실(cross-entropy loss)을 사용하여 모델을 훈련합니다. 크로스 엔트로피 손실은 실제 클래스와 예측된 클래스의 확률 분포 사이의 차이를 측정합니다. 모델의 매개변수를 업데이트하면서 손실을 최소화하는 방향으로 학습이 진행됩니다.
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="/assets/img/cs231n/assignment1/pic75.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 
 ## 참고
