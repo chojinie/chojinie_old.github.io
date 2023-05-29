@@ -667,13 +667,58 @@ SVM은 다양한 장점을 가지고 있습니다. 예를 들어, SVM은 고차�
 
 SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수 있으며, 회귀 문제에도 적용할 수 있습니다. SVM은 다양한 실제 응용 분야에서 폭넓게 사용되고 있으며, 머신러닝에서 중요한 알고리즘 중 하나입니다.
 </p>
-<p>수식으로 표현해보겠습니다. \(i\) 번째 이미지의 전체 픽셀을 하나의 열 벡터로 만든 \(x_i\) 와 해당 미지의 label \(y_i\) 가 있을 경우, score function(f)는 \(x_i\)를 입력받아 클래스 점수를 나타내는 벡터 \(s=f(x_i, W)\)를 출력합니다.(s는 점수 score를 의미) \(x_i\) 의 \(j\) 번째 클래스의 점수는 \(s_j\)의 \(j\)번째 요소인 \(s_j = f(x_i, W)_{j}\)라 표현할 수 있다.</p>
+<p>수식으로 표현해보겠습니다. \(i\) 번째 이미지의 전체 픽셀을 하나의 열 벡터로 만든 \(x_i\) 와 해당 미지의 label \(y_i\) 가 있을 경우, score function(f)는 \(x_i\)를 입력받아 클래스 점수를 나타내는 벡터 \(s=f(x_i, W)\)를 출력합니다.(s는 점수 score를 의미) \(x_i\) 의 \(j\) 번째 클래스의 점수는 \(s_j\)의 \(j\)번째 요소인 \(s_j = f(x_i, W)_{j}\)라 표현할 수 있습니다.</p>
 
-<p>\(i\)번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있다.</p>
+<p>\(i\)번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있습니다.</p>
 
 <p>\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation}</p>
 
-<p>아래 예시를 보면 Multiclass SVM 손실 함수를 어떻게 구해야 할지 알 수 있다.</p>
+<p>힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 \(max(0, ~)\) 함수이다.</p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/assignment1/pic73-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/assignment1/pic73-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/assignment1/pic73-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/cs231n/assignment1/pic73.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<p>Δ보다 작은 항을 더 강하게 불리하게 만들기 위해 선형적인 식이 아닌 2차식 형태의 제곱 힌지 손실 SVM 함수(squared hinge loss SVM, 혹은 \(L_2-SVM, max(0,−)^2\))을 대신 사용할 때도 있습니다. 제곱하지 않은 단순한 힌지 손실 함수를 사용하는 것이 더 일반적인 형태이나, 몇몇 데이터 셋에서는 제곱 힌지 손실 함수가 더 잘 작동할 수 있습니다. 두 손실값 중 어느쪽이 더 나은지는 교차 검증법(cross validation)을 적용해 결정합니다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/assignment1/pic74-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/assignment1/pic74-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/assignment1/pic74-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/cs231n/assignment1/pic74.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>아래 예시를 보면 Multiclass SVM 손실 함수를 어떻게 구해야 할지 알 수 있습니다.</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -752,10 +797,28 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
     </div>
 </div>
 
-<h3 id="softmax-함수">Softmax 함수</h3>
+<h3 id="softmax-clssifier">Softmax Clssifier</h3>
+
+<p>소프트맥스 분류기(Softmax Classifier)는 다중 클래스 분류 문제를 해결하기 위한 알고리즘입니다. 소프트맥스 분류기는 입력 데이터를 각 클래스에 속할 확률로 변환하여 분류를 수행합니다.</p>
+
+<p>소프트맥스 분류기는 다음과 같은 단계로 작동합니다:</p>
+
+<ol>
+  <li>
+    <p>입력 데이터와 매개변수로 이루어진 선형 모델을 구성합니다. 이 선형 모델은 각 클래스에 대한 점수(score)를 출력합니다. 일반적으로 입력 데이터에 대한 가중치(weight)와 편향(bias)이 사용됩니다.</p>
+  </li>
+  <li>
+    <p>소프트맥스 함수를 적용하여 각 클래스에 속할 확률을 계산합니다. 소프트맥스 함수는 입력 벡터의 원소들을 확률로 변환하는 함수로, 각 클래스에 대한 확률을 출력합니다. 이때, 소프트맥스 함수는 입력 데이터의 점수를 정규화(normalize)하는 역할을 수행합니다.</p>
+  </li>
+  <li>
+    <p>가장 높은 확률을 가지는 클래스를 선택하여 입력 데이터를 분류합니다. 이는 가장 확률이 높은 클래스가 해당 데이터의 예측 클래스로 결정되는 것을 의미합니다.</p>
+  </li>
+</ol>
+
+<p>소프트맥스 분류기는 손실 함수로 크로스 엔트로피 손실(cross-entropy loss)을 사용하여 모델을 훈련합니다. 크로스 엔트로피 손실은 실제 클래스와 예측된 클래스의 확률 분포 사이의 차이를 측정합니다. 모델의 매개변수를 업데이트하면서 손실을 최소화하는 방향으로 학습이 진행됩니다.</p>
 
 <h3 id="참고">참고</h3>
-<p>https://heekangpark.github.io/Stanford_cs231n/03-linear-classification
+<p>https://heekangpark.github.io/Stanford_cs231n/03-linear-classification<br>
 http://cs231n.stanford.edu/schedule.html</p>
 
     </div>
