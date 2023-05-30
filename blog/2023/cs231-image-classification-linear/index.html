@@ -687,11 +687,18 @@ CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,0
 
 <p>수식으로 표현해보겠습니다. \(i\) 번째 이미지의 전체 픽셀을 하나의 열 벡터로 만든 \(x_i\) 와 해당 미지의 label \(y_i\) 가 있을 경우, score function(f)는 \(x_i\)를 입력받아 클래스 점수를 나타내는 벡터 \(s=f(x_i, W)\)를 출력합니다.(s는 점수 score를 의미) \(x_i\) 의 \(j\) 번째 클래스의 점수는 \(s_j\)의 \(j\)번째 요소인 \(s_j = f(x_i, W)_{j}\)라 표현할 수 있습니다.</p>
 
-<p>\(i\)번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있습니다.</p>
+<p>\(i\)번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반화할 수 있습니다. \(max(0, ~)\) 형태는 힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 함수입니다.</p>
 
 <p>\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation}</p>
 
-<p>\(max(0, ~)\) 형태는 힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 함수입니다.</p>
+<h4 id="예제"><strong>예제</strong></h4>
+<p>예시를 들어 자세히 설명해 보겠습니다. 세개의 클래스가 각각 \(s = [13, -7, 11]\) 만큼의 점수를 가지고 있고 첫 번째 클래스가 정답(true class, \(i.e. y_i = 0\))이라고 가정해보겠습니다. 그리고 \(\delta = 10\) 으로 두겠습니다. 위 식은 잘못 매칭된 클래스 들의 점수의 합계라고 볼 수 있죠. (\(j \neq y_i\)) 이제 식에 대입해보겠습니다.</p>
+
+<p>\begin{equation} L_i = max(0, -7-13+10) + max(0, 11-13+10) \end{equation}</p>
+
+<p>첫 번째 항은 손실이 0이 됩니다. 올바른 클래스 점수(13)가 잘못된 클래스 점수(-7)보다 최소 마진 10만큼 크기 때문에 이 쌍에 대해 손실이 0이 됩니다. 두 번째 항은 손실이 8이 됩니다. 요약하면 SVM 손실 함수는 올바른 클래스 yi의 점수를 원합니다. 잘못된 클래스 점수보다 적어도 \(\delta\) 만큼 더 커야 합니다. 점수 함수를 선형 함수\((f(x_i;W)=Wx_i)\)로 작업했었죠. 그렇다면 (4)번 식은 이렇게 바꿔 쓸 수도 있습니다. 
+\begin{equation} L_i= \sum{j \neq y_i}max(0, \omega_{j}^{T}x_i - \omega_{y_i}^{T}x_i + \delta)\end{equation}</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
