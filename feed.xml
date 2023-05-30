@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T16:54:51+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T17:01:07+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -1144,7 +1144,8 @@ CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,0
 log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 교차 엔트로피 손실로 대체해서 
 해석합니다.</p>
 
-<p>\begin{equation} L_i = -log(\frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}) L_i = -f_{y_i}+ log \sum_{j}e^{f_j}}) \end{equation}</p>
+<p>\begin{equation} L_i = -log(\frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}) \end{equation}
+\begin{equation} L_i = -f_{y_i}+ log \sum_{j}e^{f_j}}) \end{equation}</p>
 
 <p>\(f_j\)는 클래스 점수 f의 벡터의 j번째 요소를 의미합니다. \(f_j(Z) = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}\) 은 <strong>softmax function</strong> 입니다. 임의의 실수값으로 이루어진 벡터를 받아서(in Z), 해당 벡터를 0과 1 사이의 값으로 압축하고, 그 값들의 합이 1이 되도록 만듭니다. softmax 기능과 관련된 전체 교차 엔트로피 손실은 어려워 보일 수 있지만, 자주 쓰일 개념이므로 잘 이해해야 합니다. 해당 글은 <a href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/">cross entropy</a>편에 정리해 놨습니다.</p>
 
@@ -1196,6 +1197,9 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 
     </div>
 </div>
+<p>가장 왼쪽의 파란 박스는 logits이라고 합니다. 이는 확률화되지 않은 날 것의 예측 결과를 지칭합니다. 멀티 클래스 분류문제에서 보통 softmax 함수의 입력으로 사용됩니다. (4) 식의 소프트맥스 함수에 적용하여 exponential을 취해줍니다.
+그 결과가 빨간색 박스 형태로 나오게 됩니다. 무조건 0 이상의 수가 나오기 때문에 확률로 변경할 수 있게 됩니다. 이후에  \(\sum\limits_{j}e^{s_j}\) 로 나눠서 normalize 시켜, 우리가 아는 분수 형태의 확률 값 형태로 변형시킵니다.
+확률이므로 각 클래스 별로 나오게 될 숫자의 합은 무조건 “1”이 나와야만 합니다.</p>
 
 <h3 id="softmax-분류기는-각-클래스에-대한-확률을-제공합니다">Softmax 분류기는 각 클래스에 대한 “확률”을 제공합니다.</h3>
 
@@ -1222,7 +1226,8 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 있고 특징으로 생각될 수도 있습니다. [10, -2, 3]의 점수를 달성하고 첫 번째 클래스가 올바른 예를 
 고려해보겠습니다. SVM (예: 원하는 여유 간격 \Delta =1을 가진 경우)은 올바른 클래스가 다른 
 클래스들과 비교하여 여유 간격보다 높은 점수를 이미 가지고 있으므로 손실을 0으로 계산합니다. SVM은 
-개별 점수의 세부 사항에는 관심이 없습니다. 예를 들어, 점수가 [10, -100, -100]이거나 [10, 9, 9]라면, SVM은 여유 간격이 1로 만족되므로 손실이 0이기 때문에 차이를 느끼지 않습니다. 그러나 이러한 
+개별 점수의 세부 사항에는 관심이 없습니다. 예를 들어, 점수가 [10, -100, -100]이거나 [10, 9, 
+9]라면, SVM은 여유 간격이 1로 만족되므로 손실이 0이기 때문에 차이를 느끼지 않습니다. 그러나 이러한 
 시나리오는 Softmax 분류기와 동일하지 않습니다. Softmax 분류기는 점수 [10, 9, 9]에 대해 [10, 
 -100, -100]보다 훨씬 더 높은 손실을 누적합니다. 다시 말해, Softmax 분류기는 생성된 점수에 대해 
 완전히 만족하지 않습니다. 올바른 클래스는 항상 더 높은 확률을 가지고 있어야 하고, 잘못된 클래스는 항상 
@@ -1231,10 +1236,6 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 예를 들어, 자동차 분류기는 자동차와 트럭을 분리하는 어려운 문제에 대부분의 “노력”을 기울이고 있을 
 것이며, 이미 매우 낮은 점수를 할당하는 개구리 예제에 영향을 받지 않아야 하며, 아마도 데이터 클라우드의 
 완전히 다른 쪽에 군집화될 가능성이 높습니다.</p>
-
-<p>가장 왼쪽의 파란 박스는 logits이라고 합니다. 이는 확률화되지 않은 날 것의 예측 결과를 지칭합니다. 멀티 클래스 분류문제에서 보통 softmax 함수의 입력으로 사용됩니다. (4) 식의 소프트맥스 함수에 적용하여 exponential을 취해줍니다.
-그 결과가 빨간색 박스 형태로 나오게 됩니다. 무조건 0 이상의 수가 나오기 때문에 확률로 변경할 수 있게 됩니다. 이후에  \(\sum\limits_{j}e^{s_j}\) 로 나눠서 normalize 시켜, 우리가 아는 분수 형태의 확률 값 형태로 변형시킵니다.
-확률이므로 각 클래스 별로 나오게 될 숫자의 합은 무조건 “1”이 나와야만 합니다.</p>
 
 <h2 id="참고">참고</h2>
 <p>https://heekangpark.github.io/Stanford_cs231n/03-linear-classification<br />
