@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: /
+permalink: /about/
 subtitle: <a href='https://www.vilab.cau.ac.kr/home'>VILAB</a>. jincho@vilab.cau.ac.kr.
 
 profile:

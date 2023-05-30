@@ -2,9 +2,9 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: # the website title (if blank, full name will be used instead)
-first_name: hyun
-middle_name: jin
+title: blank # the website title (if blank, full name will be used instead)
+first_name: hyun jin
+middle_name:
 last_name: Cho
 email: jincho@vilab.cau.ac.kr
 description:  > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -138,8 +138,8 @@ related_blog_posts:
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out
 # the information below.
 giscus:
-  repo: alshedivat/al-folio      # <your-github-user-name>/<your-github-repo-name>
-  repo_id: MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==
+  repo: chojinie/chojinie.github.io      # <your-github-user-name>/<your-github-repo-name>
+  repo_id: R_kgDOJf6alQ
   category: Comments             # name of the category under which discussions will be created
   category_id: DIC_kwDOA5PmLc4CTBt6
   mapping: title                 # identify discussions by post title
@@ -151,7 +151,7 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: communications # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
