@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T06:03:43+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T06:04:36+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -32,11 +32,11 @@
 
 <p>이 식은 어떠한 개념에서 나오게 된 것일까요?<br /></p>
 
-<p>엔트로피는 특성 사건에 대해 알기 위해 얻어야 하는 정보의 평균 비트 수입니다. 사건의 결과를 알기 위해서는 불확실성을 0으로 줄여야 합니다(즉, 확실성을 1로). 어떤 사건 A가 발생할 확률이 p라면 그 결과를 안다는 것은 불확실성을 \(\fraction{1}{p}\) 만큼 줄이는 것을 의미합니다. 따라서 사건 결과에 대해 알기 위해서는 \(log\fraction{1}{p}\) 비트 수가 필요하며 이는 \(-log(p)\)와 같습니다. 이것은 A가 발생할 때의 엔트로피 값입니다. 마찬가지로 A가 일어나지 않을 때의 엔트로피 값은 \(-log(1-p)\)입니다. 확률 분포가 p를 갖는 <em>Bernoulli</em> 인 경우 사건의 평균 엔트로피는 \(-p * log(p) -(1-p) * log(1-p)\)입니다.</p>
+<p>엔트로피는 특성 사건에 대해 알기 위해 얻어야 하는 정보의 평균 비트 수입니다. 사건의 결과를 알기 위해서는 불확실성을 0으로 줄여야 합니다(즉, 확실성을 1로). 어떤 사건 A가 발생할 확률이 p라면 그 결과를 안다는 것은 불확실성을 \(\frac{1}{p}\) 만큼 줄이는 것을 의미합니다. 따라서 사건 결과에 대해 알기 위해서는 \(log\frac{1}{p}\) 비트 수가 필요하며 이는 \(-log(p)\)와 같습니다. 이것은 A가 발생할 때의 엔트로피 값입니다. 마찬가지로 A가 일어나지 않을 때의 엔트로피 값은 \(-log(1-p)\)입니다. 확률 분포가 p를 갖는 <em>Bernoulli</em> 인 경우 사건의 평균 엔트로피는 \(-p * log(p) -(1-p) * log(1-p)\)입니다.</p>
 
 <h3 id="엔트로피-vs-사건의-개수">엔트로피 VS 사건의 개수</h3>
 <p>사건의 개수가 많아진다면, 엔트로피는 어떻게 될까요? 아마 높아질 것으로 직감할 수 있을 것입니다. 확률이 같은 n개의 이벤트를 선택하고 확률 분포의 엔트로피를 계산해보겠습니다.
-\begin{equation} -n * \fraction{1}{n} * log\fraction{1}{n} = log(n) \end{equation}
+\begin{equation} -n * \frac{1}{n} * log\frac{1}{n} = log(n) \end{equation}
 n이 증가할 수록 log함수적으로 엔트로피는 증가하게 됩니다.</p>
 
 <h2 id="cross-entropy교차-엔트로피-크로스-엔트로피">cross entropy(교차 엔트로피, 크로스 엔트로피)</h2>
