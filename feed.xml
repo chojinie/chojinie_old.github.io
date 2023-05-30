@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T11:23:23+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T11:26:21+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -1009,6 +1009,8 @@ CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,0
 
 <p>첫 번째 항은 손실이 0이 됩니다. 올바른 클래스 점수(13)가 잘못된 클래스 점수(-7)보다 최소 마진 10만큼 크기 때문에 이 쌍에 대해 손실이 0이 됩니다. 두 번째 항은 손실이 8이 됩니다. 요약하면 SVM 손실 함수는 올바른 클래스 yi의 점수를 원합니다. 잘못된 클래스 점수보다 적어도 \(\delta\) 만큼 더 커야 합니다. 점수 함수를 선형 함수\((f(x_i;W)=Wx_i)\)로 작업했었죠. 그렇다면 (4)번 식은 이렇게 바꿔 쓸 수도 있습니다. 
 \begin{equation} L_i= \sum{j \neq y_i}max(0, \omega_{j}^{T}x_i - \omega_{y_i}^{T}x_i + \delta)\end{equation}</p>
+
+<p>\(\omega_{j}\)는 \(W\)의 j번째 행이 열로 재구성된 것입니다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
