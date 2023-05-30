@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T04:09:53+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T04:34:24+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cs231n Summary - Introduction</title><link href="https://chojinie.github.io/blog/2023/cs231-Introduction/" rel="alternate" type="text/html" title="cs231n Summary - Introduction" /><published>2023-05-28T00:00:00+00:00</published><updated>2023-05-28T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Introduction</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Introduction/"><![CDATA[<p>본 시리즈는 cs231n을 공부하고 그 내용을 정리하기 위해 작성됩니다. 시리즈에 관련된 모든 출처는 기본적으로 http://cs231n.stanford.edu/schedule.html 의 강의 내용을 기반으로 하고 있습니다.</p>
 
 <h3 id="강의-목표">강의 목표</h3>
@@ -865,7 +865,7 @@
 <h3 id="좋은-가중치weight-고르기">좋은 가중치(Weight) 고르기</h3>
 
 <p>
-손실함수를 통해 훈련 데이터의 점수에 대한 불만을 측정하는 손실 함수를 정의하겠습니다. 그리고 손실 함수를 최소화하는 매개변수를 효율적으로 찾는 방법을 고안해보겠습니다. (최적화)
+손실함수를 통해 훈련 데이터의 점수에 대한 불만을 측정하는 손실 함수를 정의하겠습니다. 그리고 손실 함수를 최소화하는 매개변수를 효율적으로 찾는 방법을 고안해보겠습니다. (최적화)<br />
 
 SVM(Multiclass Support Vector Machine) 손실 함수를 살펴보겠습니다. 지도학습(Supervised Learning)에서 사용되는 분류(Classification)와 회귀(Regression) 문제를 해결하기 위한 알고리즘입니다. SVM은 데이터를 고차원 공간으로 매핑하여 최적의 경계를 찾는 방식으로 작동합니다.
 
@@ -881,7 +881,7 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
 
 <p>\begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation}</p>
 
-<p>힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 \(max(0, ~)\) 함수이다.</p>
+<p>\(max(0, ~)\) 형태는 힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 함수입니다.</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
