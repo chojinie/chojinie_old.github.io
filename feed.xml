@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T04:34:24+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T04:35:31+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cs231n Summary - Introduction</title><link href="https://chojinie.github.io/blog/2023/cs231-Introduction/" rel="alternate" type="text/html" title="cs231n Summary - Introduction" /><published>2023-05-28T00:00:00+00:00</published><updated>2023-05-28T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Introduction</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Introduction/"><![CDATA[<p>본 시리즈는 cs231n을 공부하고 그 내용을 정리하기 위해 작성됩니다. 시리즈에 관련된 모든 출처는 기본적으로 http://cs231n.stanford.edu/schedule.html 의 강의 내용을 기반으로 하고 있습니다.</p>
 
 <h3 id="강의-목표">강의 목표</h3>
@@ -1013,8 +1013,9 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
 
 <p>\begin{equation} u = exp(x_0) + exp(x_1) + exp(x_2)
 \end{equation}
-위 식을 사용하여 y꼴로 변환해준다면, \(y_0 = \frac{exp(x_0)}{u} , y_1 = \frac{exp(x_1)}{u}, y_2 = \frac{exp(x_2)}{u}\)
-소프트맥스 분류기는 다음과 같은 단계로 작동합니다:</p>
+위 식을 사용하여 y꼴로 변환해준다면, \(y_0 = \frac{exp(x_0)}{u} , y_1 = \frac{exp(x_1)}{u}, y_2 = \frac{exp(x_2)}{u}\) 로 나타낼 수 있습니다. <br /></p>
+
+<p>소프트맥스 분류기는 다음과 같은 단계로 작동합니다:</p>
 
 <ol>
   <li>
