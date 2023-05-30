@@ -11,6 +11,8 @@ toc:
   sidebar: left
 ---
 
+본 시리즈는 cs231n을 공부하고 그 내용을 정리하기 위해 작성됩니다. 시리즈에 관련된 모든 출처는 기본적으로 http://cs231n.stanford.edu/schedule.html 의 강의 내용을 기반으로 하고 있습니다.
+
 ### 강의 목표
 
 아래 이미지에서 교집합 부분에 해당하는 부분을 학습합니다.
@@ -124,3 +126,6 @@ Hubel and Wiesel, 1959의 연구를 보면 생명체가 사물을 인식할 때 
         {% include figure.html path="/assets/img/cs231n/assignment1/pic43.png" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
+
+## 참고
+http://cs231n.stanford.edu/schedule.html
