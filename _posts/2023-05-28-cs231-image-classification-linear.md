@@ -233,6 +233,8 @@ $$ i $$번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반�
 첫 번째 항은 손실이 0이 됩니다. 올바른 클래스 점수(13)가 잘못된 클래스 점수(-7)보다 최소 마진 10만큼 크기 때문에 이 쌍에 대해 손실이 0이 됩니다. 두 번째 항은 손실이 8이 됩니다. 요약하면 SVM 손실 함수는 올바른 클래스 yi의 점수를 원합니다. 잘못된 클래스 점수보다 적어도 $$ \delta $$ 만큼 더 커야 합니다. 점수 함수를 선형 함수$$ (f(x_i;W)=Wx_i) $$로 작업했었죠. 그렇다면 (4)번 식은 이렇게 바꿔 쓸 수도 있습니다. 
 \begin{equation} L_i= \sum{j \neq y_i}max(0, \omega_{j}^{T}x_i - \omega_{y_i}^{T}x_i + \delta)\end{equation}
 
+$$ \omega_{j} $$는 $$ W $$의 j번째 행이 열로 재구성된 것입니다.
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/cs231n/assignment1/pic73.png" class="img-fluid rounded z-depth-1" zoomable=true %}
