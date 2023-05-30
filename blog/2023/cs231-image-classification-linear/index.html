@@ -834,9 +834,12 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 해석합니다.</p>
 
 <p>\begin{equation} L_i = -log(\frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}) 
-\end{equation}
-또는
-\begin{equation} L_i = -f_{y_i}+ log \sum_{j}e^{f_j}}) 
+\end{equation}</p>
+
+<p>또는</p>
+
+<p>\begin{equation} 
+L_i = -f_{y_i}+ log\sum_{j}e^{f_j}}
 \end{equation}</p>
 
 <p>\(f_j\)는 클래스 점수 f의 벡터의 j번째 요소를 의미합니다. \(f_j(Z) = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}\) 은 <strong>softmax function</strong> 입니다. 임의의 실수값으로 이루어진 벡터를 받아서(in Z), 해당 벡터를 0과 1 사이의 값으로 압축하고, 그 값들의 합이 1이 되도록 만듭니다. softmax 기능과 관련된 전체 교차 엔트로피 손실은 어려워 보일 수 있지만, 자주 쓰일 개념이므로 잘 이해해야 합니다. 해당 글은 <a href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/">cross entropy</a>편에 정리해 놨습니다.</p>
