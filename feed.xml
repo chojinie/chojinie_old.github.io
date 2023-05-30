@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T16:33:38+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T16:51:52+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -1148,11 +1148,19 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 
 <p>\(f_j\)는 클래스 점수 f의 벡터의 j번째 요소를 의미합니다. \(f_j(Z) = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}\) 은 <strong>softmax function</strong> 입니다. 임의의 실수값으로 이루어진 벡터를 받아서(in Z), 해당 벡터를 0과 1 사이의 값으로 압축하고, 그 값들의 합이 1이 되도록 만듭니다. softmax 기능과 관련된 전체 교차 엔트로피 손실은 어려워 보일 수 있지만, 자주 쓰일 개념이므로 잘 이해해야 합니다. 해당 글은 <a href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/">cross entropy</a>편에 정리해 놨습니다.</p>
 
-<h3 id="정보이론-관점에서-정리">정보이론 관점에서 정리.</h3>
+<h3 id="정보이론-관점에서-해석">정보이론 관점에서 해석</h3>
 <p>참 값의 분포인 p와 예측 분포인 q간의 관계는 아래와 같이 정의 할 수 있습니다.
 \begin{equation} h(p,q) = -\sum_{i=1}^n (q_i lg_2(p_i)) \end{equation}</p>
 
-<p>소프트맥스 분류기는 예측 클래스 확률 (q = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}})와 참 값의 분포 사이의 크로스 엔트로피를 최소화 합니다. 이 해석에서 “참 값”의 분포는 모든 확률 질량이 정답 클래스에 위치한 분포입니다.(즉, p = [0, …, 1, …,0]은 \(y_i\) 번째 위치에 단일한 1을 갖습니다.) 또한 교차 엔트로피는 엔트로피와 KL Divergence의 합으로 나타낼 수 있습니다. 델타 함수 p의 엔트로피는 0이므로, 이는 두 분포 간의 KL Divergence를 최소화하는 것과 동등합니다. 즉, 교차 엔트로피 목적은 예측된 분포가 올바른 답에 대한 확률을 모두 가지도록 하는 것입니다.
+<p>소프트맥스 분류기는 예측 클래스 확률 (q = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}})와 참 값의 분포 사이의 크로스 엔트로피를 최소화 합니다. 이 해석에서 “참 값”의 분포는 모든 확률 질량이 정답 클래스에 위치한 분포입니다.(즉, p = [0, …, 1, …,0]은 \(y_i\) 번째 위치에 단일한 1을 갖습니다.) 또한 교차 엔트로피는 엔트로피와 KL Divergence의 합으로 나타낼 수 있습니다. 델타 함수 p의 엔트로피는 0이므로, 이는 두 분포 간의 KL Divergence를 최소화하는 것과 동등합니다. 즉, 교차 엔트로피 목적은 예측된 분포가 올바른 답에 대한 확률을 모두 가지도록 하는 것입니다.</p>
+
+<h3 id="확률론-관점에서-해석">확률론 관점에서 해석</h3>
+
+<p>이를 이해하기 위해, 소프트맥스 분류기는 출력 벡터 “f” 내의 점수를 비정규화된 로그 확률로 해석합니다. 
+이러한 값을 지수화함으로써 (비정규화된) 확률을 얻을 수 있으며, 나눗셈은 확률을 정규화하여 확률이 1이 
+되도록 합니다. 확률적 해석에서는 따라서 올바른 클래스의 음의 로그 우도를 최소화하는 것으로, 최대 우도 
+추정(MLE)을 수행한다고 볼 수 있습니다.</p>
+
 <!--예를 들어, 3개의 수 $$ x_0=2, x_1=1, x_2=-1 $$이 있고 이 수의 대소 관계를 유지하면서 각각의 -->
 <!--확률을 나타내는 $$ y_0, y_1, y_2 $$로 변환하려고 할 경우, 확률이므로 0에서 1 사이의 숫자가 -->
 <!--나와야 하며, 모두 더하면 1이어야만 합니다. 이 떄 사용되는 것이 소프트맥스 (Softmax) 함수입니다. -->
@@ -1162,7 +1170,7 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 <!---->
 <!--\begin{equation} u = exp(x_0) + exp(x_1) + exp(x_2)-->
 <!--\end{equation}-->
-<!--위 식을 사용하여 y꼴로 변환해준다면, $$ y_0 = \frac{exp(x_0)}{u} , y_1 = \frac{exp(x_1)}{u}, y_2 = \frac{exp(x_2)}{u} $$ 로 나타낼 수 있습니다. <br>--></p>
+<!--위 식을 사용하여 y꼴로 변환해준다면, $$ y_0 = \frac{exp(x_0)}{u} , y_1 = \frac{exp(x_1)}{u}, y_2 = \frac{exp(x_2)}{u} $$ 로 나타낼 수 있습니다. <br>-->
 
 <p>소프트맥스 분류기는 손실 함수로 크로스 엔트로피 손실(cross-entropy loss)을 사용하여 모델을 
 훈련합니다. 크로스 엔트로피 손실은 실제 클래스와 예측된 클래스의 확률 분포 사이의 차이를 측정합니다. 
@@ -1188,6 +1196,26 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 
     </div>
 </div>
+
+<h3 id="softmax-분류기는-각-클래스에-대한-확률을-제공합니다">Softmax 분류기는 각 클래스에 대한 “확률”을 제공합니다.</h3>
+
+<p>보정되지 않고 모든 클래스에 대한 점수를 해석하기 어려운 SVM과는 달리 소프트맥스 분류기는 모든 레이블에 
+대한 확률을 계산할 수 있습니다. 예를 들어 이미지가 주어지면 SVM 분류기는 “cat”, “dog” 및 
+“ship” 클래스에 대해 [12.5, 0.6, -23.0] 점수를 줄 수 있습니다. 대신 softmax 분류기는 세 
+레이블의 “확률”을 [0.9, 0.09, 0.01]로 계산할 수 있습니다. 이렇게 각 클래스에 대한 신뢰도를 해석 
+할 수 있게 됩니다. 그러나 “확률”이라는 단어에 강조를 하는 이유는 이러한 확률의 뾰족함 또는 흩어짐이 
+정규화 강도 \lamda 에 직접적으로 의존하기 때문입니다. 이 정규화 강도는 시스템에 입력으로 주어지는 
+값입니다. 예를 들어, 어떤 세 개의 클래스에 대한 비정규화된 로그 확률이 [1, -2, 0]으로 나온다고 
+가정해보겠습니다. softmax 함수는 다음을 계산합니다. 
+\begin{equation} [1,-2,0] \rightarrow [e^1,e^{-2},e^0]=[2.71,0.14,1] 
+\rightarrow [0.7,0.04,0.26] \end{equation}
+스코어를 exp로 지수화하고, 그 값을 정규화하여 확률의 합계를 1로 만드는 것입니다. (0.55 + 0.12 + 
+0.33 = 1) 이제 확률은 더 흩어져 있습니다. 또한, 매우 강한 정규화 강도 λ로 인해 가중치가 매우 작은 
+수로 수렴하는 한계에서는 출력 확률이 균일에 가까워질 것입니다. 따라서 소프트맥스 분류기에 의해 계산된 
+확률은 SVM과 유사하게 순위 지정 가능하지만, 절대적인 숫자(또는 그 차이)는 기술적으로 해석할 수 없는 
+대신, 신뢰도로 생각하는 것이 더 나은 접근입니다.</p>
+
+<h3 id="실제로-svm과-softmax는-일반적으로-비슷합니다">실제로 SVM과 Softmax는 일반적으로 비슷합니다.</h3>
 
 <p>가장 왼쪽의 파란 박스는 logits이라고 합니다. 이는 확률화되지 않은 날 것의 예측 결과를 지칭합니다. 멀티 클래스 분류문제에서 보통 softmax 함수의 입력으로 사용됩니다. (4) 식의 소프트맥스 함수에 적용하여 exponential을 취해줍니다.
 그 결과가 빨간색 박스 형태로 나오게 됩니다. 무조건 0 이상의 수가 나오기 때문에 확률로 변경할 수 있게 됩니다. 이후에  \(\sum\limits_{j}e^{s_j}\) 로 나눠서 normalize 시켜, 우리가 아는 분수 형태의 확률 값 형태로 변형시킵니다.
