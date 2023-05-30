@@ -17,23 +17,26 @@ size = 정수 또는 튜플(튜플인 경우, 행렬로 리턴됨. (x, y, z) >> 
 replace = 중복 허용 여부, boolean<br>
 p = 1차원 배열, 각 데이터가 선택될 확률<br>
 
-e.g. np.random.choice(5, 3)<br>
-array([0, 3, 4])<br>
-
-0 이상 5미만인 정수 중 3개를 출력(replace=True가 default로 숨어져 있으므로 중복 허용)<br>
-
-np.random.choice(5, 3, replace=False)<br>
-array([3, 1, 0])<br>
-0 이상 5미만인 정수 중 3개를 출력(replace=False이므로 중복 불가)<br>
+example
+```
+np.random.choice(5, 3)
+array([0, 3, 4])
+# 0 이상 5미만인 정수 중 3개를 출력(replace=True가 default로 숨어져 있으므로 중복 허용)
+```
+```
+np.random.choice(5, 3, replace=False)
+array([3, 1, 0])
+# 0 이상 5미만인 정수 중 3개를 출력(replace=False이므로 중복 불가)
+```
 
 ### flatnonzero
+```
+import numpy as np
+a = np.array([1.2, -1.3, 2.1, 5.0, 4.7])
+print(np.flatnonzero(a>2)) *# [2 3 4]*
 
-import numpy as np<br>
-a = np.array([1.2, -1.3, 2.1, 5.0, 4.7])<br>
-print(np.flatnonzero(a>2)) *# [2 3 4]*<br>
-
-2보다 큰 원소의 index를 array로 리턴.
-
+# 2보다 큰 원소의 index를 array로 리턴.
+```
 
 ### np.reshape(X_train, (X_train.shape[0], -1))
 
@@ -52,19 +55,19 @@ numpy.zeros(shape, dtype=float, order='C', *, like=None)<br>
 Return a new array of given shape and type, filled with zeros.<br>
 
 Parameters<br>
-shape : int or tuple of ints<br>
-np.zeros((2, 1))<br>
-array([[ 0.],<br>
-       [ 0.]])<br>
+- shape : int or tuple of ints
+- np.zeros((2, 1))
+- array([[ 0.],
+       [ 0.]])
 
-dtype : data-type, optional<br>
+- dtype : data-type, optional
 The desired data-type for the array, e.g., numpy.int8. Default is numpy.float64.<br>
 
-order : {‘C’, ‘F’}, optional, default: ‘C’<br>
+- order : {‘C’, ‘F’}, optional, default: ‘C’<br>
 Whether to store multi-dimensional data in row-major (C-style) or column-major (Fortran-style) order in memory.<br>
 
-like : array_like, optional<br>
-Reference object to allow the creation of arrays which are not NumPy arrays. If an array-like passed in as like supports the __array_function__ protocol, the result will be defined by it. In this case, it ensures the creation of an array object compatible with that passed in via this argument.
+- like : array_like, optional<br>
+Reference object to allow the creation of arrays which are not NumPy arrays. If  an array-like passed in as like supports the __array_function__ protocol, the result will be defined by it. In this case, it ensures the creation of an array object compatible with that passed in via this argument.
 
 ### array 인덱싱 이해하기
 
@@ -82,6 +85,62 @@ arr2[1:3, :] 혹은 arr2[:, :2]와 같이, 행 또는 열에 범위 인덱스를
 
 한편 2차원 array에서 4행 3열에 위치한 하나의 성분을 얻고자 할 때는 arr2[3,2]를 실행하면 됩니다.
 인덱싱을 통해 선택한 성분에 새로운 값을 대입하는 경우에도, arr2[:2, 1:3] = 0 과 같이 입력값을 넣으면 됩니다.<br>
+
+### NumPy 어레이 정렬 (np.argsort)
+#### 기본 사용(오름차순 정렬)
+
+<!--코드블럭-->
+** Input **
+```
+import numpy as np
+
+a = np.array([1.5, 0.2, 4.2, 2.5])
+s = a.argsort()
+
+print(s)
+print(a[s])
+
+```
+** Output **
+
+```
+[1 0 3 2]
+[0.2 1.5 2.5 4.2]
+
+```
+
+a는 정렬되지 않은 숫자들의 어레이입니다.
+a.argsort()는 어레이 a를 정렬하는 인덱스의 어레이 [1 0 3 2]를 반환합니다.
+a[s]와 같이 인덱스의 어레이 s를 사용해서 어레이 a를 다시 정렬하면,
+오름차순으로 정렬된 어레이 [0.2 1.5 2.5 4.2]가 됩니다.
+
+#### 내림차순 정렬
+
+** Input **
+
+```
+import numpy as np
+
+a = np.array([1.5, 0.2, 4.2, 2.5])
+s = a.argsort()
+
+print(s)
+print(a[s[::-1]])
+print(a[s][::-1])
+```
+** Output **
+
+```
+[1 0 3 2]
+[4.2 2.5 1.5 0.2]
+[4.2 2.5 1.5 0.2]
+```
+<p>
+내림차순으로 정렬된 어레이를 얻기 위해서는
+a[s[::-1]]와 같이 인덱스 어레이를 뒤집어서 정렬에 사용하거나,
+a[s][::-1]과 같이 오름차순으로 정렬된 어레이를 뒤집어주면 됩니다.
+</p>
+
 
 ### Reference
 
