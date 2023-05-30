@@ -3,7 +3,7 @@ layout: post
 title: Numpy study
 date: 2023-05-26
 description: recording_a Summary of Numpy
-tags: numpy math
+tags: numpy math study
 categories: study math
 related_posts: false
 toc:
