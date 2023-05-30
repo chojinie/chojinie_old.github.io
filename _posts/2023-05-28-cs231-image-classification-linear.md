@@ -190,7 +190,7 @@ k-Nearest Neighbor 알고리즘에서 픽셀 간의 거리를 사용하지 않�
 ### 좋은 가중치(Weight) 고르기
 
 <p>
-손실함수를 통해 훈련 데이터의 점수에 대한 불만을 측정하는 손실 함수를 정의하겠습니다. 그리고 손실 함수를 최소화하는 매개변수를 효율적으로 찾는 방법을 고안해보겠습니다. (최적화)
+손실함수를 통해 훈련 데이터의 점수에 대한 불만을 측정하는 손실 함수를 정의하겠습니다. 그리고 손실 함수를 최소화하는 매개변수를 효율적으로 찾는 방법을 고안해보겠습니다. (최적화)<br>
 
 SVM(Multiclass Support Vector Machine) 손실 함수를 살펴보겠습니다. 지도학습(Supervised Learning)에서 사용되는 분류(Classification)와 회귀(Regression) 문제를 해결하기 위한 알고리즘입니다. SVM은 데이터를 고차원 공간으로 매핑하여 최적의 경계를 찾는 방식으로 작동합니다.
 
@@ -206,7 +206,7 @@ $$ i $$번째 이미지에 대한 SVM 손실 함수는 다음과 같이 일반�
 
 \begin{equation} L_i = \sum\limits_{j\neq y_i}max(0, s_j - s_{y_i} + \mathit{\Delta}) \end{equation} 
 
-힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 $$ max(0, ~) $$ 함수이다. 
+$$ max(0, ~) $$ 형태는 힌지 손실 함수(hinge loss)라 불리는, 0에 대한 문턱값(threshold)을 나타내는 함수입니다. 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/cs231n/assignment1/pic73.png" class="img-fluid rounded z-depth-1" zoomable=true %}
