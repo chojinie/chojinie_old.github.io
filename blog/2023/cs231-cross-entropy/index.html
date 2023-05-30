@@ -194,28 +194,18 @@
     </div>
 </div>
 
-<p>컴퓨터가 고양이 사진을 본다면 밝기 성분을 [0, 255] 범위의 정수의 집합으로 표현할 것입니다. 예시의 고양이 사진의 전체사이즈는 대략 가로 세로 1:2 비율이라고 본다면, 200px X 400px크기의 이미지로 둘 수 있습니다. 또한 color이미지이므로 RGB 3channels로 구성되어 있습니다. 네모난 창문(window)을 보면 왼쪽 상단에서 우측 상단으로 탐색하면서 해당 위치는 RGB가 각각 얼마만큼 (0~255 사이) 성분이 있는지를 나타내는 값으로 저장됩니다.</p>
+<p>엔트로피는 무질서, 임의성 또는 불확실성의 상태와 가장 일반적으로 관련된 과학적 개념이자 측정 가능한 물리적 특성입니다.(wikipedia) 고등학교, 대학교에 와서까지도 나오는 용어였습니다.
+이제는 정보이론 측면에서 살펴보려고 합니다. 불확실성, 무질서의 상태를 측정하기 때문에 엔트로피 값이 클 수록 데이터가 분류가 잘 되어 있지 않은 상태이고 엔트로피 값이 작을 수록 데이터가 잘 분류되어 있는 것입니다.</p>
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
+<h3 id="공식">공식</h3>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/assignment1/rgb-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/assignment1/rgb-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/assignment1/rgb-1400.webp"></source>
-    
+<p>어떤 특정 현상이 발생할 확률을 \(p\) 라고 할 때 엔트로피 공식은 아래와 같습니다.
+\begin{equation} h(x) = -\sum_{i=1}^n (p_i log_2(p_i)) \end{equation}
+\(log_2(p)\)에 \(p\)를 곱한 후 모두 더한 값에 -(minus)를 취해주는 것입니다.</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/cs231n/assignment1/rgb.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<p>이 식은 어떠한 개념에서 나오게 된 것일까요?<br></p>
 
-  </picture>
-
-</figure>
-
-    </div>
-</div>
+<p>엔트로피는 이벤트에 대해 알기 위해 얻어야 하는 정보의 평균 비트 수입니다. 사건의 결과를 알기 위해서는 불확실성을 0으로 줄여야 합니다(즉, 확실성을 1로). 어떤 사건 A의 확률이 p라면 그 결과를 안다는 것은 불확실성을 \(\fraction{1}{p}\) 만큼 줄이는 것을 의미합니다. 따라서 이벤트에 대해 알기 위해서는 \(log\fraction{1}{p}\) 비트 수가 필요하며 이는 \(-log(p)\)와 같습니다. 이것은 이벤트 A가 발생할 때의 엔트로피 값입니다. 마찬가지로 사건 A가 일어나지 않을 때의 엔트로피 값은 \(-log(1-p)\)입니다. 확률 분포가 p를 갖는 <em>Bernoulli</em> 인 경우 이벤트의 평균 엔트로피는 \(-p * log(p) -(1-p) * log(1-p)\)입니다.</p>
 
 <h2 id="cross-entropy교차-엔트로피-크로스-엔트로피">cross entropy(교차 엔트로피, 크로스 엔트로피)</h2>
 
@@ -251,6 +241,8 @@ https://squarecircle.be/entropy-and-disorder-the-fate-of-all-human-enterprises/<
 https://www.philgineer.com/2021/10/31.html<br>
 https://westshine-data-analysis.tistory.com/<br>
 https://www.youtube.com/watch?v=r3iRRQ2ViQM<br>
+특히 수식을 이해하는 데에는 아래 사이트가 도움 되었습니다.
+**https://towardsdatascience.com/entropy-cross-entropy-and-kl-divergence-17138ffab87b** <br>
 
 
     </div>
