@@ -843,6 +843,10 @@ SVM은 이진 분류뿐만 아니라 다중 클래스 분류에도 사용될 수
     </div>
 </div>
 
+<p>가장 왼쪽의 파란 박스는 logits이라고 합니다. 이는 확률화되지 않은 날 것의 예측 결과를 지칭합니다. 멀티 클래스 분류문제에서 보통 softmax 함수의 입력으로 사용됩니다. (4) 식의 소프트맥스 함수에 적용하여 exponential을 취해줍니다.
+그 결과가 빨간색 박스 형태로 나오게 됩니다. 무조건 0 이상의 수가 나오기 때문에 확률로 변경할 수 있게 됩니다. 이후에  \(\sum\limits_{j}e^{s_j}\) 로 나눠서 normalize 시켜, 우리가 아는 분수 형태의 확률 값 형태로 변형시킵니다.
+확률이므로 각 클래스 별로 나오게 될 숫자의 합은 무조건 “1”이 나와야만 합니다.</p>
+
 <h2 id="참고">참고</h2>
 <p>https://heekangpark.github.io/Stanford_cs231n/03-linear-classification<br>
 http://cs231n.stanford.edu/schedule.html</p>
