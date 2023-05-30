@@ -153,11 +153,12 @@ k-Nearest Neighbor 알고리즘에서 픽셀 간의 거리를 사용하지 않�
 이 접근 방식의 첫 번째 구성 요소는 이미지의 픽셀 값을 각 클래스의 신뢰도 점수에 매핑하는 점수 함수를 정의하는 것입니다. 구체적인 예를 들어서 접근 방식을 가시화 시켜보겠습니다. 그전에, 이미지의 training dataset인 $$ x_i \in \mathbf{R}^D $$ 의 성분을 정해 놓고 이야기 해보겠습니다. 각각의 이미지들은 $$ y_i (i = 1 \dots N) $$라는 레이블들과 엮여 있습니다. 즉 $$ x_i $$ 이미지는 $$ y_i $$라는 레이블을 갖게 되는 것입니다. 그리고 $$ y_i \in 1 \dots K $$입니다. 즉, N개의 example이 있으며(Example 각각 D 차원) K개의 별개의 카테고리가 있다는 의미입니다.
 
 <p>예를 한 번 들어보죠
-CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,000) 이미지는 각각 D차원 (D = 32 X 32 X 3 = 3072pixel) 로 되어 있고, K=10이기 때문에 10개의 카테고리(Classes dog, cat, car and so on and so forth)로 분류가 되는 것입니다. 이제 점수 함수(score function)는 $$ \\mathbf{f: R^D \rightarrow R^K} $$ 로 정의할 수 있으며, raw 이미지 픽셀을 클래스 점수에 매핑할 수 있게 됩니다.
+CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,000) 이미지는 각각 D차원 (D = 32 X 32 X 3 = 3072pixel) 로 되어 있고, K=10이기 때문에 10개의 카테고리(Classes dog, cat, car and so on and so forth)로 분류가 되는 것입니다. 이제 점수 함수(score function)는 $$ \mathbf{f: R^D \rightarrow R^K} $$ 로 정의할 수 있으며, raw 이미지 픽셀을 클래스 점수에 매핑할 수 있게 됩니다.
 </p>
 
 <p>
-**Linear classifier**. 가장 간단한 함수인 선형 함수의 매핑 형태입니다.
+
+**Linear classifier** 가장 간단한 함수인 선형 함수의 매핑 형태입니다.
 
 \begin{equation} f(x_i, W, b) = Wx_i + b \end{equation}
 </p>
