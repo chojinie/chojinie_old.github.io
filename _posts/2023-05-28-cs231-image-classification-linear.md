@@ -162,6 +162,9 @@ CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,0
 \begin{equation} f(x_i, W, b) = Wx_i + b \end{equation}
 </p>
 
+위의 수식에서 이미지 $$ x_i $$는 모든 픽셀을 D X 1 형태의 하나의 열 벡터로 **Flatten**시킨다고 가정하겠습니다. 행렬 W(size : [K X D])와 벡터 b(size : [K X 1])는 함수의 매개변수(parameter)입니다. CIFAR-10에서 $$ x_i $$는 단일 [3072 x 1] 열 벡터로 병합된 i 번째 이미지의 모든 픽셀을 포함하고 있습니다. W는 [10 X 3072]이고 b는 [10 X 1] 크기 입니다. 따라서 3072개의 숫자가 input으로 들어오고(raw image pixels) 10개의 숫자가 output으로 나오게 됩니다.(클래스 점수)
+
+**w**는 Weight(가중치)라고 합니다. b는 bias vector(편향 벡터)라고 하고, 실제 데이터 $$ x_i $$에와 상호 작용하지 않고 출력 점수 값에 영향을 주게 됩니다. W와 b가 parameter에 속하지만 보통은 사람들은 가중치와 매개변수라는 용어를 같은 의미로 사용하기도 합니다.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
