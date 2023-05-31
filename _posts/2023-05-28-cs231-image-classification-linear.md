@@ -82,6 +82,11 @@ task 수행을 위해 모델이 필요하다고 했었죠. 하지만 KNN의 경�
 Distance Metric 즉, 거리 차이를 비교하는 방법은 대표적으로 두가지가 있습니다. L1 distance와 L2 distance 입니다.
 
 L1 distance: \begin{equation} d_1(I_1, I_2) = \sum\limits_{p}|I_1^{p} - I_2^{p}| \end{equation}
+
+두 이미지를 L1 거리로 비교하기 위해 픽셀별 차이를 사용하는 예입니다(예에서는 하나의 색상 채널에 대해).
+두 개의 이미지를 요소별로 뺀 다음 모든 차이를 더하여 하나의 숫자로 만듭니다. 두 이미지가 동일하면 결과는 0이 됩니다. 그러나 이미지가 매우 다르면 결과가 커집니다.
+
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="/assets/img/cs231n/assignment1/pic57.png" class="img-fluid rounded z-depth-1" zoomable=true %}
@@ -89,6 +94,8 @@ L1 distance: \begin{equation} d_1(I_1, I_2) = \sum\limits_{p}|I_1^{p} - I_2^{p}|
 </div>
 
 L2 distance: \begin{equation} d_1(I_1, I_2) = \sqrt{\sum\limits_{p}(I_1^{p} - I_2^{p})^2} \end{equation}
+
+**L1 VS L2**  특히, L2 거리는 L1 거리보다 두 벡터 사이의 차이에 대해 훨씬 더 까다롭습니다. 즉, L2 거리는 하나의 큰 불일치보다 많은 중간 불일치를 선호합니다.
 
 #### Hyperparameter setting
 <p>그렇다면, 얼마만큼의 k를 줘야 최적의 답을 끌어내는 모델일까요? 혹은 어떠한 distance metric을 사용해야 최고의 모델이 될까요?<br>
