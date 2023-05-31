@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T02:47:34+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T04:21:42+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -807,7 +807,9 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 
 <ol>
   <li>차원의 저주 (Curse of Dimensionality): 이미지 데이터의 경우 각 픽셀은 하나의 차원으로 간주됩니다. 이미지의 크기가 커질수록 차원의 수가 급격히 증가하게 되는데, 이는 차원의 저주로 알려진 문제를 야기할 수 있습니다. 차원의 저주는 고차원 공간에서 데이터 간의 거리 측정이 더 어렵고, 더 많은 데이터가 필요하게 만들어서 k-최근접 이웃 알고리즘의 성능을 저하시킵니다.</li>
+  <li>픽셀 간의 거리는 이미지의 의미를 적절하게 반영하지 않을 수 있습니다. 이미지는 일반적으로 시각적인 패턴, 구조, 텍스처 등을 포함하고 있으며, 이러한 특징들은 단순히 픽셀 값의 거리로만 표현하기에는 제한적일 수 있습니다. 따라서 픽셀 간의 거리를 사용하지 않는 대안적인 특징 추출 방법이나 거리 측정 방법을 사용하는 것이 더 효과적일 수 있습니다.</li>
 </ol>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -828,14 +830,9 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 
     </div>
 </div>
-<ol>
-  <li>
-    <p>픽셀 간의 거리는 이미지의 의미를 적절하게 반영하지 않을 수 있습니다. 이미지는 일반적으로 시각적인 패턴, 구조, 텍스처 등을 포함하고 있으며, 이러한 특징들은 단순히 픽셀 값의 거리로만 표현하기에는 제한적일 수 있습니다. 따라서 픽셀 간의 거리를 사용하지 않는 대안적인 특징 추출 방법이나 거리 측정 방법을 사용하는 것이 더 효과적일 수 있습니다.</p>
-  </li>
-  <li>
-    <p>픽셀 간의 거리는 이미지의 변형에 민감할 수 있습니다. 이미지에 대한 작은 변형이나 노이즈의 증가가 픽셀 값의 큰 변화로 나타날 수 있기 때문에, 픽셀 간의 거리를 직접 사용하면 이러한 변형에 매우 민감한 모델이 만들어질 수 있습니다. 이는 모델의 일반화 성능을 저하시킬 수 있습니다.</p>
-  </li>
-</ol>
+
+<p>왼쪽에는 원본 이미지가 있고 그 옆에는 픽셀 기반 L2 거리에 따라 모두 동일한 거리에 있는 세 개의 다른 이미지가 있습니다. 분명히, 픽셀 단위의 거리는 인지적이거나 의미론적인 유사성과 전혀 일치하지 않습니다.</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -857,7 +854,7 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
     </div>
 </div>
 
-<p>따라서, 이미지 데이터의 경우에는 픽셀 간의 거리를 직접 사용하지 않고, 보다 효과적인 특징 추출 방법과 거리 측정 방법을 활용하는 것이 일반적입니다.</p>
+<p>따라서, 이미지 데이터의 경우에는 픽셀 간의 거리를 직접 사용하지 않고, 보다 효과적인 특징 추출 방법과 Distance Metric(L1, L2, etc) 방법을 활용하는 것이 일반적입니다.</p>
 
 <h2 id="linear-classifier">Linear Classifier</h2>
 <p>선형 분류기(Linear Classifier)는 입력 데이터를 선형 경계로 구분하는 분류 알고리즘입니다. 주어진 입력 데이터에 대해 각각의 특성을 가중치와 결합하여 선형 함수를 생성하고, 이 함수의 결과를 기반으로 데이터를 클래스로 분류합니다. 이 분류방식을 잘 학습해야 Neural Network와 Convolutional Nueral Network로 자연스럽게 개념을 확장해 갈 수 있습니다.</p>
