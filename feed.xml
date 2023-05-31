@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T02:38:43+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T02:47:34+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -731,9 +731,7 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 이러한 요소들이 우리들이 학습하면서 수정해 나아가야 할 KNN모델의 Hyperparameter라고 합니다.
 매우 어려운 부분이고, 데이터셋에 의존적입니다. 모든 알고리즘을 실행해보고 어떤 것이 가장 잘 동작하는지 확인을 해야합니다.
 </p>
-<p>
-아래 이미지 두 장이 설명이 잘 되어 있습니다. 즉, dataset은 Training, Validation, Test의 3분할이 가장 효과적일 수 있다는 것이죠. 나아가 Cross-Validation을 통해 Fold부분을 순환하여 validation data로 중간평가를 하게 된다면 Small dataset에 한해서는 꽤 효과적일 수도 있다고 합니다. 단 딥러닝 분야에서는 잘 사용되지 않는다고 강의에서는 얘기하고 있습니다.
-</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -754,6 +752,11 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 
     </div>
 </div>
+
+<p>여러 가지 다른 값들을 시도해보고 가장 좋은 결과를 찾는 것은 당연히 좋은 아이디어이며, 실제로 수행해야 할 일입니다. 하지만 이 매우 신중하게 수행되어야 합니다. 특히 <em>하이퍼파라미터를 조정하기 위해 테스트 세트를 사용할 수 없습니다.</em> 기계 학습 알고리즘을 설계할 때 테스트 세트는 매우 귀중한 자원으로 간주해야 하며, 가능하면 맨 마지막에 한 번만 사용하는 것이 이상적입니다. 그렇지 않으면 실제로 모델을 배포할 때 성능이 크게 저하될 수 있는 실질적인 위험이 있습니다. 실전에서는 테스트 세트에 과적합(overfit)된다고 말합니다.</p>
+
+<p>다행히도 하이퍼파라미터를 조정하는 올바른 방법이 있으며, 이는 테스트 세트를 전혀 건드리지 않습니다. 아이디어는 훈련 세트를 두 개로 나누는 것입니다: 조금 더 작은 훈련 세트와 우리가 검증 세트라고 부르는 세트입니다. CIFAR-10을 예로 들면, 예를 들어 49,000개의 훈련 이미지를 훈련용으로 사용하고, 나머지 1,000개를 검증용으로 남겨둘 수 있습니다. 이 검증 세트는 사실상 하이퍼파라미터를 조정하기 위한 가짜 테스트 세트로 사용됩니다.</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -774,6 +777,8 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 
     </div>
 </div>
+
+<p>훈련 데이터의 크기(따라서 검증 데이터의 크기도)가 작을 수 있는 경우, 하이퍼파라미터 튜닝을 위해 교차 검증(cross-validation)이라는 더 정교한 기법을 사용하는 경우도 있습니다. 이전의 예제를 가지고 작업할 때, 임의로 처음 1,000개의 데이터 포인트를 검증 세트로 선택하는 대신, 교차 검증을 사용하여 특정 k 값의 성능을 더 좋고 노이즈가 적게 평가할 수 있습니다. 예를 들어, 5-fold 교차 검증에서는 훈련 데이터를 5개의 동일한 폴드로 분할하여 4개를 훈련에 사용하고 1개를 검증에 사용합니다. 그런 다음 어떤 폴드가 검증 폴드인지 반복하면서 성능을 평가하고, 마지막으로 다른 폴드들 사이에서 성능을 평균합니다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
