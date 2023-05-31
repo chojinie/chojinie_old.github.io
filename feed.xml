@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-30T17:20:35+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T01:25:32+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -876,7 +876,9 @@ CIFAAR-10 데이터셋에서 training data는 50,000장이 있습니다. (N=50,0
 
 <p>
 
-**Linear classifier** 가장 간단한 함수인 선형 함수의 매핑 형태입니다.
+
+**Linear classifier.**  가장 간단한 함수인 선형 함수의 매핑 형태입니다.
+
 
 \begin{equation} f(x_i, W, b) = Wx_i + b \end{equation}
 </p>
@@ -1149,8 +1151,8 @@ log probabilties(비정규화 로그 확률)로 해석하고 힌지 손실을 �
 
 <p>또는</p>
 
-<p>\begin{equation} 
-L_i = -f_{y_i}+ log\sum_{j}e^{f_j}}
+<p>\begin{equation}
+L_i = -f_{y_i}+ log\sum_{j}e^{f_j}
 \end{equation}</p>
 
 <p>\(f_j\)는 클래스 점수 f의 벡터의 j번째 요소를 의미합니다. \(f_j(Z) = \frac{e^{f_{y_i}}}{\sum_{j}e^{f_j}}\) 은 <strong>softmax function</strong> 입니다. 임의의 실수값으로 이루어진 벡터를 받아서(in Z), 해당 벡터를 0과 1 사이의 값으로 압축하고, 그 값들의 합이 1이 되도록 만듭니다. softmax 기능과 관련된 전체 교차 엔트로피 손실은 어려워 보일 수 있지만, 자주 쓰일 개념이므로 잘 이해해야 합니다. 해당 글은 <a href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/">cross entropy</a>편에 정리해 놨습니다.</p>
