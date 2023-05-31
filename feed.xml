@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T01:25:32+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-31T02:38:43+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cross entropy</title><link href="https://chojinie.github.io/blog/2023/cs231-cross-entropy/" rel="alternate" type="text/html" title="cross entropy" /><published>2023-05-30T00:00:00+00:00</published><updated>2023-05-30T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-cross-entropy</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-cross-entropy/"><![CDATA[<h2 id="entropy엔트로피">entropy(엔트로피)</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -688,7 +688,19 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 
 <p>Distance Metric 즉, 거리 차이를 비교하는 방법은 대표적으로 두가지가 있습니다. L1 distance와 L2 distance 입니다.</p>
 
-<p>L1 distance: \begin{equation} d_1(I_1, I_2) = \sum\limits_{p}|I_1^{p} - I_2^{p}| \end{equation}</p>
+<table>
+  <tbody>
+    <tr>
+      <td>L1 distance: \begin{equation} d_1(I_1, I_2) = \sum\limits_{p}</td>
+      <td>I_1^{p} - I_2^{p}</td>
+      <td>\end{equation}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>두 이미지를 L1 거리로 비교하기 위해 픽셀별 차이를 사용하는 예입니다(예에서는 하나의 색상 채널에 대해).
+두 개의 이미지를 요소별로 뺀 다음 모든 차이를 더하여 하나의 숫자로 만듭니다. 두 이미지가 동일하면 결과는 0이 됩니다. 그러나 이미지가 매우 다르면 결과가 커집니다.</p>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         <figure>
@@ -711,6 +723,8 @@ https://www.youtube.com/watch?v=r3iRRQ2ViQM<br />
 </div>
 
 <p>L2 distance: \begin{equation} d_1(I_1, I_2) = \sqrt{\sum\limits_{p}(I_1^{p} - I_2^{p})^2} \end{equation}</p>
+
+<p><strong>L1 VS L2</strong>  특히, L2 거리는 L1 거리보다 두 벡터 사이의 차이에 대해 훨씬 더 까다롭습니다. 즉, L2 거리는 하나의 큰 불일치보다 많은 중간 불일치를 선호합니다.</p>
 
 <h4 id="hyperparameter-setting">Hyperparameter setting</h4>
 <p>그렇다면, 얼마만큼의 k를 줘야 최적의 답을 끌어내는 모델일까요? 혹은 어떠한 distance metric을 사용해야 최고의 모델이 될까요?<br />
