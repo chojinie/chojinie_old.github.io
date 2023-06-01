@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>a post with videos | Cho HyunJin</title>
+    <title>support vector machine(SVM) | Cho HyunJin</title>
     <meta name="author" content="hyunJin real Cho">
-    <meta name="description" content="this is what included videos could look like">
+    <meta name="description" content="recording_a Summary of math">
 
 
     <!-- Bootstrap & MDB -->
@@ -31,13 +31,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%90%A5&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://chojinie.github.io/blog/2023/videos/">
+    <link rel="canonical" href="https://chojinie.github.io/blog/2023/support-vector-machine/">
 
     <!-- Dark Mode -->
     
@@ -129,24 +132,34 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
 
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">a post with videos</h1>
-    <p class="post-meta">April 24, 2023</p>
+    <h1 class="post-title">support vector machine(SVM)</h1>
+    <p class="post-meta">June 1, 2023</p>
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/tag/including">
-          <i class="fas fa-hashtag fa-sm"></i> including</a>  
-          <a href="/blog/tag/videos">
-          <i class="fas fa-hashtag fa-sm"></i> videos</a>  
+        <a href="/blog/tag/study">
+          <i class="fas fa-hashtag fa-sm"></i> study</a>  
+          <a href="/blog/tag/math">
+          <i class="fas fa-hashtag fa-sm"></i> math</a>  
           
         ·  
-        <a href="/blog/category/sample-posts">
-          <i class="fas fa-tag fa-sm"></i> sample-posts</a>  
+        <a href="/blog/category/study">
+          <i class="fas fa-tag fa-sm"></i> study</a>  
+          <a href="/blog/category/math">
+          <i class="fas fa-tag fa-sm"></i> math</a>  
           
 
     </p>
@@ -155,74 +168,87 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>This is an example post with videos. It supports local video files.</p>
+      <h2 id="classification-with-support-vector-machines">Classification with Support Vector Machines</h2>
+
+<p>많은 경우에 우리는 다양한 선택지 중에서 옳은 답을 결정하는 머신러닝 알고리즘을 바랄 것입니다. 예를 들어, 스팸 메일 분류 기능에서는 스팸 메일과 정상 메일을 분류해 낼 수 있죠. 분류기에는 오직 두개의 결과만을 바라 보고 어떤 결과에 해당되는지를 분류해내는 Binary Classification이라는 분야가 있습니다. 여기서 출력이 값으로 가질 수 있는 것(label/output의 조합)은 오직 두개만 존재 할 수 있습니다. 그리고 이후에는 \({+1, -1}\) 으로 나타낼 것입니다. 이를 아래와 같은 수식으로 표현하게 됩니다.</p>
+
+<p>\begin{equation} f : \mathbb{R}^D \rightarrow {+1, -1} \end{equation}</p>
+
+<p>각각의 예제 (데이터 포인트) xn은 D개의 실수로 구성된 피처 벡터로 나타냅니다. 레이블은 일반적으로 양성 클래스와 음성 클래스로 구분됩니다. SVM (Support Vector Machine)이라고 하는 접근 방식을 소개하겠습니다. SVM은 이진 분류 작업을 해결하는 방법입니다. 회귀와 마찬가지로 binary 레이블 \(y_n \in {+1, -1}\) 와 짝을 이루는 example \(x_n \in \mathbb{r}^D\) 의 집합에서 지도 학습 task를 갖고 있습니다. example-레이블 쌍 {(x1, y1), …, (xN, yN)}로 구성된 훈련 데이터 세트가 주어졌을 때, 최소의 분류 오류를 얻는 우리는 모델의 매개변수를 추정하고자 합니다. 선형/비선형 모델을 모두 고려해야하지만, 이번 글에서는 선형 모델만을 고려하고 비선형 모델은 별도로 설명하겠습니다.</p>
+
+<p>SVM은 많은 응용 분야에서 최첨단 결과를 제공하며, 실질적인 이론적 보장을 제공합니다 (Steinwart and Christmann, 2008). 이진 분류를 SVM을 사용하여 설명하는 데에는 두 가지 주요 이유가 있습니다. 첫째, SVM은 지도 학습의 기하학적인 관점을 고려할 수 있게 해줍니다. 두 번째는 SVM의 최적화 문제가 해석적인 해를 가지지 않아 다양한 최적화 도구를 활용해야 한다는 점입니다.</p>
+
+<p>SVM의 기계 학습 관점은 최대 우도 관점과 약간 다릅니다. 최대 우도 관점은 데이터 분포의 확률적인 관점을 기반으로 모델을 제안하고, 이를 기반으로 최적화 문제를 도출합니다. 반면, SVM 관점은 기하학적 직관에 기반하여 훈련 중에 최적화되어야 하는 특정한 함수를 설계하는 것으로 시작합니다. SVM의 경우, 훈련 데이터에서 최소화되어야 하는 손실 함수를 설계하기 시작합니다. 이는 경험적 위험 최소화 원칙을 따릅니다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        
+        <figure>
 
-<figure>
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/svm/pic1-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/svm/pic1-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/svm/pic1-1400.webp"></source>
+    
 
-  
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/cs231n/svm/pic1.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
-  <video src="/assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" autoplay="" controls=""></video>
-
-  
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <video src="/assets/video/pexels-engin-akyurt-6069112-960x540-30fps.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls=""></video>
-
-  
+  </picture>
 
 </figure>
 
     </div>
 </div>
-<div class="caption">
-    A simple, elegant caption looks good between video rows, after each row, or doesn't have to be there at all.
-</div>
 
-<p>It does also support embedding videos from different sources. Here are some examples:</p>
+<p>SVM을 훈련하기 위한 최적화 문제를 유도해 보도록 하겠습니다. 직관적으로, 우리는 이진 분류 데이터를 상상해볼 수 있습니다. 데이터는 위의 그림처럼 Hyperplane(초평면)으로 분리될 수 있습니다. 여기에서 모든 example \(x_n\) (2차원 벡터)은 2차원 위치 \((x_n^(1)과 x_n^(2))\)이고, 해당하는 이진 레이블 \(y_n\)은 두 가지 다른 기호 (주황색 엑스표시 또는 파란색 원모양) 중 하나입니다. “Hyperplane”은 기계 학습에서 흔히 사용되는 용어입니다. Hyperplane은 차원이 D - 1인 (해당하는 벡터 공간이 차원 D인 경우) 아핀 sub space입니다. 이 예제들은 두 개의 클래스로 구성되어 있으며 (두 가지 가능한 레이블이 있음), 이들을 직선으로 그려서 분리/분류할 수 있도록 특징들 (example을 나타내는 벡터의 구성 요소들)이 배열되어 있습니다.</p>
+
+<p>두 클래스를 나누는 선형 separator를 찾기 위한 아이디어를 공식화 해보려고합니다. margin(마진)의 개념을 소개한 다음, 분류 에러를 야기하여 example을 “wrong” 부분에 놓이게 하도록 선형 separator의 개념을 확대하겠습니다. 두 가지 관점에서의 동등한 SVM을 공식화하는 방식을 얘기할 것입니다. : 첫 번째는 geometric 관점이며, 두 번째는 loss function 관점입니다. Lagrange multipliers를 이용하여 SVM의 dual version을 유도할 것입니다. dual SVM은 SVM 공식화의 세 번째 관점을 제공합니다.(각 클래스의 example의 convex hulls로 표현하는 관점) 이 후에는 커널(kernels)에 대해 간략히 설명한 후, 비선형 커널 SVM 최적화 문제를 수치적으로 어떻게 해결하는 지에 대한 설명으로 마무리 하겠습니다.</p>
+
+<h2 id="separating-hyperplanes">Separating Hyperplanes</h2>
+
+<p>두 개의 벡터 \(x_i, x_j\)가 example들로 주어졌다고 하겠습니다. 이 두 벡터 간의 유사성을 계산하는 한 가지 방법은 내적을 하는 것입니다 \(&lt;x_i, x_j&gt;\). 내적은 두 벡터 사이의 각도와 큰 관련이 있습니다. 내적 값은 각 벡터의 길이(norm)에 따라 달라집니다. 또한, 내적은 수학적으로 직교성(orthogonality)과 투영(projections)과 같은 기하학적 개념을 엄격하게 정의할 수 있게 해줍니다. 많은 분류 알고리즘의 주요 아이디어는 데이터를 \(\mathbb{R}^D\) 공간에 표현한 다음, 이 공간을 분할하는 것입니다. 이상적으로는 동일한 레이블을 가진 example들이 같은 분할에 속하고 다른 것들은 속하지 않도록 분할하는 것입니다. binary classification에서는 양성/음성 클래스 두 부분으로 “hypterplane”을 이용하여 공간을 분할합니다. 모든 example은 \(\mathbb{R}^D\) data space의 element(요소)라고 둡시다. \(w \in \mathbb{R}^D\) 그리고 \(b \in \mathbb{R}\) 에 의해 매개변수화된 함수 f를 다음과 같이 표현할 수 있습니다.</p>
+
+<p>\begein{equation} f: \mathbb{R}^D \rightarrow \mathbb{R} \end{equation}</p>
+
+<p>\begein{equation} x \mapsto f(x) := &lt;w,x&gt; + b \end{equation}</p>
+
+<p>hyperplane은 아핀 subspace입니다. 따라서 이진 분류 문제에서 두 클래스를 분리하는 초공간은 다음과 같이 정의됩니다.</p>
+
+<p>\begein{equation} {x \in \mathbb{R}^D : f(x) = 0} \end{equation}</p>
+
+<p>아래 그림처럼 초공간벡터 w는 하이퍼플레인에 수직인 벡터이고 b는 절편(intercept)입니다.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        
+        <figure>
 
-<figure>
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/cs231n/svm/pic2-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/cs231n/svm/pic2-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/cs231n/svm/pic2-1400.webp"></source>
+    
 
-  
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/cs231n/svm/pic2.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
-  <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto"></iframe>
-
-  
-
-</figure>
-
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        
-
-<figure>
-
-  
-
-  <iframe src="https://player.vimeo.com/video/524933864?h=1ac4fd9fb4&amp;title=0&amp;byline=0&amp;portrait=0" class="img-fluid rounded z-depth-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" width="auto" height="auto"></iframe>
-
-  
+  </picture>
 
 </figure>
 
     </div>
 </div>
+
+<p>위 식에서 \(w\) 가 초공간에 수직인 normal vector임을 증명하기 위해 초공간 상의 임의의 두 example인 \(x_a와 x_b\)를 선택하고 그 사이의 벡터가 \(w\)와 수직임을 보일 수 있어야 합니다. 이를 수식으로 나타내면 아래와 같습니다. (두 번째 수식은 내적의 선형성에 의해 얻어집니다.)</p>
+
+<p>\begein{equation} f(x_a) - f(x_b) = &lt;w, x_a&gt; + b - (&lt;w, x_b&gt; + b)
+= &lt;w, x_a - x_b&gt; \end{equation}</p>
+
+<p>초공간 상의 점 들인 \(x_a, x_b\)를 골랐으므로 \(f(x_a), f(x_b) = 0\) 입니다. 나아가 \(&lt;w, x_a - x_b&gt; = 0\)d입니다. 두 벡터가 orthogonal할 때 그들의 내적은 0이 나온다는 개념을 다시 떠올려봅시다. 그렇다면, 초공간 상의 모든 벡터에 orthogonal한 \(w\)를 얻을 수 있게 됩니다. 벡터의 개념은 다양하게 쓰일 수 있씁니다. 다만, 지금 설명하는 매개 변수 벡터 \(w\)는 방향을 나타내는 기하학적 벡터로 생각합니다. 반면, example로 표시되는 \(x\)의 벡터는 데이터 포인트로 나타냅니다. \(x\)를 basis에 대한 좌표를 갖는 벡터로 간주하는 것입니다. 테스트 example이 주어지면, 어느 쪽에 위치하는지에 따라 양성 또는 음성으로 분류합니다. 이는 example이 하이퍼플레인의 어느 쪽에 있는지를 기준으로 판단합니다.</p>
+
+<h2 id="참고">참고</h2>
+<p>MATHEMATICS FOR MACHINE LEARNING(1st Edition) by Marc Peter Deisenroth</p>
 
     </div>
   </article>
@@ -247,12 +273,6 @@
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/support-vector-machine/">support vector machine(SVM)</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/math-norm/">norm</a>
   </li>
 
@@ -268,8 +288,45 @@
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/cs231-image-classification-linear/">cs231n Summary - Image Classification with Linear Classifiers</a>
   </li>
 
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/cs231-Introduction/">cs231n Summary - Introduction</a>
+  </li>
+
+<div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "alshedivat/al-folio",
+        "data-repo-id": "MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOA5PmLc4CTBt6",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -297,6 +354,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@/dist/bootstrap-table.min.js"></script>
