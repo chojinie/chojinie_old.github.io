@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-01T07:39:52+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-01T09:11:13+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">norm</title><link href="https://chojinie.github.io/blog/2023/math-norm/" rel="alternate" type="text/html" title="norm" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/math-norm</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/math-norm/"><![CDATA[<h2 id="norms">Norms</h2>
 
 <h3 id="정의">정의</h3>
 
-<p>vector space $V$ 상에서의 함수 혹은 연산 값을 norm이라고 한다.</p>
+<p>vector space  \(V\)  상에서의 함수 혹은 연산 값을 norm이라고 한다.</p>
 
-<p>그 함수 혹은 연산은 $\left\vert\left\vert \cdot\right\vert\right\vert : V\rightarrow\mathbb{R}$ 와 같이 연산된 값이 하나의 스칼라 값으로 나타나게 된다.</p>
+<p>그 함수 혹은 연산은  \(\left\vert\left\vert \cdot\right\vert\right\vert : V\rightarrow\mathbb{R}\)  와 같이 연산된 값이 하나의 스칼라 값으로 나타나게 된다.</p>
 
-<p>즉, 간단히 설명하자면 vector $\mathbf{x}$의 길이는 norm으로 표현되고, $\left\vert\left\vert \mathbf{x}\right\vert\right\vert \in \mathbb{R}$로 나타낼 수 있다.</p>
+<p>즉, 간단히 설명하자면 vector  \(\mathbf{x}\) 의 길이는 norm으로 표현되고,  \(\left\vert\left\vert \mathbf{x}\right\vert\right\vert \in \mathbb{R}\) 로 나타낼 수 있다.</p>
 
 <h3 id="설명">설명</h3>
 <ul>
   <li>
-    <p>Homogeneous : $\lVert\lambda\mathbf{x} \rVert = \left\vert \lambda \right\vert\lVert\mathbf{x} \rVert$
+    <p>Homogeneous :  \(\lVert\lambda\mathbf{x} \rVert = \left\vert \lambda \right\vert\lVert\mathbf{x} \rVert\) 
 벡터에 스칼라 값을 곱한 것을 norm을 취하나, norm을 취한 벡터에 스칼라 값을 곱하나 결과는 같다.</p>
   </li>
   <li>
-    <p>Triangle inequality : $\lVert \mathbf{x+y}\rVert\le\lVert \mathbf{x}\rVert +\lVert \mathbf{y}\rVert$
+    <p>Triangle inequality :  \(\lVert \mathbf{x+y}\rVert\le\lVert \mathbf{x}\rVert +\lVert \mathbf{y}\rVert\) 
 <img src="https://velog.velcdn.com/images/jinnij/post/66e07f5e-5adf-48e8-b1e6-04a02653fda7/image.png" alt="WikipediA" /></p>
   </li>
   <li>
-    <p>Positive Definite : $\lVert \mathbf{x}\rVert\ge0$ 그리고, $\lVert \mathbf{x}\rVert= 0$이라고 함은, $\mathbf{x}=0$일 때를 의미한다.
+    <p>Positive Definite :  \(\lVert \mathbf{x}\rVert\ge0\)  그리고,  \(\lVert \mathbf{x}\rVert= 0\) 이라고 함은,  \(\mathbf{x}=0\) 일 때를 의미한다.
 (앞으로 나올 부등호에서 0을 포함한 것은 중요한 포인트이다. x=0을 만족해야만 한다.)</p>
   </li>
 </ul>
@@ -29,15 +29,15 @@
 
 <p>General form으로 P-norm이라고 지칭한다.</p>
 <ul>
-  <li>notation : $\lVert\mathbf{x_p}\rVert\equiv\sqrt[p]{\sum_{i=1}^nx_i^p}$</li>
+  <li>notation :  \(\lVert\mathbf{x_p}\rVert\equiv\sqrt[p]{\sum_{i=1}^nx_i^p}\)</li>
 </ul>
 
 <h4 id="manhattan-norml1-norm">Manhattan Norm(L1-norm)</h4>
-<p>$\lVert\mathbf{x_1}\rVert\equiv\sum_{i=1}^n\left\vert x_i\right\vert$
+<p>\(\lVert\mathbf{x_1}\rVert\equiv\sum_{i=1}^n\left\vert x_i\right\vert\) 
 <img src="https://velog.velcdn.com/images/jinnij/post/e16142c3-3aad-47e2-abc9-6b71af95cc19/image.png" alt="" /></p>
 
 <h4 id="euclidean-norml2-norm">Euclidean Norm(L2-norm)</h4>
-<p>$\lVert\mathbf{x_p}\rVert\equiv\sqrt{\sum_{i=1}^nx_i^2}=\sqrt{\mathbf{x^T}\mathbf{x}}$
+<p>\(\lVert\mathbf{x_p}\rVert\equiv\sqrt{\sum_{i=1}^nx_i^2}=\sqrt{\mathbf{x^T}\mathbf{x}}\) 
 <img src="https://velog.velcdn.com/images/jinnij/post/3c1028c6-d545-436b-88e0-477e74c75403/image.png" alt="" /></p>
 
 <p>이후에는 학습적으로 L2-norm을 “norm”이라고 간주한다.(단, 논문이나 기타 공식적인 문서를 예외다. 정확히 무슨 norm인지 표시해줘야 한다.)</p>
@@ -45,25 +45,25 @@
 <h2 id="dot-product">Dot Product</h2>
 
 <h3 id="definition">Definition</h3>
-<p>$\mathbf{x\cdot y}\equiv\mathbf{x^T\cdot y}=\sum_{i=1}^nx_iy_i$</p>
+<p>\(\mathbf{x\cdot y}\equiv\mathbf{x^T\cdot y}=\sum_{i=1}^nx_iy_i\)</p>
 
 <p>즉, 스칼라 곱이라고 생각하면 쉽다. 두 벡터의 곱이 하나의 스칼라 값이 나온다. 앞으로는 세 번째 수식이 아닌 두 번째 수식에 익숙해져야 한다.</p>
 
-<h3 id="dot-product-neq-inner-product내적">Dot Product $\neq$ Inner Product(내적)</h3>
+<h3 id="dot-product--neq--inner-product내적">Dot Product  \(\neq\)  Inner Product(내적)</h3>
 
-<p>사실, Dot Product $\in$ (General) Inner Product 관계이다.</p>
+<p>사실, Dot Product  \(\in\)  (General) Inner Product 관계이다.</p>
 
 <h2 id="bilinear-mapping">Bilinear mapping</h2>
 
 <h3 id="정의-1">정의</h3>
-<p>두개의 arguments(벡터)를 받아서 출력(매핑)시키는 것을 뜻한다.(i.e. $\mathbf\Omega(x,y)$)</p>
+<p>두개의 arguments(벡터)를 받아서 출력(매핑)시키는 것을 뜻한다.(i.e.  \(\mathbf\Omega(x,y)\) )</p>
 
 <h3 id="설명-1">설명</h3>
 <p>두 가지 조건을 모두 만족해야 한다.</p>
 <ul>
-  <li>$\mathbf{\Omega(\lambda x+\psi y,z)=\lambda\Omega(x,z)+\psi\Omega(y,z)}$
+  <li>\(\mathbf{\Omega(\lambda x+\psi y,z)=\lambda\Omega(x,z)+\psi\Omega(y,z)}\) 
 ‘스칼라를 곱하고 더한 것’의 매핑과 ‘매핑하고 스칼라를 곱하고 더한 것’의 값이 같아야 한다.</li>
-  <li>$\mathbf{\Omega( x,\lambda y+\psi z)=\lambda\Omega(x,y)+\psi\Omega(x,z)}$ 
+  <li>\(\mathbf{\Omega( x,\lambda y+\psi z)=\lambda\Omega(x,y)+\psi\Omega(x,z)}\)<br />
 Bilinear하므로 뒤에서 한 것의 값도 같아야 한다.</li>
 </ul>
 
@@ -71,19 +71,19 @@ Bilinear하므로 뒤에서 한 것의 값도 같아야 한다.</li>
 
 <p>Bilinear mapping이 특정 조건을 만족할 경우, 어떠한 특성을 가지고 있는 Bilinear mapping이라고 설명할 수 있다.</p>
 
-<p>단, Bilinear mapping을 $\mathbf{V}$X$\mathbf{V}\rightarrow\mathbb{R}$ 인 경우로 한정한다. 즉 두 벡터 스페이스에서 각각의 벡터를 뽑아서 연산했을 때, 하나의 스칼라 값이 나오는 경우로 한정 짓는다.</p>
+<p>단, Bilinear mapping을  \(\mathbf{V}\) X \(\mathbf{V}\rightarrow\mathbb{R}\)  인 경우로 한정한다. 즉 두 벡터 스페이스에서 각각의 벡터를 뽑아서 연산했을 때, 하나의 스칼라 값이 나오는 경우로 한정 짓는다.</p>
 
 <ul>
   <li>Bilinear mapping이 Symmetric하다
-($\Omega$ is “Symmetric”)고 표현되려면,
-If $\mathbf{\Omega(x,y)=\Omega(y,x)}$ for all $\mathbf{x,y}\in\mathbf{V}$</li>
+( \(\Omega\)  is “Symmetric”)고 표현되려면,
+If  \(\mathbf{\Omega(x,y)=\Omega(y,x)}\)  for all  \(\mathbf{x,y}\in\mathbf{V}\)</li>
 </ul>
 
-<p>i.e.) 내적 $x\cdot y=y\cdot x$</p>
+<p>i.e.) 내적  \(x\cdot y=y\cdot x\)</p>
 
 <ul>
-  <li>Bilinear mapping이 Positive Definite하다($\Omega$ is “Positive Definite”)고 표현되려면,
-If $\forall\mathbf{x}\in\mathbf{V}-{0}: \mathbf{\Omega(x,x)&gt;0}$ and $\mathbf{\Omega(0,0)=0}$
+  <li>Bilinear mapping이 Positive Definite하다( \(\Omega\)  is “Positive Definite”)고 표현되려면,
+If  \(\forall\mathbf{x}\in\mathbf{V}-\{0\}: \mathbf{\Omega(x,x)&gt;0}\)  and  \(\mathbf{\Omega(0,0)=0}\) 
 전체 벡터 스페이스에서 0이 제외되었을 때는 Bilinear mapping 값이 0보다 클 때, 그리고 (0,0)의 Bilinear mapping이 0일 때
 (즉, 0을 제외해서는 결과 값이 0이 되면 안되고 0일 경우에는 결과 값이 0이 될 때)</li>
 </ul>
@@ -94,34 +94,34 @@ If $\forall\mathbf{x}\in\mathbf{V}-{0}: \mathbf{\Omega(x,x)&gt;0}$ and $\mathbf{
 
 <p>Positive definite 하고 Symmetric한 bilinear mapping을 의미한다.</p>
 
-<p>Notation : $\mathbf{&lt;x,y&gt;}$
+<p>Notation :  \(\mathbf{&lt;x,y&gt;}\) 
 i.e : 내적</p>
 
 <h3 id="inner-product-space">Inner Product Space</h3>
-<p>$\mathbf(V,&lt;\cdot,\cdot&gt;)$의 페어를 의미한다 &lt;&gt;는 연산을 의미한다.
-i.e : $\mathbf{V}$ 가 $\mathbb{R}^n$이고, &lt;&gt;이 dot product라면,
+<p>\(\mathbf(V,&lt;\cdot,\cdot&gt;)\) 의 페어를 의미한다 &lt;&gt;는 연산을 의미한다.
+i.e :  \(\mathbf{V}\)  가  \(\mathbb{R}^n\) 이고, &lt;&gt;이 dot product라면,
 이 때의 Inner Product Space를 ‘Uclidean vector space’라고 한다.</p>
 
 <h2 id="inner-product이지만-dot-product가-아닌-경우">Inner Product이지만 Dot Product가 아닌 경우</h2>
 
 <h3 id="예시">예시</h3>
-<p>$\mathbf{V}=\mathbb{R^2}$
-$\mathbf{&lt;x,y&gt;}\equiv x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2 \in \mathbb{R}$</p>
+<p>\(\mathbf{V}=\mathbb{R^2}\) 
+ \(\mathbf{&lt;x,y&gt;}\equiv x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2 \in \mathbb{R}\)</p>
 
-<p>만약 Dot Product라면 $x_1y_1+x_2y_2$ 형식을 띄게 된다.</p>
+<p>만약 Dot Product라면  \(x_1y_1+x_2y_2\)  형식을 띄게 된다.</p>
 
 <p>1) Bilinear Mapping인가? <em>Yes</em>
-$\because \mathbf{V}$ X $\mathbf{V}\rightarrow \mathbb{R}$</p>
+ \(\because \mathbf{V}\)  X  \(\mathbf{V}\rightarrow \mathbb{R}\)</p>
 
 <p>2) Symmetric한 B.M 인가? <em>Yes</em>
-$\because x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2= y_1x_1-(y_1x_2+y_2x_1)+2y_2x_2 \iff \mathbf{&lt;x,y&gt;=&lt;y,x&gt;}$</p>
+ \(\because x_1y_1-(x_1y_2+x_2y_1)+2x_2y_2= y_1x_1-(y_1x_2+y_2x_1)+2y_2x_2 \iff \mathbf{&lt;x,y&gt;=&lt;y,x&gt;}\)</p>
 
 <p>3) Positive Definite한 B.M 인가? <em>Yes</em></p>
 
-<p>$\because \mathbf{&lt;0,0&gt;}=0 \ \mathbf{&lt;x,x&gt;}$ &gt; 0 $(\mathbf{V}-{0})$
-$x_1, x_2$를 넣어보고 식을 정리하면 아래 식을 얻을 수 있고 0보다 크다는 것을 알 수 있다.</p>
+<p>\(\because \mathbf{&lt;0,0&gt;}=0 \\ \mathbf{&lt;x,x&gt;}\)  &gt; 0  \((\mathbf{V}-\{0\})\) 
+ \(x_1, x_2\) 를 넣어보고 식을 정리하면 아래 식을 얻을 수 있고 0보다 크다는 것을 알 수 있다.</p>
 
-<p>$(x_1-x_2)^2+x^2 &gt;0$</p>
+\[(x_1-x_2)^2+x^2 &gt;0\]
 
 <h2 id="derivation-of-matrix-of-inner-product">Derivation of Matrix of Inner Product</h2>
 
@@ -129,19 +129,19 @@ $x_1, x_2$를 넣어보고 식을 정리하면 아래 식을 얻을 수 있고 0
 
 <p>inner product : Symmetric &amp; Positive Definite</p>
 
-<p>ordered basis B = $b_1, \cdots, b_n$</p>
+<p>ordered basis B =  \(b_1, \cdots, b_n\)</p>
 
 <p>basis의 linear combination으로 벡터 스페이스 상의 모든 벡터를 표시할 수 있고</p>
 
-<p>$\psi, \lambda$를 coordinate로 표시할 수 있다. (Coordinate with respect to Basis)
-$\mathbf{x^{‘}}=[\psi_1,\cdots,\psi_n]^T$
-$\mathbf{y^{‘}}=[\lambda_1,\cdots,\lambda_n]^T$</p>
+<p>\(\psi, \lambda\) 를 coordinate로 표시할 수 있다. (Coordinate with respect to Basis)
+ \(\mathbf{x^{'}}=[\psi_1,\cdots,\psi_n]^T\) 
+ \(\mathbf{y^{'}}=[\lambda_1,\cdots,\lambda_n]^T\)</p>
 
 <p>inner product의 bilinearity를 사용한다면,</p>
 
-<p>$&lt;x,y&gt;=&lt;\sum_{i=1}^n\psi_i\mathbf{b}<em>i,\sum</em>{i=1}^n\lambda_i\mathbf{b}<em>i&gt;=\sum</em>{i=1}^n\sum_{i=1}^n\psi_i&lt;\mathbf{b_i,b_j}&gt;\lambda_j = \mathbf{x^{‘T}Ay^{‘}} \in \mathbb{R}$</p>
+\[&lt;x,y&gt;=&lt;\sum_{i=1}^n\psi_i\mathbf{b}_i,\sum_{i=1}^n\lambda_i\mathbf{b}_i&gt;=\sum_{i=1}^n\sum_{i=1}^n\psi_i&lt;\mathbf{b_i,b_j}&gt;\lambda_j = \mathbf{x^{'T}Ay^{'}} \in \mathbb{R}\]
 
-<p>$A_{ij}\equiv&lt;b_i,b_j&gt;$</p>
+\[A_{ij}\equiv&lt;b_i,b_j&gt;\]
 
 <p>A는 basis에 대해서 i,j에 element를 갖는 스칼라로 구성된 매트릭스가 된다.</p>
 
@@ -149,27 +149,27 @@ $\mathbf{y^{‘}}=[\lambda_1,\cdots,\lambda_n]^T$</p>
 
 <h2 id="symmetric--positive-definite-matrix">Symmetric &amp; Positive Definite Matrix</h2>
 
-<p>$A_{ij} \equiv &lt;\mathbf{b_i,b_j}&gt;$</p>
+\[A_{ij} \equiv &lt;\mathbf{b_i,b_j}&gt;\]
 
 <h3 id="properties">Properties</h3>
 <ul>
   <li>Symmetric Matrix
-$\because A_{ij}=&lt;b_i,b_j&gt;=&lt;b_j,b_i&gt;=A_{ji}$</li>
+ \(\because A_{ij}=&lt;b_i,b_j&gt;=&lt;b_j,b_i&gt;=A_{ji}\)</li>
   <li>Positive Definite Matrix
-$\forall \mathbf{x}-{0}: \mathbf{x^TAx}&gt;0$</li>
+ \(\forall \mathbf{x}-\{0\}: \mathbf{x^TAx}&gt;0\)</li>
   <li>
-    <p>Null space of A $(\in \mathbb{R})$는 오직 0으로만 구성되어 있다.
-$\mathbf{x^TAx}&gt;0 \ (\forall \mathbf{x}\neq0)$
-null space는 기본적으로 $A\mathbf{x}=0$성립하는 x의 non trivial solution을 찾아야 한다. x가 0이 아니면 식이 성립을 안하기 때문에
+    <p>Null space of A  \((\in \mathbb{R})\) 는 오직 0으로만 구성되어 있다.
+ \(\mathbf{x^TAx}&gt;0 \ (\forall \mathbf{x}\neq0)\) 
+null space는 기본적으로  \(A\mathbf{x}=0\) 성립하는 x의 non trivial solution을 찾아야 한다. x가 0이 아니면 식이 성립을 안하기 때문에
 Null space는 x=0인 trivial solution 외의 값은 존재할 수 없다는 의미.</p>
   </li>
-  <li>$A$의 Diagonal element는 0보다 크다(positive)</li>
+  <li>\(A\) 의 Diagonal element는 0보다 크다(positive)</li>
 </ul>
 
 <h3 id="additionalif-possible">Additional(If possible,)</h3>
 <ul>
   <li>Positive Semi-definite Matrix
-$\forall \mathbf{x}-{0}: \mathbf{x^TAx}\ge0$</li>
+ \(\forall \mathbf{x}-\{0\}: \mathbf{x^TAx}\ge0\)</li>
 </ul>
 
 <h2 id="lengths-and-distances">Lengths and Distances</h2>
@@ -177,12 +177,12 @@ $\forall \mathbf{x}-{0}: \mathbf{x^TAx}\ge0$</li>
 <ul>
   <li>
     <p>Norm &amp; Inner product
-$\lVert \mathbf{x}\rVert\equiv\sqrt{&lt;\mathbf{x,x}&gt;}$
+ \(\lVert \mathbf{x}\rVert\equiv\sqrt{&lt;\mathbf{x,x}&gt;}\) 
 Norm = Inner product에 square(루트)를 씌운 것. (length)</p>
   </li>
   <li>
     <p>Cauchy-Schwarz Inequality
-$|\mathbf{&lt;x,y&gt;}|\le\lVert\mathbf{x}\rVert\lVert\mathbf{y}\rVert$</p>
+ \(|\mathbf{&lt;x,y&gt;}|\le\lVert\mathbf{x}\rVert\lVert\mathbf{y}\rVert\)</p>
   </li>
   <li>
     <p>Distance
