@@ -178,7 +178,7 @@
 
 <p>즉, 간단히 설명하자면 vector  \(\mathbf{x}\) 의 길이는 norm으로 표현되고,  \(\left\vert\left\vert \mathbf{x}\right\vert\right\vert \in \mathbb{R}\) 로 나타낼 수 있다.</p>
 
-<h3 id="설명">설명</h3>
+<h3 id="조건">조건</h3>
 <ul>
   <li>
     <p>Homogeneous :  \(\lVert\lambda\mathbf{x} \rVert = \left\vert \lambda \right\vert\lVert\mathbf{x} \rVert\) 
@@ -213,21 +213,21 @@
 
 <h2 id="dot-product">Dot Product</h2>
 
-<h3 id="definition">Definition</h3>
+<h3 id="정의-1">정의</h3>
 <p>\(\mathbf{x\cdot y}\equiv\mathbf{x^T\cdot y}=\sum_{i=1}^nx_iy_i\)</p>
 
 <p>즉, 스칼라 곱이라고 생각하면 쉽다. 두 벡터의 곱이 하나의 스칼라 값이 나온다. 앞으로는 세 번째 수식이 아닌 두 번째 수식에 익숙해져야 한다.</p>
 
-<h3 id="dot-product--neq--inner-product내적">Dot Product  \(\neq\)  Inner Product(내적)</h3>
+<h4 id="dot-product--neq--inner-product내적">Dot Product  \(\neq\)  Inner Product(내적)</h4>
 
 <p>사실, Dot Product  \(\in\)  (General) Inner Product 관계이다.</p>
 
 <h2 id="bilinear-mapping">Bilinear mapping</h2>
 
-<h3 id="정의-1">정의</h3>
+<h3 id="정의-2">정의</h3>
 <p>두개의 arguments(벡터)를 받아서 출력(매핑)시키는 것을 뜻한다.(i.e.  \(\mathbf\Omega(x,y)\) )</p>
 
-<h3 id="설명-1">설명</h3>
+<h3 id="조건-1">조건</h3>
 <p>두 가지 조건을 모두 만족해야 한다.</p>
 <ul>
   <li>\(\mathbf{\Omega(\lambda x+\psi y,z)=\lambda\Omega(x,z)+\psi\Omega(y,z)}\) 
@@ -259,7 +259,7 @@ If  \(\forall\mathbf{x}\in\mathbf{V}-\{0\}: \mathbf{\Omega(x,x)&gt;0}\)  and  \(
 
 <h2 id="general-inner-product">General Inner Product</h2>
 
-<h3 id="정의-2">정의</h3>
+<h3 id="정의-3">정의</h3>
 
 <p>Positive definite 하고 Symmetric한 bilinear mapping을 의미한다.</p>
 
@@ -320,7 +320,7 @@ i.e :  \(\mathbf{V}\)  가  \(\mathbb{R}^n\) 이고, &lt;&gt;이 dot product라�
 
 \[A_{ij} \equiv &lt;\mathbf{b_i,b_j}&gt;\]
 
-<h3 id="properties">Properties</h3>
+<h3 id="특성">특성</h3>
 <ul>
   <li>Symmetric Matrix
  \(\because A_{ij}=&lt;b_i,b_j&gt;=&lt;b_j,b_i&gt;=A_{ji}\)</li>
