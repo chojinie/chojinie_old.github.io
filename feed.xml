@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T01:42:05+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T01:59:42+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">norm</title><link href="https://chojinie.github.io/blog/2023/math-norm/" rel="alternate" type="text/html" title="norm" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/math-norm</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/math-norm/"><![CDATA[<h2 id="norms">Norms</h2>
 
 <h3 id="정의">정의</h3>
@@ -188,7 +188,7 @@ Norm = Inner product에 square(루트)를 씌운 것. (length)</p>
     <p>Distance
 두 점 간의 norm 형태</p>
   </li>
-</ul>]]></content><author><name></name></author><category term="study" /><category term="math" /><category term="study" /><category term="math" /><summary type="html"><![CDATA[recording_a Summary of math]]></summary></entry><entry><title type="html">support vector machine(SVM)</title><link href="https://chojinie.github.io/blog/2023/support-vector-machine/" rel="alternate" type="text/html" title="support vector machine(SVM)" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/support-vector-machine</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/support-vector-machine/"><![CDATA[<p>처음 접하게 된 SVM을 정확히 이해하려고 노력했습니다. UNIST 유재준 교수님의 블로그(하단의 참고에 출처)와 Mathmatic for ML교재를 바탕으로 공부 내용을 정리하고자 합니다. SVM은 아직까지도 많은 응용 분야에서 최첨단 결과를 제공하며, 실질적인 이론적 보장을 제공합니다 (Steinwart and Christmann, 2008).</p>
+</ul>]]></content><author><name></name></author><category term="study" /><category term="math" /><category term="study" /><category term="math" /><summary type="html"><![CDATA[recording_a Summary of math]]></summary></entry><entry><title type="html">support vector machine(SVM)</title><link href="https://chojinie.github.io/blog/2023/support-vector-machine/" rel="alternate" type="text/html" title="support vector machine(SVM)" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/support-vector-machine</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/support-vector-machine/"><![CDATA[<p>처음 접하게 된 SVM을 정확히 이해하려고 노력했습니다. UNIST 유재준 교수님의 블로그(하단의 참고에 출처)와 Mathmatic for ML교재를 바탕으로 공부 내용을 정리하고자 합니다. SVM은 매우 아름답고 탄탄한 이론적인 배경을 바탕(Steinwart and Christmann, 2008)으로 정교하게 고안된 기계학습 알고리즘이며, 실제 적용이 여러 모로 쉽고 성능이 강력하며 따라서 실전적이라는 점이 매력적이라고 합니다.</p>
 
 <h2 id="classification-with-support-vector-machines">Classification with Support Vector Machines</h2>
 
@@ -203,7 +203,54 @@ Norm = Inner product에 square(루트)를 씌운 것. (length)</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"How do we divide the space with decision boundaries?"
 </code></pre></div></div>
 
-<p>회귀와 마찬가지로 binary 레이블 \(y_n \in \{+1, -1\}\) 와 짝을 이루는 example \(x_n \in \mathbb{r}^D\) 의 집합에서 지도 학습 task를 갖고 있습니다. example-레이블 쌍 {(x1, y1), …, (xN, yN)}로 구성된 훈련 데이터 세트가 주어졌을 때, 최소의 분류 오류를 얻는 모델의 매개변수를 추정하고자 합니다. 선형/비선형 모델을 모두 고려해야하지만, 당장은 선형 모델만을 고려하겠습니다.</p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/svm/pic4-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/svm/pic4-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/svm/pic4-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/svm/pic4.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>위 그림에서 보면 ‘+’ example과 ‘-‘ example을 어떻게 구별 할 수 있을까?
+어떻게 최대한 그 둘 간의 구분을 지어 놓을까에 대해 고민하는 것으로 해석 할 수 있겠습니다.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/svm/pic5-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/svm/pic5-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/svm/pic5-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/svm/pic5.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>이런식으로 -와 + example이 가장 맞닿아 있는 부분들(노란 실선)로 부터 특정 간격만큼의 거리가 벌려져서 가장 넓어 질 수 있는 라인(빨간 점선)을 정하면 될 것 같습니다.</p>
+
+<p>살짝 복잡하게 말해보면, 이는 회귀와 마찬가지로 binary 레이블 \(y_n \in \{+1, -1\}\) 와 짝을 이루는 example \(x_n \in \mathbb{r}^D\) 의 집합에서 지도 학습 task를 갖고 있습니다. example-레이블 쌍 {(x1, y1), …, (xN, yN)}로 구성된 훈련 데이터 세트가 주어졌을 때, 최소의 분류 오류를 얻는 모델의 매개변수를 추정하는 것 입니다. 선형/비선형 모델을 모두 고려해야하지만, 당장은 선형 모델만을 고려하겠습니다.</p>
 
 <p>이진 분류를 SVM을 사용하여 설명하는 데에는 두 가지 주요 이유가 있습니다. 첫째, SVM은 지도 학습의 기하학적인 관점을 고려할 수 있게 해줍니다. 두 번째는 SVM의 최적화 문제가 해석적인 해를 가지지 않아 다양한 최적화 도구를 활용해야 한다는 점입니다.</p>
 
