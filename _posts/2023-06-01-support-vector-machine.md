@@ -79,7 +79,7 @@ $$ \theta $$ 만큼의 각도를 가지며 $$ \vec{a} $$와 $$ \vec{b} $$가 내
 
 길이가 너무 길어서 간격을 벗어나면 '+', 너무 짧아서 간격에 못미치면 '-'를 분류해 내는 것입니다. 임의의 상수 b와 크기를 비교하는 식으로 일반화 시킬 수 있습니다.
 \begin{equation}
-\vec{w} \cdot \vec{u} + b \ge 0 \qquad then \; "+"
+\vec{w} \cdot \vec{u} + b \ge 0 \qquad then \; +
 \end{equation}
 
 하지만 일반화 식에서 \vec{w} 와 b는 어떤 값을 잡아야하는지 전혀 알 수 가 없습니다. under constraint 상황이기 때문에 constraint (제약) 조건을 추가하는 작업을 아래에서 해 나갈 예정입니다.
@@ -97,7 +97,7 @@ $$ \theta $$ 만큼의 각도를 가지며 $$ \vec{a} $$와 $$ \vec{b} $$가 내
 즉 decision rule이 최소한 1보다 크거나 -1보다 작은 값을 주도록 해봤습니다. 두 개의 식을 하나의 변수를 추가하여 하나의 식으로 변경해 보도록 하죠.(변수를 추가하는 수학적 의미는 거창한게 아니라 편하려고 도입한 것입니다.)
 
 \begin{equation} y_i =
-\left\{ 
+{ 
   \begin{array} 
   1 & for \; +\\ 
   -1 & for \; -
