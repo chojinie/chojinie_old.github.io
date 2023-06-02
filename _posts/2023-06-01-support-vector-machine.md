@@ -96,7 +96,10 @@ $$ \theta $$ 만큼의 각도를 가지며 $$ \vec{a} $$와 $$ \vec{b} $$가 내
 
 즉 decision rule이 최소한 1보다 크거나 -1보다 작은 값을 주도록 해봤습니다. 두 개의 식을 하나의 변수를 추가하여 하나의 식으로 변경해 보도록 하죠.(변수를 추가하는 수학적 의미는 거창한게 아니라 편하려고 도입한 것입니다.)
 
-$$ y_i = \Big\{ 1 \qquad for "+"  \\ -1 \qquad for "-" $$
+\begin{equation} y_i = 
+\begin{array} 1 \qquad for \; '+'  \\ -1 \qquad for \; '-' $$
+\end{array}
+\end{equation}
 
 $$ y_i $$ 를 (3) 식에 각각 곱해 줍니다.
 아래와 같이 두개의 식을 하나의 식으로 묶어서 표현할 수 있게 됩니다.
