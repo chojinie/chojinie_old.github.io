@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T04:23:46+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T04:27:47+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">norm</title><link href="https://chojinie.github.io/blog/2023/math-norm/" rel="alternate" type="text/html" title="norm" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/math-norm</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/math-norm/"><![CDATA[<h2 id="norms">Norms</h2>
 
 <h3 id="정의">정의</h3>
@@ -332,7 +332,10 @@ SVM의 기계 학습 관점은 최대 우도 관점과 약간 다릅니다. 최�
 
 <p>즉 decision rule이 최소한 1보다 크거나 -1보다 작은 값을 주도록 해봤습니다. 두 개의 식을 하나의 변수를 추가하여 하나의 식으로 변경해 보도록 하죠.(변수를 추가하는 수학적 의미는 거창한게 아니라 편하려고 도입한 것입니다.)</p>
 
-\[y_i = \Big\{ 1 \qquad for "+"  \\ -1 \qquad for "-"\]
+<p>\begin{equation} y_i = 
+\begin{array} 1 \qquad for \; ‘+’  \ -1 \qquad for \; ‘-‘ $$
+\end{array}
+\end{equation}</p>
 
 <p>\(y_i\) 를 (3) 식에 각각 곱해 줍니다.
 아래와 같이 두개의 식을 하나의 식으로 묶어서 표현할 수 있게 됩니다.</p>
