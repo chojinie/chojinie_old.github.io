@@ -106,7 +106,7 @@ $$ \theta $$ 만큼의 각도를 가지며 $$ \vec{a} $$와 $$ \vec{b} $$가 내
 \begin{equation}
 y_i =
 \begin{cases}
-    1 & \text{for '+' } \\ 
+    1 & \text{for '+' }  
     -1 & \text{for '-' }
 \end{cases}
 \end{equation}
