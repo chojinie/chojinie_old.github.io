@@ -1,6 +1,6 @@
 ---
 layout: post
-title: support vector machine(SVM)
+title: support \vector machine(SVM)
 date: 2023-06-01
 description: recording_a Summary of math
 tags: study math
@@ -13,13 +13,13 @@ toc:
 
 처음 접하게 된 SVM을 정확히 이해하려고 노력했습니다. UNIST 유재준 교수님의 블로그(하단의 참고에 출처)와 Mathmatic for ML교재를 바탕으로 공부 내용을 정리하고자 합니다. SVM은 매우 아름답고 탄탄한 이론적인 배경을 바탕(Steinwart and Christmann, 2008)으로 정교하게 고안된 기계학습 알고리즘이며, 실제 적용이 여러 모로 쉽고 성능이 강력하며 따라서 실전적이라는 점이 매력적이라고 합니다.
 
-## Classification with Support Vector Machines
+## Classification with Support \Vector Machines
 
 많은 경우에 우리는 다양한 선택지 중에서 옳은 답을 결정하는 머신러닝 알고리즘을 바랄 것입니다. 예를 들어, 스팸 메일 분류 기능에서는 스팸 메일과 정상 메일을 분류해 낼 수 있죠. 이렇게 오직 두개의 결과만을 바라 보고 어떤 결과에 해당되는지를 분류해내는 분야를 Binary Classification(이진 분류)이라 합니다. 출력이 분류값으로 가질 수 있는 오직 두개의 클래스를 \{+1, -1 \} 으로 나타내겠습니다. 아래와 같은 수식으로 표현하게 됩니다.
 
-\begin{equation} f : \mathbb{R}^D \rightarrow \{+1, -1 \} \end{equation}
+\begin{equation} f : \mathbb{R}^D \rightarrow \{ +1, -1 \} \end{equation}
 
-각각의 example (데이터 포인트) $$ x_n $$ 은 D개의 실수로 구성된 피처 벡터로 나타냅니다. 레이블은 일반적으로 양성 클래스(+1)와 음성 클래스(-1)로 구분됩니다. 이진 분류작업에 사용되는 SVM (Support Vector Machine)이라고 하는 접근 방식을 소개하겠습니다. 
+각각의 example (데이터 포인트) $$ x_n $$ 은 D개의 실수로 구성된 피처 벡터로 나타냅니다. 레이블은 일반적으로 양성 클래스(+1)와 음성 클래스(-1)로 구분됩니다. 이진 분류작업에 사용되는 SVM (Support \Vector Machine)이라고 하는 접근 방식을 소개하겠습니다. 
 
 SVM이 풀고자하는 문제는 다음과 같습니다.
 
@@ -73,12 +73,18 @@ SVM의 기계 학습 관점은 최대 우도 관점과 약간 다릅니다. 최�
     </div>
 </div>
 
-\theta 만큼의 각도를 가지며 $$ vec{a} $$와 $$ vec{b} $$가 내적하는 경우를 상상해봅시다. 만약 두 벡터가 X,Y평면에 있다고 생각하면 $$ vec{a} $$는 x, y 성분으로 분리할 수 있겠죠. $$ vec{b} $$ 가 x축이라고 여기면, projection된 a는 b벡터 방향(x축 방향)의 x성분 만큼의 크기를 갖는 $$ acos\theta $$의 벡터 형태로 변하게 됩니다. 이를 b와 곱한 것이 내적의 표현입니다.
+$$ \theta $$ 만큼의 각도를 가지며 $$ \vec{a} $$와 $$ \vec{b} $$가 내적하는 경우를 상상해봅시다. 만약 두 벡터가 X,Y평면에 있다고 생각하면 $$ \vec{a} $$는 x, y 성분으로 분리할 수 있겠죠. $$ \vec{b} $$ 가 x축이라고 여기면, projection된 a는 b벡터 방향(x축 방향)의 x성분 만큼의 크기를 갖는 $$ acos\theta $$의 벡터 형태로 변하게 됩니다. 이를 b와 곱한 것이 내적의 표현입니다.
 
-다시 $$ vec{w} $$, $$ vec {u} $$의 입장으로 돌아가 보겠습니다. $$ vec {u} $$는 $$ vec {w} $$와 \theta 만큼 각도를 가지며 u는 w방향 성분만큼 projection되어 $$ ucos\theta $$ 벡터로 변할 것입니다. 그리고 $$ \vec{u} \dot \vec{v} = \vec{u}\vec{v}cos\theta $$ 의 크기를 갖는 선이 될 것입니다. 그 선의 크기(길이)의 의미는 그래프의 원점으로 부터 간격이 있는 방향으로 얼마만큼 멀리 떨어져 있느냐를 얘기합니다.
+다시 $$ \vec{w} $$, $$ \vec {u} $$의 입장으로 돌아가 보겠습니다. $$ \vec {u} $$는 $$ \vec {w} $$와 \theta 만큼 각도를 가지며 u는 w방향 성분만큼 projection되어 $$ ucos\theta $$ 벡터로 변할 것입니다. 그리고 $$ \vec{u} \cdot \vec{v} = \vec{u}\vec{v}cos\theta $$ 의 크기를 갖는 선이 될 것입니다. 그 선의 크기(길이)의 의미는 그래프의 원점으로 부터 간격이 있는 방향으로 얼마만큼 멀리 떨어져 있느냐를 얘기합니다.
 
-길이가 너무 길어서 간격을 벗어나면 '+', 너무 짧아서 간격에 못미치면 '-'를 분류해 내는 것입니다. 임의의 상수 b와 크기를 비교하는 식으로 일반화 시킬 수 있을 것 같습니다.
+길이가 너무 길어서 간격을 벗어나면 '+', 너무 짧아서 간격에 못미치면 '-'를 분류해 내는 것입니다. 임의의 상수 b와 크기를 비교하는 식으로 일반화 시킬 수 있습니다.
+\begin{equation}
+\vec{w} \cdot \vec{u} + b \ge 0 then '+'
+\end{equation}
 
+하지만 일반화 식에서 \vec{w} 와 b는 어떤 값을 잡아야하는지 전혀 알 수 가 없습니다. under constraint 상황이기 때문에 constraint (제약) 조건을 추가하는 작업을 아래에서 해 나갈 예정입니다.
+
+### Design and Add additional constraints
 
 SVM을 훈련하기 위한 최적화 문제를 유도해 보도록 하겠습니다. 직관적으로, 우리는 이진 분류 데이터를 상상해볼 수 있습니다. 데이터는 위의 그림처럼 Hyperplane(초평면)으로 분리될 수 있습니다. 여기에서 모든 example $$ x_n $$ (2차원 벡터)은 2차원 위치 $$ (x_n^{(1)}, x_n^{(2)}) $$이고, 해당하는 이진 레이블 $$ y_n $$은 두 가지 다른 기호 (주황색 엑스표시 또는 파란색 원모양) 중 하나입니다. "Hyperplane"은 기계 학습에서 흔히 사용되는 용어입니다. Hyperplane은 차원이 D - 1인 (해당하는 벡터 공간이 차원 D인 경우) 아핀 sub space입니다. 이 예제들은 두 개의 클래스로 구성되어 있으며 (두 가지 가능한 레이블이 있음), 이들을 직선으로 그려서 분리/분류할 수 있도록 특징들 (example을 나타내는 벡터의 구성 요소들)이 배열되어 있습니다.
 
@@ -108,7 +114,7 @@ hyperplane은 아핀 subspace입니다. 따라서 이진 분류 문제에서 두
     </div>
 </div>
 
-위 식에서 $$ w $$ 가 초공간에 수직인 normal vector임을 증명하기 위해 초공간 상의 임의의 두 example인 $$ x_a와 x_b $$를 선택하고 그 사이의 벡터가 $$ w $$와 수직임을 보일 수 있어야 합니다. 이를 수식으로 나타내면 아래와 같습니다. (두 번째 수식은 내적의 선형성에 의해 얻어집니다.)
+위 식에서 $$ w $$ 가 초공간에 수직인 normal \vector임을 증명하기 위해 초공간 상의 임의의 두 example인 $$ x_a와 x_b $$를 선택하고 그 사이의 벡터가 $$ w $$와 수직임을 보일 수 있어야 합니다. 이를 수식으로 나타내면 아래와 같습니다. (두 번째 수식은 내적의 선형성에 의해 얻어집니다.)
 
 \begein{equation}
 f(x_a) - f(x_b) = <w, x_a> + b - (<w, x_b> + b)
