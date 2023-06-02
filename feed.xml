@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T10:55:42+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-02T10:57:53+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">norm</title><link href="https://chojinie.github.io/blog/2023/math-norm/" rel="alternate" type="text/html" title="norm" /><published>2023-06-01T00:00:00+00:00</published><updated>2023-06-01T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/math-norm</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/math-norm/"><![CDATA[<h2 id="norms">Norms</h2>
 
 <h3 id="정의">정의</h3>
@@ -316,7 +316,7 @@ SVM의 기계 학습 관점은 최대 우도 관점과 약간 다릅니다. 최�
     </div>
 </div>
 
-<p>\(\theta\) 만큼의 각도를 가지며 \(\vec{a}\)와 \(\vec{b}\)가 내적하는 경우를 상상해봅시다. 만약 두 벡터가 X,Y평면에 있다고 생각하면 \(\vec{a}\)는 x, y 성분으로 분리할 수 있겠죠. \(\vec{b}\) 가 x축이라고 여기면, projection된 a는 b벡터 방향(x축 방향)의 x성분 만큼의 크기를 갖는 \(\vec{a}cos\theta\)의 벡터 형태로 변하게 됩니다. 이를 b와 곱한 것이 내적의 표현입니다.</p>
+<p>\(\theta\) 만큼의 각도를 가지며 \(\vec{a}\)와 \(\vec{b}\)가 내적하는 경우를 상상해봅시다. 만약 두 벡터가 X,Y평면에 있다고 생각하면 \(\vec{a}\)는 x, y 성분으로 분리할 수 있겠죠. \(\vec{b}\) 가 x축이라고 여기면, projection된 a는 b벡터 방향(x축 방향)의 x성분 만큼의 크기를 갖는 \(\left\vert a\right\vert cos\theta\)의 벡터 형태로 변하게 됩니다. 이를 b와 곱한 것이 내적의 표현입니다.</p>
 
 <p>다시 \(\vec{w}\), \(\vec {u}\)의 입장으로 돌아가 보겠습니다. \(\vec {u}\)는 \(\vec {w}\)와 \(\theta\) 만큼 각도를 가지며 u는 w방향 성분만큼 projection되어 \(\vec{u}cos\theta\) 벡터로 변할 것입니다. 그리고 \(\vec{u} \cdot \vec{v} = \vec{u}\vec{v}cos\theta\) 의 크기를 갖는 선이 될 것입니다. 그 선의 크기(길이)의 의미는 그래프의 원점으로 부터 간격이 있는 방향으로 얼마만큼 멀리 떨어져 있느냐를 얘기합니다.</p>
 
