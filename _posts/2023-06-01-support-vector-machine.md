@@ -45,7 +45,7 @@ SVM이 풀고자하는 문제는 다음과 같습니다.
 이런식으로 -와 + example이 가장 맞닿아 있는 부분들(노란 실선)로 부터 특정 간격만큼의 거리가 벌려져서 가장 넓어 질 수 있는 라인(빨간 점선)을 정하면 될 것 같습니다.
 
 <details>
-<summary>접기/펼치기</summary>
+<summary>추가 설명 펼치기/접기</summary>
 
 살짝 복잡하게 말해보면, 이는 회귀와 마찬가지로 binary 레이블 $$ y_n \in \{+1, -1\} $$ 와 짝을 이루는 example $$ x_n \in \mathbb{r}^D $$ 의 집합에서 지도 학습 task를 갖고 있습니다. example-레이블 쌍 {(x1, y1), ..., (xN, yN)}로 구성된 훈련 데이터 세트가 주어졌을 때, 최소의 분류 오류를 얻는 모델의 매개변수를 추정하는 것 입니다. 선형/비선형 모델을 모두 고려해야하지만, 당장은 선형 모델만을 고려하겠습니다.
 
@@ -132,14 +132,16 @@ y_i ( \vec{w} \cdot \vec{x_i} + b ) -1 = 0 \qquad for \; \vec{x_i} \in 노란선
 </div>
 
 \begin{equation}
-WIDTH = (x_+ \; - x_-) \; \cdot \; \frac{\vec{w}}{\lVert vec{w} \rVert}
+WIDTH = (x_+ \; - x_-) \; \cdot \; \frac{\vec{w}}{\lVert \vec{w} \rVert}
 \end{equation}
 
 위의 노란선 위에 example이 놓였을 때의 수식 덕분에 WIDTH의 분자를 계산하면 아래와 같이 표현할 수 있습니다.
 
 \begin{equation}
-WIDTH = \frac{2}{\lVert vec{w} \rVert}
+WIDTH = \frac{2}{\lVert \vec{w} \rVert}
 \end{equation}
+
+
 
 SVM을 훈련하기 위한 최적화 문제를 유도해 보도록 하겠습니다. 직관적으로, 우리는 이진 분류 데이터를 상상해볼 수 있습니다. 데이터는 위의 그림처럼 Hyperplane(초평면)으로 분리될 수 있습니다. 여기에서 모든 example $$ x_n $$ (2차원 벡터)은 2차원 위치 $$ (x_n^{(1)}, x_n^{(2)}) $$이고, 해당하는 이진 레이블 $$ y_n $$은 두 가지 다른 기호 (주황색 엑스표시 또는 파란색 원모양) 중 하나입니다. "Hyperplane"은 기계 학습에서 흔히 사용되는 용어입니다. Hyperplane은 차원이 D - 1인 (해당하는 벡터 공간이 차원 D인 경우) 아핀 sub space입니다. 이 예제들은 두 개의 클래스로 구성되어 있으며 (두 가지 가능한 레이블이 있음), 이들을 직선으로 그려서 분리/분류할 수 있도록 특징들 (example을 나타내는 벡터의 구성 요소들)이 배열되어 있습니다.
 
