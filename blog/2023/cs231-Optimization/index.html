@@ -256,7 +256,7 @@ for i in range(1000):
 
 <p>좋은 방향을 무작위로 탐색할 필요는 없습니다. 손실을 가장 급격하게 감소시키는 방향을 수학적으로 계산하여 가중치 벡터를 변경해야 할 최적의 방향을 구할 수 있습니다. 이 방향은 손실 함수의 그래디언트와 관련이 있습니다. 두 번째 전략과 컨셉이 비슷하죠. 그래디언트는 입력 공간의 각 차원에 대한 기울기의 벡터(도함수:derivatives)입니다. 수학적 표현으로는 아래와 같이 나타낼 수 있습니다.</p>
 
-<p>\begein{equation}
+<p>\begin{equation}
 \frac{df(x)}{dx} = \lim{h \to 0}\frac{f(x+h)-f(x)}{h}
 \end{equation}</p>
 
@@ -298,10 +298,8 @@ L_i = \sum{j \ne y_i}[max(0, {w_j}^T{x_i} - {w_{y_i}}^T{x_i} + \Delta)]
 gradient를 구해 봤습니다.
 
 \begin{equation}
-\nabla{w{y_i}}L_i = -(\sum{j \ne y_i}\mathbb{1}({w_j}^T{x_i} - 
-{w{y_i}}^T{x_i} + \Delta &gt; 0)x_i
+\nabla{w{y_i}}L_i = -(\sum{j \ne y_i}\mathbb{1}({w_j}^T{x_i} - {w{y_i}}^T{x_i} + \Delta &gt; 0)x_i
 \end{equation}
-
 
 $$ \mathbb{1} $$은 내부 조건이 참이면 1이고 그렇지 않으면 0인 indicator function입니다.
 주어진 문장은 정확한 클래스에 해당하는 W의 행에 대한 기울기만을 설명하며, 코드로 구현할 때는 원하는 
