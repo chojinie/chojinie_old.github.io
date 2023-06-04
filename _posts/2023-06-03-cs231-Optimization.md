@@ -193,5 +193,8 @@ Gradient Descent(SGD)(또는 때때로 온라인 Gradient Descent)라고 합니�
 descent"를 나타내는 BGD와 같은 용어는 드물게 사용됩니다.) 보통 미니배치가 사용된다고 가정합니다. 
 미니배치의 크기는 하이퍼파라미터이지만 이를 교차 검증하는 것은 그리 일반적이지 않습니다.
 
+다음 글에서는 SGD를 비롯하여 최적화에 사용되는 알고리즘들에 대해 조금 더 살펴보도록 하겠습니다.
+
 ## 참고
 http://cs231n.stanford.edu/schedule.html
+https://imgur.com/a/Hqolp#NKsFHJb
