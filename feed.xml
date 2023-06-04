@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-04T04:56:38+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://chojinie.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chojinie.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-04T05:06:56+00:00</updated><id>https://chojinie.github.io/feed.xml</id><title type="html">Cho HyunJin</title><subtitle>M.S student | Machine Learning Computer Vision
 </subtitle><entry><title type="html">cs231n Summary - Optimization</title><link href="https://chojinie.github.io/blog/2023/cs231-Optimization/" rel="alternate" type="text/html" title="cs231n Summary - Optimization" /><published>2023-06-03T00:00:00+00:00</published><updated>2023-06-03T00:00:00+00:00</updated><id>https://chojinie.github.io/blog/2023/cs231-Optimization</id><content type="html" xml:base="https://chojinie.github.io/blog/2023/cs231-Optimization/"><![CDATA[<h2 id="optimization">Optimization</h2>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -128,6 +128,7 @@ gradient를 구해 봤습니다.
 \nabla{w{y_i}}L_i = -(\sum{j \ne y_i}\mathbb{1}({w_j}^T{x_i} - 
 {w{y_i}}^T{x_i} + \Delta &gt; 0)x_i
 \end{equation}
+
 
 $$ \mathbb{1} $$은 내부 조건이 참이면 1이고 그렇지 않으면 0인 indicator function입니다.
 주어진 문장은 정확한 클래스에 해당하는 W의 행에 대한 기울기만을 설명하며, 코드로 구현할 때는 원하는 
