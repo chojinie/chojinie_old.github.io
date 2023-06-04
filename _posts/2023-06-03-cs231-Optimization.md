@@ -196,5 +196,5 @@ descent"를 나타내는 BGD와 같은 용어는 드물게 사용됩니다.) 보
 다음 글에서는 SGD를 비롯하여 최적화에 사용되는 알고리즘들에 대해 조금 더 살펴보도록 하겠습니다.
 
 ## 참고
-http://cs231n.stanford.edu/schedule.html
+http://cs231n.stanford.edu/schedule.html<br>
 https://imgur.com/a/Hqolp#NKsFHJb
