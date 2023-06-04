@@ -289,10 +289,12 @@ f, 벡터 x를 사용하고 x에서 f의 기울기를 반환하는 일반 함수
 <p>
 그래디언트 계산에 하나의 에시를 들어 보겠습니다. 하나의 데이터 포인트에 대한 SVM 손실 함수를 사용하겠습니다.
 \begin{equation}
+
 L_i = \sum{j \ne y_i}[max(0, {w_j}^T{x_i} - {w_{y_i}}^T{x_i} + \Delta)]
+
 \end{equation}
 
-가중치인 w에 대하여 함수 간에 차를 구할 수 있습니다. 아래 예시는 $$ w{y_y_i} $$에 대한 
+가중치인 w에 대하여 함수 간에 차를 구할 수 있습니다. 아래 예시는 $$ w{y_i} $$에 대한 
 gradient를 구해 봤습니다.
 
 \begin{equation}
@@ -300,7 +302,7 @@ gradient를 구해 봤습니다.
 {w{y_i}}^T{x_i} + \Delta &gt; 0)x_i
 \end{equation}
 
-$$ \mathbbb{1} $$은 내부 조건이 참이면 1이고 그렇지 않으면 0인 indicator function입니다.
+$$ \mathbb{1} $$은 내부 조건이 참이면 1이고 그렇지 않으면 0인 indicator function입니다.
 주어진 문장은 정확한 클래스에 해당하는 W의 행에 대한 기울기만을 설명하며, 코드로 구현할 때는 원하는 
 마진을 충족하지 못한 클래스의 개수를 간단히 계산하는 것으로 이해하시면 됩니다. 원하는 마진을 충족하지 
 못한 클래스의 개수에 따라 데이터 벡터 xi를 해당 개수로 곱하여 스케일링한 값이 기울기가 됩니다. 주어진 
@@ -313,8 +315,54 @@ $$ \mathbbb{1} $$은 내부 조건이 참이면 1이고 그렇지 않으면 0인
 \nabla{w{y_i}}L_i = \mathbb{1}({w_j}^T{x_i} - 
 {w{y_i}}^T{x_i} + \Delta &gt; 0)x_i
 \end{equation}
-
 </p>
+
+<h3 id="gradient-descent-경사-하강법">Gradient Descent (경사 하강법)</h3>
+
+<p>이제 손실 함수의 그래디언트를 계산할 수 있게 되었습니다. 그래디언트를 반복적으로 평가한 다음 매개변수 
+업데이트를 수행하는 절차를 경사 하강법(Gradient Descent)라고 합니다. <strong>바닐라</strong> 버전은 
+다음과 같습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Vanilla Gradient Descent
+
+while True:
+  weights_grad = evaluate_gradient(loss_fun, data, weights)
+  weights += - step_size * weights_grad # perform parameter update
+</code></pre></div></div>
+<p>경사 하강법은 현재까지 신경망 손실 기능을 최적화하는 가장 일반적이고 확립된 방법입니다.<br></p>
+
+<p><strong>Mini-batch gradient descent</strong>. 대규모 애플리케이션(예: ILSVRC 챌린지)에서 훈련 데이터는 
+수백만 개의 example을 가질 수 있습니다. 따라서 하나의 매개변수 업데이트만 수행하기 위해 전체 훈련 
+세트에 대해 전체 손실 함수를 계산하는 것은 낭비인 것 같습니다. 이 문제를 해결하는 가장 일반적인 접근 
+방식은 데이터 셋의 일부분인 ‘배치’에 대한 기울기만을 계산하는 것입니다. 예를 들어, 최신 
+ConvNets에서 일반적인 배치에는 120만 개의 전체 교육 세트에서 256개의 example이 포함됩니다. 그런 
+다음 이 배치를 사용하여 매개변수 업데이트를 수행합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Vanilla Minibatch Gradient Descent
+
+while True:
+  data_batch = sample_training_data(data, 256) # sample 256 examples
+  weights_grad = evaluate_gradient(loss_fun, data_batch, weights)
+  weights += - step_size * weights_grad # perform parameter update
+</code></pre></div></div>
+<p>이것이 잘 작동하는 이유는 훈련 데이터의 예가 서로 연관되어 있기 때문입니다. ILSVRC의 120만 이미지 
+모두가 실제로 단 1000개의 고유한 이미지(각 클래스에 대해 하나씩, 즉 각 이미지의 동일한 복사본 
+1200개)의 정확한 복제본으로 구성되는 극단적인 경우를 고려해보겠습니다. 1200개의 동일한 복사본 모두에 
+대해 계산할 그래디언트는 동일하게 됩니다.그리고 120만개의 이미지 전체에 대한 데이터 손실을 평균화하면 
+1000개의 작은 subset에서만 평가한 것과 정확히 동일한 손실이 발생합니다. 물론 실제로 데이터 세트에는 
+중복 이미지가 포함되지 않으며 미니 배치의 그래디언트는 전체 목적의 그래디언트에 대한 좋은 근사치로 
+여기는 것입니다. 따라서 더 자주 매개변수 업데이트를 수행하기 위해 미니 배치 기울기를 평가하여 실제로 
+훨씬 더 빠른 수렴을 달성할 수 있습니다.</p>
+
+<h4 id="stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</h4>
+<p>이것의 극단적인 경우는 미니 배치가 하나의 example만 포함하는 설정입니다. 이 프로세스를 Stochastic 
+Gradient Descent(SGD)(또는 때때로 온라인 Gradient Descent)라고 합니다. 실제로는 벡터화된 
+코드 최적화로 인해 하나의 example에 대한 그래디언트를 100번 평가하는 것보다 100개의 example에 
+대한 그래디언트를 평가하는 것이 훨씬 더 계산적으로 효율적일 수 있기 때문에 이것은 상대적으로 덜 
+일반적입니다. 하지만 사람들은 미니배치 경사 하강법을 참조할 때에도 일반적으로 “SGD”라는 용어를 
+사용합니다. (즉, “Minibatch Gradient Descent”를 나타내는 MGD나 “Batch gradient 
+descent”를 나타내는 BGD와 같은 용어는 드물게 사용됩니다.) 보통 미니배치가 사용된다고 가정합니다. 
+미니배치의 크기는 하이퍼파라미터이지만 이를 교차 검증하는 것은 그리 일반적이지 않습니다.</p>
 
 <h2 id="참고">참고</h2>
 <p>http://cs231n.stanford.edu/schedule.html</p>
