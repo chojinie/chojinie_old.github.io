@@ -36,8 +36,15 @@ Structure from Motion(SfM)을 다시 정리하고자 한다. 해당 알고리즘
 
 모든 점들은 coplanar에 있기 때문에, 각 x, x'에서 ray back-projection을 할 경우 X에서 교차한다는 것을 알 수 있고, 이 특성이 점들 간의 상관 관계를 찾게 해주는 강력한 constraint로 작용한다.
 
+(3) 선분인 l\prime 은 반대편 x와 관계가 있다고 볼 수 있다. C로부터 ray back하는 이미지를 나타내기 때문이다. l\prime을 점 x와 관련이 있는 *epipolar line* 이라고 한다.
+(4) 이러한 해석의 장점은 x와 관련이 있는 점을 C'에서 바라보는 이미지 평면의 모든 점에서 찾을 필요가 없고, l\prime 위에서만 제한적으로 찾을 수 있다는 것이다.
+
+* epipole은 점이다. 카메라 중심끼리 연결한 선분이 이미지 평면과 만나는 점들(e, e')
+* epipolar plane은 baseline을 포함하는 평면을 의미한다.
+* epipolar line은 epipolar plane과 image plane이 교차하는 선분을 의미한다.
 
 
+다음 글에서 Fundamental Matrix에 대해 살펴본다.
 
 ## 참고
 https://cmsc426.github.io/sfm/<br>
