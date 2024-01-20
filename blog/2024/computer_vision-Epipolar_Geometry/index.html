@@ -10,9 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>a post with custom blockquotes | Cho HyunJin</title>
+    <title>Epipolar_Geometry | Cho HyunJin</title>
     <meta name="author" content="hyunJin real Cho">
-    <meta name="description" content="an example of a blog post with custom blockquotes">
+    <meta name="description" content="recording_a Summary of lecture">
 
 
     <!-- Bootstrap & MDB -->
@@ -31,13 +31,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%90%A5&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://chojinie.github.io/blog/2023/custom-blockquotes/">
+    <link rel="canonical" href="https://chojinie.github.io/blog/2024/computer_vision-Epipolar_Geometry/">
 
     <!-- Dark Mode -->
     
@@ -129,20 +132,30 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
 
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">a post with custom blockquotes</h1>
-    <p class="post-meta">May 12, 2023</p>
+    <h1 class="post-title">Epipolar_Geometry</h1>
+    <p class="post-meta">January 20, 2024</p>
     <p class="post-tags">
-      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
         ·  
-        <a href="/blog/category/sample-posts">
-          <i class="fas fa-tag fa-sm"></i> sample-posts</a>  
-          <a href="/blog/category/blockquotes">
-          <i class="fas fa-tag fa-sm"></i> blockquotes</a>  
+        <a href="/blog/tag/study">
+          <i class="fas fa-hashtag fa-sm"></i> study</a>  
+          
+        ·  
+        <a href="/blog/category/study">
+          <i class="fas fa-tag fa-sm"></i> study</a>  
           
 
     </p>
@@ -151,107 +164,58 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>This post shows how to add custom styles for blockquotes. Based on <a href="https://github.com/sighingnow/jekyll-gitbook" rel="external nofollow noopener" target="_blank">jekyll-gitbook</a> implementation.</p>
+      <h2 id="epipolar-geometry">Epipolar Geometry</h2>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
-<p>We decided to support the same custom blockquotes as in <a href="https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html" rel="external nofollow noopener" target="_blank">jekyll-gitbook</a>, which are also found in a lot of other sites’ styles. The styles definitions can be found on the <a href="https://github.com/alshedivat/al-folio/blob/master/_sass/_base.scss" rel="external nofollow noopener" target="_blank">_base.scss</a> file, more specifically:</p>
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/epipolar-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/epipolar-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/epipolar-1400.webp"></source>
+    
 
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Tips, warnings, and dangers */</span>
-<span class="nc">.post</span> <span class="nc">.post-content</span> <span class="nt">blockquote</span> <span class="p">{</span>
-    <span class="k">&amp;</span><span class="nc">.block-tip</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-bg</span><span class="p">);</span>
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/epipolar.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
+  </picture>
 
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-tip-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+</figure>
 
-  <span class="k">&amp;</span><span class="nc">.block-warning</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-bg</span><span class="p">);</span>
+    </div>
+</div>
 
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
+<p>CV를 복습하기 위해 작성하는 글.
+Structure from Motion(SfM)을 다시 정리하고자 한다. 해당 알고리즘은 여러 단계의 기법들을 이해해야 하는데,
+정의나 이런건 다른 포스트에서 기법들을 한대 모아서 설명하도록하고, 여기서는 두 이미지 상의 포인트들의 상관 관계를 정의하는 <em>Fundamental Matrix</em> 를 이해하기 ‘위한’ Epipolar Geometry를 정리한다.</p>
 
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-warning-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<h3 id="설명">설명</h3>
+<p>
+(1)상기 이미지에서 3D-space 상의 한 점 \mathbf{X} 을 양 쪽 카메라의 중심 \mathbf{C} , \mathbf{C\prime} 에서 봤을 때, 이미지 평면에 보이는 점은 각각 \mathbf{x}와 \mathbf{x\prime} 라고 하자. 여기서 \mathbf{x}와 \mathbf{x\prime} 간의 관계를 수식적으로 나타내는 것을 epipolar geometry라고 한다. 즉, 둘 중 한 점만 알더라도 어떠한 기하학적 관계에 따라 나머지 점의 위치를 정확히 예측할 수 있는 것이다. </p>
 
-  <span class="k">&amp;</span><span class="nc">.block-danger</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block</span><span class="p">);</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-bg</span><span class="p">);</span>
+<p>(2) 그림에서 볼 수 있는 모든 점 x, x’, X, C, C’은 모두 같은 평면에 있는 관계이다 (coplanar에 점들이 존재한다고 표현할 수 있음) 그리고 아래와 같은 관계식으로 표현할 수 있다. 해당 평면은 \pi라고 정의할 수 있다. 
+‘’’
+\begin{equation}
+\vec{Cx} \cdot (\vec{CC’} \times \vec{C\prime x\prime}) = 0
+\end{equation}
+‘’’</p>
 
-    <span class="nt">p</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-text</span><span class="p">);</span>
-    <span class="p">}</span>
+<p>모든 점들은 coplanar에 있기 때문에, 각 x, x’에서 ray back-projection을 할 경우 X에서 교차한다는 것을 알 수 있고, 이 특성이 점들 간의 상관 관계를 찾게 해주는 강력한 constraint로 작용한다.</p>
 
-    <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">global-danger-block-title</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>(3) 선분인 l\prime 은 반대편 x와 관계가 있다고 볼 수 있다. C로부터 ray back하는 이미지를 나타내기 때문이다. l\prime을 점 x와 관련이 있는 <em>epipolar line</em> 이라고 한다.
+(4) 이러한 해석의 장점은 x와 관련이 있는 점을 C’에서 바라보는 이미지 평면의 모든 점에서 찾을 필요가 없고, l\prime 위에서만 제한적으로 찾을 수 있다는 것이다.</p>
 
-<p>A regular blockquote can be used as following:</p>
+<ul>
+  <li>epipole은 점이다. 카메라 중심끼리 연결한 선분이 이미지 평면과 만나는 점들(e, e’)</li>
+  <li>epipolar plane은 baseline을 포함하는 평면을 의미한다.</li>
+  <li>epipolar line은 epipolar plane과 image plane이 교차하는 선분을 의미한다.</li>
+</ul>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; This is a regular blockquote</span>
-<span class="gt">&gt; and it can be used as usual</span>
-</code></pre></div></div>
+<p>다음 글에서 Fundamental Matrix에 대해 살펴본다.</p>
 
-<blockquote>
-  <p>This is a regular blockquote
-and it can be used as usual</p>
-</blockquote>
-
-<p>These custom styles can be used by adding the specific class to the blockquote, as follows:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; A tip can be used when you want to give advice</span>
-<span class="gt">&gt; related to a certain content.</span>
-{: .block-tip }
-</code></pre></div></div>
-
-<blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
-
-  <p>A tip can be used when you want to give advice
-related to a certain content.</p>
-</blockquote>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a warning, and thus should</span>
-<span class="gt">&gt; be used when you want to warn the user</span>
-{: .block-warning }
-</code></pre></div></div>
-
-<blockquote class="block-warning">
-  <h5 id="warning">WARNING</h5>
-
-  <p>This is a warning, and thus should
-be used when you want to warn the user</p>
-</blockquote>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This is a danger zone, and thus should</span>
-<span class="gt">&gt; be used carefully</span>
-{: .block-danger }
-</code></pre></div></div>
-
-<blockquote class="block-danger">
-  <h5 id="danger">DANGER</h5>
-
-  <p>This is a danger zone, and thus should
-be used carefully</p>
-</blockquote>
+<h2 id="참고">참고</h2>
+<p>https://cmsc426.github.io/sfm/<br></p>
 
     </div>
   </article>
@@ -276,12 +240,6 @@ be used carefully</p>
   
 
   <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/computer_vision-Epipolar_Geometry/">Epipolar_Geometry</a>
-  </li>
-
-  
-
-  <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/cs231-regularization/">cs231n Summary - Regularization</a>
   </li>
 
@@ -295,6 +253,12 @@ be used carefully</p>
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/support-vector-machine/">support vector machine(SVM)</a>
+  </li>
+
+  
+
+  <li class="my-2">
+    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/math-norm/">norm</a>
   </li>
 
 <div id="giscus_thread" style="max-width: 800px; margin: 0 auto;">
@@ -327,6 +291,9 @@ be used carefully</p>
 </div>
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -354,6 +321,9 @@ be used carefully</p>
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@/dist/bootstrap-table.min.js"></script>
