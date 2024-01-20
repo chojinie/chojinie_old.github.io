@@ -1,10 +1,10 @@
 ---
 layout: post
-title: computer_vision - Epipolar_Geometry
+title: Epipolar_Geometry
 date: 2024-01-20
 description: recording_a Summary of lecture
-tags: cv study
-categories: study cv
+tags: study
+categories: study
 related_posts: True
 giscus_comments: true
 toc:
