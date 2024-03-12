@@ -154,7 +154,20 @@
         <div class="author">
         
 
-        </div>
+        Minji Kwak, Hyunjin Cho, Suyeon Cha, and
+          <span class="more-authors" title="click to view 1 more author" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '1 more author' ? 'Jongwon Choi' : '1 more author';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">1 more author</span>
+</div>
 
         <!-- Journal/Book title and date -->
         
@@ -179,7 +192,7 @@
           <!-- Hidden bibtex block -->
           <div class="bibtex hidden">
             <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">Conference</span><span class="p">,</span>
-  <span class="na">author</span> <span class="p">=</span> <span class="s">{}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Kwak, Minji and Cho, Hyunjin and Cha, Suyeon and Choi, Jongwon}</span><span class="p">,</span>
   <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{2023 대한전자공학회 학술대회}</span><span class="p">,</span>
   <span class="na">title</span> <span class="p">=</span> <span class="s">{In-the-wild 3D Human Pose Estimation with Synthetic 3D data and Real 2D data}</span><span class="p">,</span>
   <span class="na">year</span> <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
